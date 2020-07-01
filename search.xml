@@ -8,7 +8,7 @@
       <link href="/2020/07/01/wo-de-di-yi-pian-bo-ke-wen-zhang/"/>
       <url>/2020/07/01/wo-de-di-yi-pian-bo-ke-wen-zhang/</url>
       
-        <content type="html"><![CDATA[<p>事情很多，但是我仍然很摸鱼。今天看到了许多优秀的博客，我也想弄一个自己的博客。然后就开始尝试了。</p>]]></content>
+        <content type="html"><![CDATA[<p>事情很多，但是我仍然很摸鱼。今天看到了许多优秀的博客，我也想弄一个自己的博客。然后就开始尝试了</p><p>搞了一晚上，终于弄了个雏形出来了，多谢大佬的<a href="https://zhuanlan.zhihu.com/p/35668237" target="_blank" rel="noopener">指点</a>，让我的搭建过程顺利了许多。这位学长的<a href="https://godweiyang.com/" target="_blank" rel="noopener">博客</a>写的真的不错，是我学习的榜样。可是我太懒了，只想摸鱼，唉。</p><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
       
       
       
