@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="我的第一篇博客文章, 摸鱼者的博客">
+    <meta name="keywords" content="软路由做旁路由时电脑无法上网, 摸鱼者的博客">
     <meta name="description" content="整天不学习，只知道玩的我">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>我的第一篇博客文章 | 摸鱼者的博客</title>
+    <title>软路由做旁路由时电脑无法上网 | 摸鱼者的博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -308,12 +308,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/17.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/4.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">我的第一篇博客文章</h1>
+                    <h1 class="description center-align post-title">软路由做旁路由时电脑无法上网</h1>
                 </div>
             </div>
         </div>
@@ -442,21 +442,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-07-01
+                    2020-07-17
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-07-02
+                    2020-07-17
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    335
+                    363
                 </div>
                 
 
@@ -478,22 +478,18 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="2020年7月1日"><a href="#2020年7月1日" class="headerlink" title="2020年7月1日"></a>2020年7月1日</h1><p>事情很多，但是我仍然很摸鱼。今天看到了许多优秀的博客，我也想弄一个自己的博客。然后就开始尝试了</p>
-<p>搞了一晚上，终于弄了个雏形出来了，多谢大佬的<a href="https://zhuanlan.zhihu.com/p/35668237" target="_blank" rel="noopener">指点</a>，让我的搭建过程顺利了许多。这位学长的<a href="https://godweiyang.com/" target="_blank" rel="noopener">博客</a>写的真的不错，是我学习的榜样。可是我太懒了，只想摸鱼，唉。</p>
-<h1 id="2020年7月2日"><a href="#2020年7月2日" class="headerlink" title="2020年7月2日"></a>2020年7月2日</h1><p>早上一大早起来就开始着手实行博客访问速度的优化方式。使用国外CDN的速度还是不理想，使用国内CDN需要备案太麻烦。于是只是想静态的js和css资源使用了cdn，速度似乎提高了一点。接下来需要做的是将图片换成其他的图床，避免从国外服务器拉取。</p>
-<p>测试博文中图床的使用：</p>
-<p>sm.ms</p>
-<p><img src="https://i.loli.net/2020/07/02/xgAZMPk6yXstFnT.png" alt="sm.ms图床的照片"></p>
-<p>路过图床</p>
-<p><img src="https://s1.ax1x.com/2020/05/05/YiphlD.png" alt="路过图床的照片"></p>
-<h2 id="待完成的任务"><a href="#待完成的任务" class="headerlink" title="待完成的任务"></a>待完成的任务</h2><ol>
-<li>将图片从图床上获取。</li>
-<li>消除文章正文后面的冗余信息。</li>
+                <h1 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h1><p>本科用了四年的华硕笔记本，淘汰下来放在那里吃灰。最近不想学习，所以折腾起了软路由玩。按照网上的教程装好了openwrt，在设置电脑时却无论如何都无法上网，断断续续尝试了一个星期后终于解决了。</p>
+<h1 id="基本设置"><a href="#基本设置" class="headerlink" title="基本设置"></a>基本设置</h1><p>基本设置大家应该都知道，软路由的ip设置为主路由ip段中的某个合法ip，网关为主路由的ip地址，dns啥的可以是主路由地址也可以是114.114.114.114啥的。这个都可以。dhcp关掉，使用主路由的dhcp。</p>
+<p>电脑端设置为静态ip，ip地址为主路由ip段中的某个合法ip，子网掩码为225.225.225.0，网关为软路由的ip地址。但是设置为这些后还是无法上网，我很郁闷。</p>
+<h1 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h1><p>（暂时没有贴图，等我有图了我就来贴上）</p>
+<ol>
+<li><p>在接口中的高级设置中取消桥接。</p>
+</li>
+<li><p>防火墙的自定义规则中添加如下规则，并让他生效。</p>
+<pre class=" language-shell"><code class="language-shell">iptables -t nat -I POSTROUTING -o eth0 -j MASQUERADE</code></pre>
+</li>
 </ol>
-<h1 id="参考站点"><a href="#参考站点" class="headerlink" title="参考站点"></a>参考站点</h1><ol>
-<li>godweiyang的博客<a href="https://godweiyang.com/" target="_blank" rel="noopener">https://godweiyang.com/</a></li>
-<li>hexo-theme-matery主题<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank" rel="noopener">https://github.com/blinkfox/hexo-theme-matery</a></li>
-</ol>
+<p>进行这些设置后应该就可以了。如果还不行那我也不知道了。</p>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -537,7 +533,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://untaggedrui.github.io/zhangrui.github.io/2020/07/01/wo-de-di-yi-pian-bo-ke-wen-zhang/">https://untaggedrui.github.io/zhangrui.github.io/2020/07/01/wo-de-di-yi-pian-bo-ke-wen-zhang/</a>
+                    <a href="https://untaggedrui.github.io/zhangrui.github.io/2020/07/17/ruan-lu-you-zuo-pang-lu-you-shi-dian-nao-wu-fa-shang-wang/">https://untaggedrui.github.io/zhangrui.github.io/2020/07/17/ruan-lu-you-zuo-pang-lu-you-shi-dian-nao-wu-fa-shang-wang/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -614,31 +610,31 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2020/07/03/gdb-de-xue-xi-yu-cuo-wu-jie-jue/">
+                <a href="/2020/07/17/ruan-lu-you-zuo-pang-lu-you-shi-dian-nao-wu-fa-shang-wang/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="gdb的学习与错误解决">
+                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="软路由做旁路由时电脑无法上网">
                         
-                        <span class="card-title">gdb的学习与错误解决</span>
+                        <span class="card-title">软路由做旁路由时电脑无法上网</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            错误解决在写某个程序时，出现错误，想要使用gdb进行调试，但是在使用b命令设置断点后出现如下错误，并且运行后不能在断点处暂停。
-No symbol table is loaded.  Use the "file" command.
-Make
+                            背景本科用了四年的华硕笔记本，淘汰下来放在那里吃灰。最近不想学习，所以折腾起了软路由玩。按照网上的教程装好了openwrt，在设置电脑时却无论如何都无法上网，断断续续尝试了一个星期后终于解决了。
+基本设置基本设置大家应该都知道，软路由的ip
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-07-03
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-07-17
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -647,6 +643,7 @@ Make
                         </span>
                     </div>
                 </div>
+
                 
             </div>
         </div>
@@ -657,24 +654,24 @@ Make
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/07/01/hello-world/">
+                <a href="/2020/07/05/yi-qing-qi-jian-zai-jia-de-gan-kai/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Hello World">
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="疫情期间在家的感慨">
                         
-                        <span class="card-title">Hello World</span>
+                        <span class="card-title">疫情期间在家的感慨</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hex
+                            2020年7月5日今天是两门课作业的最后一个晚上。本来是完全有时间来写这两门作业的，可是刚开始的时候仍然是不着急，一拖再拖，拖到只剩最后一个周末。即使到了最后的晚上仍然是懈怠。作业完成的质量真的是呵呵了。我不知道我为什么会成为现在这个样子。
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-07-01
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-07-05
                             </span>
                         <span class="publish-author">
                             
@@ -818,6 +815,13 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 
 </main>
 
+
+<script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script>
+    MathJax.Hub.Config({
+        tex2jax: {inlineMath: [['$', '$'], ['\(', '\)']]}
+    });
+</script>
 
 
 
