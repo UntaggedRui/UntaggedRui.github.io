@@ -4,6 +4,19 @@
   
     
     <entry>
+      <title>未找到相关的Issues进行评论 请联系XXX初始化创建</title>
+      <link href="/2020/07/24/wei-zhao-dao-xiang-guan-de-issues-jin-xing-ping-lun-qing-lian-xi-xxx-chu-shi-hua-chuang-jian/"/>
+      <url>/2020/07/24/wei-zhao-dao-xiang-guan-de-issues-jin-xing-ping-lun-qing-lian-xi-xxx-chu-shi-hua-chuang-jian/</url>
+      
+        <content type="html"><![CDATA[<h1 id="问题背景"><a href="#问题背景" class="headerlink" title="问题背景"></a>问题背景</h1><p>今天晚上在配置hexo博客的评论时，使用gittalk的过程中遇到了点小麻烦，正如题中说道的那样。</p><p><img src="https://i.loli.net/2020/07/24/HkOUmpTFYLGAb67.png" alt="gitalk无法使用"></p><p>倒腾了我接近一个小时终于弄好的，还是马虎的原因导致的。</p><h1 id="问题解决"><a href="#问题解决" class="headerlink" title="问题解决"></a>问题解决</h1><p>我使用的是<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank" rel="noopener">Matery</a>主题，gitalk是在这个主题的_config.yml中配置的。</p><p><img src="https://i.loli.net/2020/07/24/7rXBl2KS46hsFNk.png" alt="配置文件中gitalk的配置信息"></p><p>问题就出在这个admin的配置上。admin字段就是用来初始化评论的github用户名，之前我这个填错了导致一直不能初始化。更改为你的github用户名就可以了。</p><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>软路由做旁路由时电脑无法上网</title>
       <link href="/2020/07/17/ruan-lu-you-zuo-pang-lu-you-shi-dian-nao-wu-fa-shang-wang/"/>
       <url>/2020/07/17/ruan-lu-you-zuo-pang-lu-you-shi-dian-nao-wu-fa-shang-wang/</url>
