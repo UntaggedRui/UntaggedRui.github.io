@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="软路由做旁路由时电脑无法上网, 个人摸鱼记录">
+    <meta name="keywords" content="繁琐的小知识点记录, 个人摸鱼记录">
     <meta name="description" content="整天不学习，只知道玩的我">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>软路由做旁路由时电脑无法上网 | 个人摸鱼记录</title>
+    <title>繁琐的小知识点记录 | 个人摸鱼记录</title>
     <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/UntaggedRui/zhangrui.github.io/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/UntaggedRui/zhangrui.github.io/libs/awesome/css/all.css">
@@ -308,12 +308,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/UntaggedRui/zhangrui.github.io/medias/featureimages/4.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/UntaggedRui/zhangrui.github.io/medias/featureimages/3.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">软路由做旁路由时电脑无法上网</h1>
+                    <h1 class="description center-align post-title">繁琐的小知识点记录</h1>
                 </div>
             </div>
         </div>
@@ -442,7 +442,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-07-17
+                    2020-07-25
                 </div>
                 
 
@@ -456,7 +456,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    363
+                    125
                 </div>
                 
 
@@ -478,18 +478,19 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h1><p>本科用了四年的华硕笔记本，淘汰下来放在那里吃灰。最近不想学习，所以折腾起了软路由玩。按照网上的教程装好了openwrt，在设置电脑时却无论如何都无法上网，断断续续尝试了一个星期后终于解决了。</p>
-<h1 id="基本设置"><a href="#基本设置" class="headerlink" title="基本设置"></a>基本设置</h1><p>基本设置大家应该都知道，软路由的ip设置为主路由ip段中的某个合法ip，网关为主路由的ip地址，dns啥的可以是主路由地址也可以是114.114.114.114啥的。这个都可以。dhcp关掉，使用主路由的dhcp。</p>
-<p>电脑端设置为静态ip，ip地址为主路由ip段中的某个合法ip，子网掩码为225.225.225.0，网关为软路由的ip地址。但是设置为这些后还是无法上网，我很郁闷。</p>
-<h1 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h1><p>（暂时没有贴图，等我有图了我就来贴上）</p>
-<ol>
-<li><p>在接口中的高级设置中取消桥接。</p>
+                <ol>
+<li><p>更新jsDelivr缓存内容</p>
+<p>以下内容转载于<a href="https://mazhuang.org/2020/05/01/cdn-for-github-pages/" target="_blank" rel="noopener">码志</a></p>
+<blockquote>
+<p>可以访问 <code>https://purge.jsdelivr.net/gh/mzlogin/mzlogin.github.io@1.2.0/assets/js/main.js</code> 来清除指定文件的缓存；（将引用的 CDN 链接里的 <code>cdn</code> 改成 <code>purge</code> 就是了）</p>
+</blockquote>
 </li>
-<li><p>防火墙的自定义规则中添加如下规则，并让他生效。</p>
-<pre class=" language-shell"><code class="language-shell">iptables -t nat -I POSTROUTING -o eth0 -j MASQUERADE</code></pre>
-</li>
+<li><p>查看公网ip</p>
+<pre><code>curl ifconfig.me
+
+curl icanhazip.com</code></pre></li>
+<li></li>
 </ol>
-<p>进行这些设置后应该就可以了。如果还不行那我也不知道了。</p>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -563,7 +564,7 @@
         repo: 'zhangrui.github.io',
         owner: 'UntaggedRui',
         admin: "UntaggedRui",
-        id: '2020-07-17T22-22-36',
+        id: '2020-07-25T07-14-27',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -854,27 +855,39 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/posts/Related%20Issues%20were%20not%20found%20to%20comment/">
+                <a href="/posts/videos-in-bilibili/">
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/UntaggedRui/zhangrui.github.io/medias/featureimages/5.jpg" class="responsive-img" alt="未找到相关的Issues进行评论 请联系XXX初始化创建">
+                        <img src="https://cdn.jsdelivr.net/gh/UntaggedRui/zhangrui.github.io/medias/featureimages/7.jpg" class="responsive-img" alt="B站视频记录">
                         
-                        <span class="card-title">未找到相关的Issues进行评论 请联系XXX初始化创建</span>
+                        <span class="card-title">B站视频记录</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            问题背景今天晚上在配置hexo博客的评论时，使用gittalk的过程中遇到了点小麻烦，正如题中说道的那样。
+                            这篇文章暂时有两个目的，一是学习在hexo中插入B站视频，二是记录B站中感兴趣的视频。
+2020B站跨年演唱会——好一朵美丽的茉莉花下面是未更改框架代码。
+ 
 
-倒腾了我接近一个小时终于弄好的，还是马虎的原因导致的。
-问题解决我使用的是Matery主题，gitalk是在这个主题的_confi
+下面是原始框架。
+ 
+下面是美化后的效果。
+
+
+
+
+
+
+
+参考资料
+关于博客园
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-07-24
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-07-25
                         </span>
                         <span class="publish-author">
                             
@@ -894,23 +907,27 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/posts/20f9887f/">
+                <a href="/posts/Related-Issues-were-not-found-to-comment/">
                     <div class="card-image">
                         
-                        <img src="http://101.76.160.28:8001/cas/comm/ahu/image/gq.jpg?1595597274652" class="responsive-img" alt="疫情期间在家的感慨">
                         
-                        <span class="card-title">疫情期间在家的感慨</span>
+                        <img src="https://cdn.jsdelivr.net/gh/UntaggedRui/zhangrui.github.io/medias/featureimages/5.jpg" class="responsive-img" alt="未找到相关的Issues进行评论 请联系XXX初始化创建">
+                        
+                        <span class="card-title">未找到相关的Issues进行评论 请联系XXX初始化创建</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            2020年7月5日今天是两门课作业的最后一个晚上。本来是完全有时间来写这两门作业的，可是刚开始的时候仍然是不着急，一拖再拖，拖到只剩最后一个周末。即使到了最后的晚上仍然是懈怠。作业完成的质量真的是呵呵了。我不知道我为什么会成为现在这个样子。
+                            问题背景今天晚上在配置hexo博客的评论时，使用gittalk的过程中遇到了点小麻烦，正如题中说道的那样。
+
+倒腾了我接近一个小时终于弄好的，还是马虎的原因导致的。
+问题解决我使用的是Matery主题，gitalk是在这个主题的_confi
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-07-05
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-07-24
                             </span>
                         <span class="publish-author">
                             
@@ -1076,7 +1093,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">1.9k</span>&nbsp;字
+                class="white-color">2k</span>&nbsp;字
             
             
             

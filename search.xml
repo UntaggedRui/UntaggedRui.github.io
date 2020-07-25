@@ -4,9 +4,22 @@
   
     
     <entry>
+      <title>B站视频记录</title>
+      <link href="/posts/videos-in-bilibili/"/>
+      <url>/posts/videos-in-bilibili/</url>
+      
+        <content type="html"><![CDATA[<p>这篇文章暂时有两个目的，一是学习在hexo中插入B站视频，二是记录B站中感兴趣的视频。</p><h1 id="2020B站跨年演唱会——好一朵美丽的茉莉花"><a href="#2020B站跨年演唱会——好一朵美丽的茉莉花" class="headerlink" title="2020B站跨年演唱会——好一朵美丽的茉莉花"></a>2020B站跨年演唱会——好一朵美丽的茉莉花</h1><p>下面是未更改框架代码。</p><iframe src="//player.bilibili.com/player.html?aid=413586195&amp;bvid=BV1VV411k7Tz&amp;cid=204774430&amp;page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe><p>下面是原始框架。</p><iframe src="//player.bilibili.com/player.html?aid=81391222&amp;bvid=BV1TJ411h7HL&amp;cid=140862377&amp;page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>下面是美化后的效果。<div style="position: relative; width: 100%; height: 0; padding-bottom: 75%;"><iframe src="//player.bilibili.com/player.html?aid=81391222&amp;bvid=BV1TJ411h7HL&amp;cid=140862377&amp;page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" style="position: absolute; width: 100%; height: 100%; Left: 0; top: 0;"></iframe></div><h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ol><li><a href="https://www.cnblogs.com/wkfvawl/p/12268980.html" target="_blank" rel="noopener">关于博客园内嵌入bilibili视频</a></li></ol><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>繁琐的小知识点记录</title>
-      <link href="/posts/little%20knowledge%20points%20record/"/>
-      <url>/posts/little%20knowledge%20points%20record/</url>
+      <link href="/posts/little-knowledge-points-record/"/>
+      <url>/posts/little-knowledge-points-record/</url>
       
         <content type="html"><![CDATA[<ol><li><p>更新jsDelivr缓存内容</p><p>以下内容转载于<a href="https://mazhuang.org/2020/05/01/cdn-for-github-pages/" target="_blank" rel="noopener">码志</a></p><blockquote><p>可以访问 <code>https://purge.jsdelivr.net/gh/mzlogin/mzlogin.github.io@1.2.0/assets/js/main.js</code> 来清除指定文件的缓存；（将引用的 CDN 链接里的 <code>cdn</code> 改成 <code>purge</code> 就是了）</p></blockquote></li><li><p>查看公网ip</p><pre><code>curl ifconfig.mecurl icanhazip.com</code></pre></li><li></li></ol><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
       
@@ -18,8 +31,8 @@
     
     <entry>
       <title>未找到相关的Issues进行评论 请联系XXX初始化创建</title>
-      <link href="/posts/Related%20Issues%20were%20not%20found%20to%20comment/"/>
-      <url>/posts/Related%20Issues%20were%20not%20found%20to%20comment/</url>
+      <link href="/posts/Related-Issues-were-not-found-to-comment/"/>
+      <url>/posts/Related-Issues-were-not-found-to-comment/</url>
       
         <content type="html"><![CDATA[<h1 id="问题背景"><a href="#问题背景" class="headerlink" title="问题背景"></a>问题背景</h1><p>今天晚上在配置hexo博客的评论时，使用gittalk的过程中遇到了点小麻烦，正如题中说道的那样。</p><p><img src="https://i.loli.net/2020/07/24/HkOUmpTFYLGAb67.png" alt="gitalk无法使用"></p><p>倒腾了我接近一个小时终于弄好的，还是马虎的原因导致的。</p><h1 id="问题解决"><a href="#问题解决" class="headerlink" title="问题解决"></a>问题解决</h1><p>我使用的是<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank" rel="noopener">Matery</a>主题，gitalk是在这个主题的_config.yml中配置的。</p><p><img src="https://i.loli.net/2020/07/24/7rXBl2KS46hsFNk.png" alt="配置文件中gitalk的配置信息"></p><p>问题就出在这个admin的配置上。admin字段就是用来初始化评论的github用户名，之前我这个填错了导致一直不能初始化。更改为你的github用户名就可以了。</p><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
       
@@ -31,8 +44,8 @@
     
     <entry>
       <title>软路由做旁路由时电脑无法上网</title>
-      <link href="/posts/computer%20cannot%20access%20Internet%20when%20the%20soft%20route%20is%20used%20as%20a%20bypass/"/>
-      <url>/posts/computer%20cannot%20access%20Internet%20when%20the%20soft%20route%20is%20used%20as%20a%20bypass/</url>
+      <link href="/posts/computer-cannot-access-Internet-when-the-soft-route-is-used-as-a-bypass/"/>
+      <url>/posts/computer-cannot-access-Internet-when-the-soft-route-is-used-as-a-bypass/</url>
       
         <content type="html"><![CDATA[<h1 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h1><p>本科用了四年的华硕笔记本，淘汰下来放在那里吃灰。最近不想学习，所以折腾起了软路由玩。按照网上的教程装好了openwrt，在设置电脑时却无论如何都无法上网，断断续续尝试了一个星期后终于解决了。</p><h1 id="基本设置"><a href="#基本设置" class="headerlink" title="基本设置"></a>基本设置</h1><p>基本设置大家应该都知道，软路由的ip设置为主路由ip段中的某个合法ip，网关为主路由的ip地址，dns啥的可以是主路由地址也可以是114.114.114.114啥的。这个都可以。dhcp关掉，使用主路由的dhcp。</p><p>电脑端设置为静态ip，ip地址为主路由ip段中的某个合法ip，子网掩码为225.225.225.0，网关为软路由的ip地址。但是设置为这些后还是无法上网，我很郁闷。</p><h1 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h1><p>（暂时没有贴图，等我有图了我就来贴上）</p><ol><li><p>在接口中的高级设置中取消桥接。</p></li><li><p>防火墙的自定义规则中添加如下规则，并让他生效。</p><pre class=" language-shell"><code class="language-shell">iptables -t nat -I POSTROUTING -o eth0 -j MASQUERADE</code></pre></li></ol><p>进行这些设置后应该就可以了。如果还不行那我也不知道了。</p><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
       

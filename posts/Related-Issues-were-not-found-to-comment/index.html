@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Hello World, 个人摸鱼记录">
+    <meta name="keywords" content="未找到相关的Issues进行评论 请联系XXX初始化创建, 个人摸鱼记录">
     <meta name="description" content="整天不学习，只知道玩的我">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Hello World | 个人摸鱼记录</title>
+    <title>未找到相关的Issues进行评论 请联系XXX初始化创建 | 个人摸鱼记录</title>
     <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/UntaggedRui/zhangrui.github.io/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/UntaggedRui/zhangrui.github.io/libs/awesome/css/all.css">
@@ -308,12 +308,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/UntaggedRui/zhangrui.github.io/medias/featureimages/12.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/UntaggedRui/zhangrui.github.io/medias/featureimages/5.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Hello World</h1>
+                    <h1 class="description center-align post-title">未找到相关的Issues进行评论 请联系XXX初始化创建</h1>
                 </div>
             </div>
         </div>
@@ -442,7 +442,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-07-01
+                    2020-07-24
                 </div>
                 
 
@@ -456,7 +456,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    125
+                    201
                 </div>
                 
 
@@ -478,15 +478,12 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre class=" language-bash"><code class="language-bash">$ hexo new <span class="token string">"My New Post"</span></code></pre>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre class=" language-bash"><code class="language-bash">$ hexo server</code></pre>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre class=" language-bash"><code class="language-bash">$ hexo generate</code></pre>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre class=" language-bash"><code class="language-bash">$ hexo deploy</code></pre>
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+                <h1 id="问题背景"><a href="#问题背景" class="headerlink" title="问题背景"></a>问题背景</h1><p>今天晚上在配置hexo博客的评论时，使用gittalk的过程中遇到了点小麻烦，正如题中说道的那样。</p>
+<p><img src="https://i.loli.net/2020/07/24/HkOUmpTFYLGAb67.png" alt="gitalk无法使用"></p>
+<p>倒腾了我接近一个小时终于弄好的，还是马虎的原因导致的。</p>
+<h1 id="问题解决"><a href="#问题解决" class="headerlink" title="问题解决"></a>问题解决</h1><p>我使用的是<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank" rel="noopener">Matery</a>主题，gitalk是在这个主题的_config.yml中配置的。</p>
+<p><img src="https://i.loli.net/2020/07/24/7rXBl2KS46hsFNk.png" alt="配置文件中gitalk的配置信息"></p>
+<p>问题就出在这个admin的配置上。admin字段就是用来初始化评论的github用户名，之前我这个填错了导致一直不能初始化。更改为你的github用户名就可以了。</p>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -560,7 +557,7 @@
         repo: 'zhangrui.github.io',
         owner: 'UntaggedRui',
         admin: "UntaggedRui",
-        id: '2020-07-01T21-24-21',
+        id: '2020-07-24T23-26-13',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -851,24 +848,28 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/posts/b24dd347/">
+                <a href="/posts/little-knowledge-points-record/">
                     <div class="card-image">
                         
-                        <img src="https://s1.ax1x.com/2020/07/25/UxgBEn.jpg" class="responsive-img" alt="我的第一篇博客文章">
                         
-                        <span class="card-title">我的第一篇博客文章</span>
+                        <img src="https://cdn.jsdelivr.net/gh/UntaggedRui/zhangrui.github.io/medias/featureimages/3.jpg" class="responsive-img" alt="繁琐的小知识点记录">
+                        
+                        <span class="card-title">繁琐的小知识点记录</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            2020年7月1日事情很多，但是我仍然很摸鱼。今天看到了许多优秀的博客，我也想弄一个自己的博客。然后就开始尝试了
-搞了一晚上，终于弄了个雏形出来了，多谢大佬的指点，让我的搭建过程顺利了许多。这位学长的博客写的真的不错，是我学习的榜样。可是我
+                            
+更新jsDelivr缓存内容
+以下内容转载于码志
+
+可以访问 https://purge.jsdelivr.net/gh/mzlogin/mzlogin.github.io@1.2.0/assets/js/main.js 来清除指定文件的
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-07-01
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-07-25
                         </span>
                         <span class="publish-author">
                             
@@ -885,27 +886,28 @@
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="far fa-dot-circle"></i>
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/posts/4a17b156/">
+                <a href="/posts/computer-cannot-access-Internet-when-the-soft-route-is-used-as-a-bypass/">
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/UntaggedRui/zhangrui.github.io/medias/featureimages/12.jpg" class="responsive-img" alt="Hello World">
+                        <img src="https://cdn.jsdelivr.net/gh/UntaggedRui/zhangrui.github.io/medias/featureimages/4.jpg" class="responsive-img" alt="软路由做旁路由时电脑无法上网">
                         
-                        <span class="card-title">Hello World</span>
+                        <span class="card-title">软路由做旁路由时电脑无法上网</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hex
+                            背景本科用了四年的华硕笔记本，淘汰下来放在那里吃灰。最近不想学习，所以折腾起了软路由玩。按照网上的教程装好了openwrt，在设置电脑时却无论如何都无法上网，断断续续尝试了一个星期后终于解决了。
+基本设置基本设置大家应该都知道，软路由的ip
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-07-01
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-07-17
                             </span>
                         <span class="publish-author">
                             
@@ -915,7 +917,6 @@
                         </span>
                     </div>
                 </div>
-
                 
             </div>
         </div>
@@ -1050,6 +1051,13 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 
 </main>
 
+
+<script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script>
+    MathJax.Hub.Config({
+        tex2jax: {inlineMath: [['$', '$'], ['\(', '\)']]}
+    });
+</script>
 
 
 
