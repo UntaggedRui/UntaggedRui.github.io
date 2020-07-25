@@ -5,10 +5,10 @@
     
     <entry>
       <title>繁琐的小知识点记录</title>
-      <link href="/posts/1001/"/>
-      <url>/posts/1001/</url>
+      <link href="/posts/little%20knowledge%20points%20record/"/>
+      <url>/posts/little%20knowledge%20points%20record/</url>
       
-        <content type="html"><![CDATA[<ol><li><p>更新jsDelivr缓存内容</p><p>以下内容转载于<a href="https://mazhuang.org/2020/05/01/cdn-for-github-pages/" target="_blank" rel="noopener">码志</a></p><blockquote><p>可以访问 <code>https://purge.jsdelivr.net/gh/mzlogin/mzlogin.github.io@1.2.0/assets/js/main.js</code> 来清除指定文件的缓存；（将引用的 CDN 链接里的 <code>cdn</code> 改成 <code>purge</code> 就是了）</p></blockquote></li><li></li></ol><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+        <content type="html"><![CDATA[<ol><li><p>更新jsDelivr缓存内容</p><p>以下内容转载于<a href="https://mazhuang.org/2020/05/01/cdn-for-github-pages/" target="_blank" rel="noopener">码志</a></p><blockquote><p>可以访问 <code>https://purge.jsdelivr.net/gh/mzlogin/mzlogin.github.io@1.2.0/assets/js/main.js</code> 来清除指定文件的缓存；（将引用的 CDN 链接里的 <code>cdn</code> 改成 <code>purge</code> 就是了）</p></blockquote></li><li><p>查看公网ip</p><pre><code>curl ifconfig.mecurl icanhazip.com</code></pre></li><li></li></ol><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
       
       
       
@@ -18,8 +18,8 @@
     
     <entry>
       <title>未找到相关的Issues进行评论 请联系XXX初始化创建</title>
-      <link href="/posts/1001/"/>
-      <url>/posts/1001/</url>
+      <link href="/posts/Related%20Issues%20were%20not%20found%20to%20comment/"/>
+      <url>/posts/Related%20Issues%20were%20not%20found%20to%20comment/</url>
       
         <content type="html"><![CDATA[<h1 id="问题背景"><a href="#问题背景" class="headerlink" title="问题背景"></a>问题背景</h1><p>今天晚上在配置hexo博客的评论时，使用gittalk的过程中遇到了点小麻烦，正如题中说道的那样。</p><p><img src="https://i.loli.net/2020/07/24/HkOUmpTFYLGAb67.png" alt="gitalk无法使用"></p><p>倒腾了我接近一个小时终于弄好的，还是马虎的原因导致的。</p><h1 id="问题解决"><a href="#问题解决" class="headerlink" title="问题解决"></a>问题解决</h1><p>我使用的是<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank" rel="noopener">Matery</a>主题，gitalk是在这个主题的_config.yml中配置的。</p><p><img src="https://i.loli.net/2020/07/24/7rXBl2KS46hsFNk.png" alt="配置文件中gitalk的配置信息"></p><p>问题就出在这个admin的配置上。admin字段就是用来初始化评论的github用户名，之前我这个填错了导致一直不能初始化。更改为你的github用户名就可以了。</p><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
       
@@ -31,8 +31,8 @@
     
     <entry>
       <title>软路由做旁路由时电脑无法上网</title>
-      <link href="/posts/1001/"/>
-      <url>/posts/1001/</url>
+      <link href="/posts/computer%20cannot%20access%20Internet%20when%20the%20soft%20route%20is%20used%20as%20a%20bypass/"/>
+      <url>/posts/computer%20cannot%20access%20Internet%20when%20the%20soft%20route%20is%20used%20as%20a%20bypass/</url>
       
         <content type="html"><![CDATA[<h1 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h1><p>本科用了四年的华硕笔记本，淘汰下来放在那里吃灰。最近不想学习，所以折腾起了软路由玩。按照网上的教程装好了openwrt，在设置电脑时却无论如何都无法上网，断断续续尝试了一个星期后终于解决了。</p><h1 id="基本设置"><a href="#基本设置" class="headerlink" title="基本设置"></a>基本设置</h1><p>基本设置大家应该都知道，软路由的ip设置为主路由ip段中的某个合法ip，网关为主路由的ip地址，dns啥的可以是主路由地址也可以是114.114.114.114啥的。这个都可以。dhcp关掉，使用主路由的dhcp。</p><p>电脑端设置为静态ip，ip地址为主路由ip段中的某个合法ip，子网掩码为225.225.225.0，网关为软路由的ip地址。但是设置为这些后还是无法上网，我很郁闷。</p><h1 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h1><p>（暂时没有贴图，等我有图了我就来贴上）</p><ol><li><p>在接口中的高级设置中取消桥接。</p></li><li><p>防火墙的自定义规则中添加如下规则，并让他生效。</p><pre class=" language-shell"><code class="language-shell">iptables -t nat -I POSTROUTING -o eth0 -j MASQUERADE</code></pre></li></ol><p>进行这些设置后应该就可以了。如果还不行那我也不知道了。</p><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
       
@@ -44,8 +44,8 @@
     
     <entry>
       <title>疫情期间在家的感慨</title>
-      <link href="/posts/1001/"/>
-      <url>/posts/1001/</url>
+      <link href="/posts/20f9887f/"/>
+      <url>/posts/20f9887f/</url>
       
         <content type="html"><![CDATA[<h1 id="2020年7月5日"><a href="#2020年7月5日" class="headerlink" title="2020年7月5日"></a>2020年7月5日</h1><p>今天是两门课作业的最后一个晚上。本来是完全有时间来写这两门作业的，可是刚开始的时候仍然是不着急，一拖再拖，拖到只剩最后一个周末。即使到了最后的晚上仍然是懈怠。作业完成的质量真的是呵呵了。我不知道我为什么会成为现在这个样子。看着室友完成的作业再看看自己的。我很难过，想发奋努力。不知道明天又会是怎样。别人的态度比我好，也找到了实习，确实比我优秀。我整天在家里这么干我真的能行吗？唉，无奈，却又仍然不努力，我该怎么办。有点慌了，却又无动于衷。</p><h1 id="2020年7月17日"><a href="#2020年7月17日" class="headerlink" title="2020年7月17日"></a>2020年7月17日</h1><p>今天和昨天，又是日子混的好快的两天。每天什么都没做，时间就过去了。 </p><h1 id="2020年7月24日"><a href="#2020年7月24日" class="headerlink" title="2020年7月24日"></a>2020年7月24日</h1><p>这一个星期一晃又过去了。心惊胆颤，却又完全不想学习。我也不知道我该怎么办了，别人都能学进去，我这样搞该怎么办哦。很懒，什么都不想做。</p><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
       
@@ -57,8 +57,8 @@
     
     <entry>
       <title>gdb的学习与错误解决</title>
-      <link href="/posts/1001/"/>
-      <url>/posts/1001/</url>
+      <link href="/posts/5f54a3c8/"/>
+      <url>/posts/5f54a3c8/</url>
       
         <content type="html"><![CDATA[<h1 id="错误解决"><a href="#错误解决" class="headerlink" title="错误解决"></a>错误解决</h1><p>在写某个程序时，出现错误，想要使用gdb进行调试，但是在使用<code>b</code>命令设置断点后出现如下错误，并且运行后不能在断点处暂停。</p><pre class=" language-shell"><code class="language-shell">No symbol table is loaded.  Use the "file" command.Make breakpoint pending on future shared library load? (y or [n])</code></pre><p>经过搜索资料发现是在编译的时候没有加上<code>-g</code>选项，导致无法进行断点调试，因此在<code>Makefile</code>文件中的<code>CPPFLAGS</code>（如果是C语言就是<code>CFLAGS</code>)中加上<code>-g</code>    选项后，就能够正常进行断点调试了。</p><h1 id="gdb的简单使用方法"><a href="#gdb的简单使用方法" class="headerlink" title="gdb的简单使用方法"></a>gdb的简单使用方法</h1><ol><li>设置断点<ul><li>根据函数名设置断点：<code>b func_name</code></li><li>根据代码行位置设置断点: <code>b src/mycode.cc:81</code> gdb运行到该文件的地81行处中断。</li><li>根据运行时的地址进行设置断点: <code>b *0x5859c0</code> </li></ul></li><li>跳入或跳出指令<ul><li>执行到某个函数时<strong>不进入</strong>函数体内: <code>n</code></li><li>执行到某个函数时<strong>进入</strong>函数体内: <code>s</code></li><li>跳出当前函数（执行完当前函数返回到调用它的函数）: <code>f</code></li></ul></li></ol><h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ol><li>No symbol table is loaded. Use the “file” command.解决方法: <a href="https://blog.csdn.net/pinghegood/article/details/8512747" target="_blank" rel="noopener">https://blog.csdn.net/pinghegood/article/details/8512747</a></li><li>gdb几种设置断点的方式: <a href="https://blog.csdn.net/wojiuguowei/article/details/82386567" target="_blank" rel="noopener">https://blog.csdn.net/wojiuguowei/article/details/82386567</a></li></ol><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
       
@@ -70,8 +70,8 @@
     
     <entry>
       <title>我的第一篇博客文章</title>
-      <link href="/posts/1001/"/>
-      <url>/posts/1001/</url>
+      <link href="/posts/b24dd347/"/>
+      <url>/posts/b24dd347/</url>
       
         <content type="html"><![CDATA[<h1 id="2020年7月1日"><a href="#2020年7月1日" class="headerlink" title="2020年7月1日"></a>2020年7月1日</h1><p>事情很多，但是我仍然很摸鱼。今天看到了许多优秀的博客，我也想弄一个自己的博客。然后就开始尝试了</p><p>搞了一晚上，终于弄了个雏形出来了，多谢大佬的<a href="https://zhuanlan.zhihu.com/p/35668237" target="_blank" rel="noopener">指点</a>，让我的搭建过程顺利了许多。这位学长的<a href="https://godweiyang.com/" target="_blank" rel="noopener">博客</a>写的真的不错，是我学习的榜样。可是我太懒了，只想摸鱼，唉。</p><h1 id="2020年7月2日"><a href="#2020年7月2日" class="headerlink" title="2020年7月2日"></a>2020年7月2日</h1><p>早上一大早起来就开始着手实行博客访问速度的优化方式。使用国外CDN的速度还是不理想，使用国内CDN需要备案太麻烦。于是只是想静态的js和css资源使用了cdn，速度似乎提高了一点。接下来需要做的是将图片换成其他的图床，避免从国外服务器拉取。</p><p>测试博文中图床的使用：</p><p>sm.ms</p><p><img src="https://i.loli.net/2020/07/02/xgAZMPk6yXstFnT.png" alt="sm.ms图床的照片"></p><p>路过图床</p><p><img src="https://s1.ax1x.com/2020/05/05/YiphlD.png" alt="路过图床的照片"></p><h2 id="待完成的任务"><a href="#待完成的任务" class="headerlink" title="待完成的任务"></a>待完成的任务</h2><ol><li>将图片从图床上获取。</li><li>消除文章正文后面的冗余信息。</li></ol><h1 id="参考站点"><a href="#参考站点" class="headerlink" title="参考站点"></a>参考站点</h1><ol><li>godweiyang的博客<a href="https://godweiyang.com/" target="_blank" rel="noopener">https://godweiyang.com/</a></li><li>hexo-theme-matery主题<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank" rel="noopener">https://github.com/blinkfox/hexo-theme-matery</a></li></ol><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
       
@@ -83,8 +83,8 @@
     
     <entry>
       <title>Hello World</title>
-      <link href="/posts/1001/"/>
-      <url>/posts/1001/</url>
+      <link href="/posts/4a17b156/"/>
+      <url>/posts/4a17b156/</url>
       
         <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre class=" language-bash"><code class="language-bash">$ hexo new <span class="token string">"My New Post"</span></code></pre><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre class=" language-bash"><code class="language-bash">$ hexo server</code></pre><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre class=" language-bash"><code class="language-bash">$ hexo generate</code></pre><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre class=" language-bash"><code class="language-bash">$ hexo deploy</code></pre><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
       
