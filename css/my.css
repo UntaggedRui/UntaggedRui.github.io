@@ -1,5 +1,7 @@
 /* Here is your custom css styles. */
-
+#artDetail .reprint-info {
+    word-break: break-word;
+}
 /* hexo-filter-github-emojis */
 .github-emoji{
     height: 2em;
