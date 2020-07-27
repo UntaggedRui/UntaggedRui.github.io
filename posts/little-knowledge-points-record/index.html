@@ -458,14 +458,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-07-25
+                    2020-07-27
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    125
+                    223
                 </div>
                 
 
@@ -495,9 +495,32 @@
 </blockquote>
 </li>
 <li><p>查看公网ip</p>
-<pre><code>curl ifconfig.me
+<pre><code>curl ip.sb   # 这个速度很快
+curl ipv6.ip.sb # 获取ipv6
+curl ifconfig.me
 
 curl icanhazip.com</code></pre></li>
+<li><p>iterm2中建立免输入密钥文件的配置文件</p>
+<ol>
+<li><p>创建登录脚本，保存到Documents/login.sh</p>
+<pre><code>#!/usr/bin/expect
+set keyfilepath Downloads/id_rsa
+set keyfilepassword kskhJla23kJL
+set user root
+set ip 192.168.101.1
+
+spawn ssh -i $keyfilepath $user@$ip
+expect "Enter passphrase for key '$keyfilepath':"
+send "$keyfilepassword\r"
+interact
+}</code></pre></li>
+<li><p>设置iterm2中的profile</p>
+</li>
+</ol>
+</li>
+<li><p>修改ubuntu用户的shell</p>
+<p><a href="https://blog.csdn.net/iteye_4185/article/details/82564503" target="_blank" rel="noopener">https://blog.csdn.net/iteye_4185/article/details/82564503</a></p>
+</li>
 <li></li>
 </ol>
 <script>
@@ -876,8 +899,9 @@ curl icanhazip.com</code></pre></li>
                     <div class="summary block-with-text">
                         
                             这篇文章暂时有两个目的，一是学习在hexo中插入B站视频，二是记录B站中感兴趣的视频。
-提示：看看视频就好，文字还是别看了。写的毫无逻辑可言，语言表达能力低下，想到哪写到哪:pensive:
-视频列表2020B站跨年演唱会——好一朵美丽的茉
+提示：如果视频无法播放，请使用https的方式打开
+看看视频就好，文字还是别看了。写的毫无逻辑可言，语言表达能力低下，想到哪写到哪:pensive:
+视
                         
                     </div>
                     <div class="publish-info">
@@ -1096,7 +1120,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">3k</span>&nbsp;字
+                class="white-color">3.4k</span>&nbsp;字
             
             
             
