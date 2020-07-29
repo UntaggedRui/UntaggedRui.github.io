@@ -458,14 +458,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-07-28
+                    2020-07-29
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    307
+                    348
                 </div>
                 
 
@@ -532,9 +532,13 @@ interact
 <p>其中 file.txt 为</p>
 <pre><code>file '1.mov'
 file '2.mov'</code></pre></li>
-<li><p>qita</p>
-</li>
+<li><p>hexo部署到服务器</p>
+<pre><code>cd ~
+git init --bare blog.git
+vi ~/blog.git/hooks/post-receive # 输入下一行的内容
+git --work-tree=/home/www/website --git-dir=/home/git/blog.git checkout -f</code></pre></li>
 </ol>
+<p>8. </p>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -1132,7 +1136,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">4.2k</span>&nbsp;字
+                class="white-color">4.6k</span>&nbsp;字
             
             
             
@@ -1185,11 +1189,11 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
                         diffMinutes * minutes) / seconds);
                     if (startYear == todayYear) {
                         document.getElementById("year").innerHTML = todayYear;
-                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffDays + " 天 " + diffHours +
+                        document.getElementById("sitetime").innerHTML = "本站已勉强运行 " + diffDays + " 天 " + diffHours +
                             " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
                     } else {
                         document.getElementById("year").innerHTML = startYear + " - " + todayYear;
-                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffYears + " 年 " + diffDays +
+                        document.getElementById("sitetime").innerHTML = "本站已勉强运行 " + diffYears + " 年 " + diffDays +
                             " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
                     }
                 }
