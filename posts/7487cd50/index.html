@@ -469,14 +469,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.3k
+                    1.6k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    7 分
+                    9 分
                 </div>
                 
 
@@ -493,10 +493,10 @@
             <div id="articleContent">
                 <h1 id="Day-1"><a href="#Day-1" class="headerlink" title="Day 1"></a>Day 1</h1><p>没有记录，主要讲网络的发展与rdma的应用，计算机网络相关的东西。</p>
 <h1 id="Day2"><a href="#Day2" class="headerlink" title="Day2"></a>Day2</h1><p>主要讲RDMA verbs api的使用，下面是3点以后的视频</p>
-<div id="mmedia-eevjyUKJ"></div><script src="https://cdn.jsdelivr.net/npm/dplayer/dist/DPlayer.min.js"></script>
+<div id="mmedia-BawbSlSU"></div><script src="https://cdn.jsdelivr.net/npm/dplayer/dist/DPlayer.min.js"></script>
         <script>
         var dp = new DPlayer({
-            container: document.getElementById('mmedia-eevjyUKJ'),
+            container: document.getElementById('mmedia-BawbSlSU'),
             autoplay: false,
             theme: '#b7daff',
             loop: false,
@@ -520,10 +520,10 @@
 
 <h1 id="Day3"><a href="#Day3" class="headerlink" title="Day3"></a>Day3</h1><h2 id="9点到10点"><a href="#9点到10点" class="headerlink" title="9点到10点"></a>9点到10点</h2><p>由于录制不熟练，分了三段</p>
 <p>第一段</p>
-<div id="mmedia-ZdguzVbL"></div><script src="https://cdn.jsdelivr.net/npm/dplayer/dist/DPlayer.min.js"></script>
+<div id="mmedia-wdAzifuM"></div><script src="https://cdn.jsdelivr.net/npm/dplayer/dist/DPlayer.min.js"></script>
         <script>
         var dp = new DPlayer({
-            container: document.getElementById('mmedia-ZdguzVbL'),
+            container: document.getElementById('mmedia-wdAzifuM'),
             autoplay: false,
             theme: '#b7daff',
             loop: false,
@@ -546,10 +546,10 @@
         
 
 <p>第二段</p>
-<div id="mmedia-OozPSRkw"></div><script src="https://cdn.jsdelivr.net/npm/dplayer/dist/DPlayer.min.js"></script>
+<div id="mmedia-BpKhyikz"></div><script src="https://cdn.jsdelivr.net/npm/dplayer/dist/DPlayer.min.js"></script>
         <script>
         var dp = new DPlayer({
-            container: document.getElementById('mmedia-OozPSRkw'),
+            container: document.getElementById('mmedia-BpKhyikz'),
             autoplay: false,
             theme: '#b7daff',
             loop: false,
@@ -572,10 +572,10 @@
         
 
 <p>第三段</p>
-<div id="mmedia-vNDEvfoR"></div><script src="https://cdn.jsdelivr.net/npm/dplayer/dist/DPlayer.min.js"></script>
+<div id="mmedia-VlqsePJO"></div><script src="https://cdn.jsdelivr.net/npm/dplayer/dist/DPlayer.min.js"></script>
         <script>
         var dp = new DPlayer({
-            container: document.getElementById('mmedia-vNDEvfoR'),
+            container: document.getElementById('mmedia-VlqsePJO'),
             autoplay: false,
             theme: '#b7daff',
             loop: false,
@@ -597,10 +597,10 @@
         </script>
         
 
-<h2 id="10点到11点"><a href="#10点到11点" class="headerlink" title="10点到11点"></a>10点到11点</h2><div id="mmedia-olVmYFxM"></div><script src="https://cdn.jsdelivr.net/npm/dplayer/dist/DPlayer.min.js"></script>
+<h2 id="10点到11点"><a href="#10点到11点" class="headerlink" title="10点到11点"></a>10点到11点</h2><div id="mmedia-poApaYnc"></div><script src="https://cdn.jsdelivr.net/npm/dplayer/dist/DPlayer.min.js"></script>
         <script>
         var dp = new DPlayer({
-            container: document.getElementById('mmedia-olVmYFxM'),
+            container: document.getElementById('mmedia-poApaYnc'),
             autoplay: false,
             theme: '#b7daff',
             loop: false,
@@ -622,10 +622,10 @@
         </script>
         
 
-<h2 id="11点到12点"><a href="#11点到12点" class="headerlink" title="11点到12点"></a>11点到12点</h2><div id="mmedia-SCAYdBxg"></div><script src="https://cdn.jsdelivr.net/npm/dplayer/dist/DPlayer.min.js"></script>
+<h2 id="11点到12点"><a href="#11点到12点" class="headerlink" title="11点到12点"></a>11点到12点</h2><div id="mmedia-MqoOahaZ"></div><script src="https://cdn.jsdelivr.net/npm/dplayer/dist/DPlayer.min.js"></script>
         <script>
         var dp = new DPlayer({
-            container: document.getElementById('mmedia-SCAYdBxg'),
+            container: document.getElementById('mmedia-MqoOahaZ'),
             autoplay: false,
             theme: '#b7daff',
             loop: false,
@@ -656,6 +656,7 @@
 <p>Also, are there any dangers of lost data if we call the worker too infrequently? It seems that as long as we use separate buffers, regardless if we use eager or rendezvous, it should be safe? For the first part, coming from a perspective of cooperative multi-processing, if I have many requests in-flight, is there danger of starving my computations? Thank you </p>
 <p>Qiang Wang对所有人说： (11:18 上午)<br> Hi, professor. It seems that the code tries to check the status in a loop while the request is uncompleted. Is it inefficient? Ok. I see.</p>
 <p>Dai Zhang对所有人说： (11:39 上午)<br> Avoid disorder <br>Lih Wei对所有人说： (11:39 上午)<br> Is it some form of flow control? I see <br>Lih Wei对所有人说： (11:45 上午)<br> In UCX, is there any unreliable/UDP-like paradigm? Or is there a way to broadcast data (point-to-multipoint)? Thank you <br>Lih Wei对所有人说： (12:33 下午)<br> 6 seconds? *10 Apologies, I might have missed it, why can’t all the processes receive simultaneously? I’m assuming each process is on a different link <br>Lih Wei对所有人说： (12:39 下午)<br> I think I get it, thank you <br>Qiang Wang对所有人说： (12:48 下午)<br> Hi. Professor. I am still confused that why the shift algorithm is O(n) for MPI_Alltoall. Is it because that all the received processes can deal with data in parallel. Could you explain more, please?</p>
+<p>Gil对所有人说： (1:09 下午)<br> If all processes will send data to one process at the same time, it takes { (N * DataSize) / BW ) time for this process to receive this data. Before the shift algorithm, in each [i Before the shift algorithm, in each [I] iteration we have all the processes sending to the i’th process. <br>Gil对所有人说： (1:11 下午)<br> So each iteration is in the order of N (number of processes). Now we have N such iterations (for loop) so we end up with o(N^2) So the problem is that we send from all processes to one process at the same time. <br>Gil对所有人说： (1:13 下午)<br> When we say that a receiving process can receive data from multiple processes in parallel, it is still limited in the link BW <br>Qiang Wang对所有人说： (1:18 下午)<br> I see. So it is O(N^2) for “all the processes sending to the i’th process in each [i] iteration.”. What about the shift? Does it mean that we have each process sending data to different processes in each iteration? <br>Gil对所有人说： (1:36 下午)<br> Yes, this is the idea behind the shift scheme At each iteration, each process is sending data to a different process <br>Gil对所有人说： (1:37 下午)<br> At first iteration,<br>process 1 sends to process 2<br>process 2 sends to process 3<br>…<br>Process N sends to process 1 <br>Qiang Wang对所有人说： (1:39 下午)<br> I see. It is somehow like multi-processing. However both two methods can still be limited in the link BW. Thank you very much!</p>
 </blockquote>
 <script>
         document.querySelectorAll('.github-emoji')
@@ -1265,7 +1266,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">5.5k</span>&nbsp;字
+                class="white-color">6k</span>&nbsp;字
             
             
             
