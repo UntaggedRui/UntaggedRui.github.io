@@ -126,6 +126,43 @@
     
   </li>
   
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="" class="waves-effect waves-light">
+
+      
+      <i class="fas fa-list" style="zoom: 0.6;"></i>
+      
+      <span>镜像站点</span>
+      <i class="fas fa-chevron-down" aria-hidden="true" style="zoom: 0.6;"></i>
+    </a>
+    <ul class="sub-nav menus_item_child ">
+      
+      <li>
+        <a href="https://hexo.zhangruiahu.cn/">
+          
+          <span>github+又拍云</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="https://zhangrui_cs.gitee.io/" target="_blank" rel="noopener">
+          
+          <span>gitee</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="https://www.zhangruiahu.cn/" target="_blank" rel="noopener">
+          
+          <span>阿里云</span>
+        </a>
+      </li>
+      
+    </ul>
+    
+  </li>
+  
   <li>
     <a href="#searchModal" class="modal-trigger waves-effect waves-light">
       <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
@@ -226,6 +263,45 @@
 			
 			友情链接
 		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="javascript:;">
+			
+				<i class="fa-fw fas fa-list"></i>
+			
+			镜像站点
+			<span class="m-icon"><i class="fas fa-chevron-right"></i></span>
+		</a>
+            <ul  style="background:  ;" >
+              
+                <li>
+
+                  <a href="https://hexo.zhangruiahu.cn/ " style="margin-left:75px">
+				  
+		          <span>github+又拍云</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="https://zhangrui_cs.gitee.io/ " target="_blank" rel="noopener" style="margin-left:75px">
+				  
+		          <span>gitee</span>
+                  </a>
+                </li>
+              
+                <li>
+
+                  <a href="https://www.zhangruiahu.cn/ " target="_blank" rel="noopener" style="margin-left:75px">
+				  
+		          <span>阿里云</span>
+                  </a>
+                </li>
+              
+            </ul>
           
         </li>
         
@@ -458,21 +534,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-07-29
+                    2020-08-04
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    348
+                    955
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    4 分
                 </div>
                 
 
@@ -538,7 +614,48 @@ git init --bare blog.git
 vi ~/blog.git/hooks/post-receive # 输入下一行的内容
 git --work-tree=/home/www/website --git-dir=/home/git/blog.git checkout -f</code></pre></li>
 </ol>
-<p>8. </p>
+<ol start="8">
+<li><p>git重新设置远程仓库地址</p>
+<pre><code>git remote rm origin
+git remote add origin 你的新远程仓库地址</code></pre></li>
+<li><p>git放弃本地修改</p>
+<ul>
+<li><p>未使用git add缓存代码</p>
+<pre><code>git checkout -- filepathname # 放弃指定文件的缓存
+git checkout .               # 放弃所有的文件修改</code></pre></li>
+<li><p>已经使用git add缓存代码</p>
+<pre><code> git reset HEAD filepathname #放弃指定文件的缓存
+ git reset HEAD .            # 放弃所有的文件修改</code></pre></li>
+<li><p>已经用 git commit提交代码</p>
+<pre><code>git reset --hard HEAD^      # 回到上一次commit的状态</code></pre></li>
+</ul>
+</li>
+<li><p>centos查看cpu核数</p>
+<p>1、查看 CPU 物理个数<br>　　grep ‘physical id’ /proc/cpuinfo | sort -u | wc -l</p>
+<p>2、查看 CPU 核心数量<br>　　grep ‘core id’ /proc/cpuinfo | sort -u | wc -l</p>
+<p>3、查看 CPU 线程数<br>　　grep ‘processor’ /proc/cpuinfo | sort -u | wc -l</p>
+<p>4、查看 CPU  型号<br>　　dmidecode -s processor-version</p>
+<p>5、查看 CPU 的详细信息：<br>　　cat /proc/cpuinfo</p>
+</li>
+<li><p>grep查找当前文件夹下包含指定字符串的文件</p>
+<p><a href="https://blog.csdn.net/BabyFish13/article/details/79709028" target="_blank" rel="noopener">https://blog.csdn.net/BabyFish13/article/details/79709028</a></p>
+<pre><code>--递归查找目录下含有该字符串的所有文件
+grep -rn "data_chushou_pay_info"  /home/hadoop/nisj/automationDemand/
+
+--查找当前目录下后缀名过滤的文件
+grep -Rn "data_chushou_pay_info" *.py
+
+--当前目录及设定子目录下的符合条件的文件
+grep -Rn "data_chushou_pay_info" /home/hadoop/nisj/automationDemand/ *.py
+
+--结合find命令过滤目录及文件名后缀
+find /home/hadoop/nisj/automationDemand/ -type f -name '*.py'|xargs grep -n 'data_chushou_pay_info'</code></pre><p><strong><em>\</em>Grep选项：**</strong><br>* : 表示当前目录所有文件，也可以是某个文件名<br>-r 是递归查找<br>-n 是显示行号<br>-R 查找所有文件包含子目录<br>-i 忽略大小写</p>
+<p>*<em>有意思的命令行参数：<br>*</em>grep -i pattern files ：不区分大小写地搜索。默认情况区分大小写<br>grep -l pattern files ：只列出匹配的文件名,不列出路径<br>grep -L pattern files ：列出不匹配的文件名<br>grep -w pattern files ：只匹配整个单词，而不是字符串的一部分（如匹配‘magic’，而不是‘magical’）<br>grep -C number pattern files ：匹配的上下文分别显示[number]行<br>grep pattern1 | pattern2 files ：显示匹配 pattern1 或 pattern2 的行<br>grep pattern1 files | grep pattern2 ：显示既匹配 pattern1 又匹配 pattern2 的行</p>
+<p>*<em>有些用于搜索的特殊符号：<br>*</em>&lt; 和 &gt; 分别标注单词的开始与结尾。<br>例如：<br>grep man * 会匹配 ‘Batman’、‘manic’、‘man’等<br>grep ‘&lt;man’ * 匹配‘manic’和‘man’，但不是‘Batman’<br>grep ‘&lt;man&gt;‘ 只匹配‘man’，而不是‘Batman’或‘manic’等其他的字符串。<br>‘^’：指匹配的字符串在行首<br>‘$’：指匹配的字符串在行尾</p>
+</li>
+<li><p>其他</p>
+</li>
+</ol>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -903,21 +1020,19 @@ git --work-tree=/home/www/website --git-dir=/home/git/blog.git checkout -f</code
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/posts/bilibili-videos-in-hexo/">
+                <a href="/posts/4a17b156/">
                     <div class="card-image">
                         
-                        <img src="https://s1.ax1x.com/2020/07/25/UznMss.jpg" class="responsive-img" alt="B站视频记录">
                         
-                        <span class="card-title">B站视频记录</span>
+                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Hello World">
+                        
+                        <span class="card-title">Hello World</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            这篇文章暂时有两个目的，一是学习在hexo中插入B站视频，二是记录B站中感兴趣的视频。
-提示：如果视频无法播放，请使用https的方式打开
-看看视频就好，文字还是别看了。写的毫无逻辑可言，语言表达能力低下，想到哪写到哪:pensive:
-视
+                            Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hex
                         
                     </div>
                     <div class="publish-info">
@@ -926,12 +1041,8 @@ git --work-tree=/home/www/website --git-dir=/home/git/blog.git checkout -f</code
                         </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E6%91%B8%E9%B1%BC%E8%AE%B0%E5%BD%95/" class="post-category">
-                                    摸鱼记录
-                                </a>
-                            
+                            <i class="fas fa-user fa-fw"></i>
+                            Zhang Rui
                             
                         </span>
                     </div>
@@ -1136,7 +1247,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">9.4k</span>&nbsp;字
+                class="white-color">10k</span>&nbsp;字
             
             
             
