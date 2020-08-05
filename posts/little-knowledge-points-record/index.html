@@ -565,14 +565,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.1k
+                    1.2k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    4 分
+                    5 分
                 </div>
                 
 
@@ -639,9 +639,21 @@ vi ~/blog.git/hooks/post-receive # 输入下一行的内容
 git --work-tree=/home/www/website --git-dir=/home/git/blog.git checkout -f</code></pre></li>
 </ol>
 <ol start="8">
+<li><p>git远程与本地的操作</p>
+<ol>
 <li><p>git重新设置远程仓库地址</p>
 <pre><code>git remote rm origin
 git remote add origin 你的新远程仓库地址</code></pre></li>
+<li><p>git删除远程分支</p>
+<pre><code>git push origin --delete Chapater6  </code></pre></li>
+<li><p>git 建立本地分支与远程分支的关联</p>
+<pre><code>git branch –set-upstream 本地新建分支名 origin/远程分支名</code></pre></li>
+<li><p>git重命名分支</p>
+<pre><code>git branch -m old new</code></pre></li>
+</ol>
+</li>
+</ol>
+<ol start="9">
 <li><p>git放弃本地修改</p>
 <ul>
 <li><p>未使用git add缓存代码</p>

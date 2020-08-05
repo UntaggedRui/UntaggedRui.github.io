@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://hexo.zhangruiahu.cn/posts/little-knowledge-points-record/</loc>
+    
+    <lastmod>2020-08-05</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://hexo.zhangruiahu.cn/posts/7487cd50/</loc>
     
     <lastmod>2020-08-05</lastmod>
@@ -10,13 +17,6 @@
   
   <url>
     <loc>https://hexo.zhangruiahu.cn/about/index.html</loc>
-    
-    <lastmod>2020-08-05</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://hexo.zhangruiahu.cn/posts/little-knowledge-points-record/</loc>
     
     <lastmod>2020-08-05</lastmod>
     
