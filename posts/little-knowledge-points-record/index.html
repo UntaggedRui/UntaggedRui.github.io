@@ -534,14 +534,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-08-04
+                    2020-08-05
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    955
+                    1.1k
                 </div>
                 
 
@@ -653,7 +653,32 @@ find /home/hadoop/nisj/automationDemand/ -type f -name '*.py'|xargs grep -n 'dat
 <p>*<em>有意思的命令行参数：<br>*</em>grep -i pattern files ：不区分大小写地搜索。默认情况区分大小写<br>grep -l pattern files ：只列出匹配的文件名,不列出路径<br>grep -L pattern files ：列出不匹配的文件名<br>grep -w pattern files ：只匹配整个单词，而不是字符串的一部分（如匹配‘magic’，而不是‘magical’）<br>grep -C number pattern files ：匹配的上下文分别显示[number]行<br>grep pattern1 | pattern2 files ：显示匹配 pattern1 或 pattern2 的行<br>grep pattern1 files | grep pattern2 ：显示既匹配 pattern1 又匹配 pattern2 的行</p>
 <p>*<em>有些用于搜索的特殊符号：<br>*</em>&lt; 和 &gt; 分别标注单词的开始与结尾。<br>例如：<br>grep man * 会匹配 ‘Batman’、‘manic’、‘man’等<br>grep ‘&lt;man’ * 匹配‘manic’和‘man’，但不是‘Batman’<br>grep ‘&lt;man&gt;‘ 只匹配‘man’，而不是‘Batman’或‘manic’等其他的字符串。<br>‘^’：指匹配的字符串在行首<br>‘$’：指匹配的字符串在行尾</p>
 </li>
-<li><p>其他</p>
+<li><p>linux文件清理</p>
+<ol>
+<li><p>清除<code>linux-aws-headers-*</code>文件。</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token function">sudo</span> apt autoremove
+<span class="token function">sudo</span> apt autoclean</code></pre>
+</li>
+<li><p>清除日志文件</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token function">sudo</span> journalctl --vacuum-time<span class="token operator">=</span>2d <span class="token comment" spellcheck="true"># 仅保留最近两天的系统日志，多余的都自动删掉</span>
+<span class="token function">sudo</span> journalctl --vacuum-size<span class="token operator">=</span>50M <span class="token comment" spellcheck="true"># 仅保留50M大小的系统日志，多余的都自动删掉</span></code></pre>
+</li>
+</ol>
+</li>
+<li><p>centos非root用户安装软件的一种方法</p>
+<ol>
+<li><p>使用yum搜索包</p>
+<pre><code>yum list  'graphviz*'</code></pre></li>
+<li><p>下载rpm包</p>
+<pre><code>yumdownloader graphviz.x86_64 </code></pre></li>
+<li><p>解压rpm包</p>
+<pre><code>rpm2cpio graphviz-2.30.1-19.el7.x86_64.rpm |cpio -idvm</code></pre></li>
+<li><p>将可执行文件路径添加到环境变量</p>
+<pre><code>vim  ~/.bashrc
+export PATH=$PATH:$HOME/usr/bin/</code></pre></li>
+</ol>
+</li>
+<li><p>qita </p>
 </li>
 </ol>
 <script>
@@ -1253,7 +1278,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">11.3k</span>&nbsp;字
+                class="white-color">11.5k</span>&nbsp;字
             
             
             
