@@ -1291,6 +1291,18 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             </script>
             
             <br>
+            <span id="yourip">你的ip是：正在解析中...</span>
+            <script type="application/javascript">
+                $(document).ready(function() {
+                    $.getJSON("https://api.ip.sb/jsonip?callback=?",
+                        function(json) {
+                            //document.write("My IP address is: ", json.ip);
+                            document.getElementById("yourip").innerHTML = "你的ip是: "+json.ip;
+                        }
+                    );
+                });
+            </script>
+            <br>
             
             <span id="icp"><img src="/medias/icp.png" style="vertical-align: text-bottom;" />
                 <a href="http://www.beian.miit.gov.cn/" target="_blank">皖ICP备20013391号</a>

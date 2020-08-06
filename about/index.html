@@ -811,7 +811,6 @@
 <li>韦神的博客搭建教程。<a href="https://godweiyang.com/2018/04/13/hexo-blog/" target="_blank" rel="noopener">https://godweiyang.com/2018/04/13/hexo-blog/</a></li>
 <li>又拍云的白嫖CDN</li>
 <li>404页面的小游戏。<a href="https://github.com/ganlvtech/phaser-catch-the-cat" target="_blank" rel="noopener">https://github.com/ganlvtech/phaser-catch-the-cat</a></li>
-<li></li>
 </ol>
 <script>
         document.querySelectorAll('.github-emoji')
@@ -916,6 +915,18 @@
                 setInterval(siteTime, 1000);
             </script>
             
+            <br>
+            <span id="yourip">你的ip是：正在解析中...</span>
+            <script type="application/javascript">
+                $(document).ready(function() {
+                    $.getJSON("https://api.ip.sb/jsonip?callback=?",
+                        function(json) {
+                            //document.write("My IP address is: ", json.ip);
+                            document.getElementById("yourip").innerHTML = "你的ip是: "+json.ip;
+                        }
+                    );
+                });
+            </script>
             <br>
             
             <span id="icp"><img src="/medias/icp.png" style="vertical-align: text-bottom;" />
