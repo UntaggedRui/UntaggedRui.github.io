@@ -1344,7 +1344,8 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 
     <footer class="page-footer bg-color">
     
-    <div class="container row center-align" style="margin-bottom: 15px !important;">
+    <div class="container row center-align"
+        style="margin-bottom: 15px !important;">
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
             <span id="year">2020</span>
@@ -1420,29 +1421,38 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             
             <br>
             <span id="yourip">你的ip是：正在解析中...</span>
+
             <script type="application/javascript">
-                $(document).ready(function() {
-                    $.getJSON("https://api.ip.sb/jsonip?callback=?",
-                        function(json) {
-                            //document.write("My IP address is: ", json.ip);
-                            document.getElementById("yourip").innerHTML = "你的ip是: "+json.ip;
-                        }
-                    );
-                });
+                function getgeoip(json) {
+                    var str1 = `name:${name},data:${data},password:${password}`;
+                    var info = `你的ip是: ${json.ip}, 你来自于: ${json.country}, 你的经纬度为: ${json.latitude} ${json.longitude}`;
+                    document.getElementById("yourip").innerHTML = info;
+
+                }
             </script>
+
+            <script type="application/javascript" src="https://api.ip.sb/geoip?callback=getgeoip"></script>
+            <br>
+            <span id="ipAPI">以上IP与地理信息由<a href="https://ip.sb/api/" target="_blank" rel="noopener">ip.sb</a>提供</span>
+
+
+
             <br>
             
-            <span id="icp"><img src="/medias/icp.png" style="vertical-align: text-bottom;" />
+            <span id="icp"><img src="/medias/icp.png"
+                    style="vertical-align: text-bottom;" />
                 <a href="http://www.beian.miit.gov.cn/" target="_blank">皖ICP备20013391号</a>
             </span>
             
-            <a href="https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral" target="_blank" rel="noopener external nofollow noreferrer">
-                <img src="https://files.alexhchu.com/2020/06/11/4720138de5936.png"align="absmiddle" width="66px" height="31px" />
+            <a href="https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral" target="_blank"
+                rel="noopener external nofollow noreferrer">
+                <img src="https://files.alexhchu.com/2020/06/11/4720138de5936.png" align="absmiddle" width="66px"
+                    height="31px" />
             </a>
             <span>提供加速服务</span>
         </div>
-        
-        
+
+
         <div class="col s12 m4 l4 social-link social-statis">
     <a href="https://github.com/UntaggedRui" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
         <i class="fab fa-github"></i>
@@ -1475,7 +1485,6 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 </footer>
 
 <div class="progress-bar"></div>
-
 
     <!-- 搜索遮罩框 -->
 <div id="searchModal" class="modal">
