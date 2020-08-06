@@ -684,7 +684,6 @@
 
             <script type="application/javascript">
                 function getgeoip(json) {
-                    var str1 = `name:${name},data:${data},password:${password}`;
                     var info = `你的ip是: ${json.ip}, 你来自于: ${json.country}, 你的经纬度为: ${json.latitude} ${json.longitude}`;
                     document.getElementById("yourip").innerHTML = info;
 
