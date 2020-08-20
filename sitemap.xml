@@ -2,21 +2,42 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://hexo.zhangruiahu.cn/posts/little-knowledge-points-record/</loc>
+    <loc>https://hexo.zhangruiahu.cn/posts/MAC-setup-system-proxy-quickly/</loc>
     
-    <lastmod>2020-08-06</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://hexo.zhangruiahu.cn/about/index.html</loc>
-    
-    <lastmod>2020-08-06</lastmod>
+    <lastmod>2020-08-20</lastmod>
     
   </url>
   
   <url>
     <loc>https://hexo.zhangruiahu.cn/posts/Files-to-be-backed-up-when-reinstalling-the-system/</loc>
+    
+    <lastmod>2020-08-20</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://hexo.zhangruiahu.cn/posts/little-knowledge-points-record/</loc>
+    
+    <lastmod>2020-08-20</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://hexo.zhangruiahu.cn/posts/d36c02d3/</loc>
+    
+    <lastmod>2020-08-20</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://hexo.zhangruiahu.cn/posts/bilibili-videos-in-hexo/</loc>
+    
+    <lastmod>2020-08-20</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://hexo.zhangruiahu.cn/about/index.html</loc>
     
     <lastmod>2020-08-06</lastmod>
     
@@ -59,13 +80,6 @@
   
   <url>
     <loc>https://hexo.zhangruiahu.cn/posts/OneDrive-pan/</loc>
-    
-    <lastmod>2020-08-06</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://hexo.zhangruiahu.cn/posts/bilibili-videos-in-hexo/</loc>
     
     <lastmod>2020-08-06</lastmod>
     
@@ -137,7 +151,7 @@
 
   <url>
     <loc>https://hexo.zhangruiahu.cn/</loc>
-    <lastmod>2020-08-06</lastmod>
+    <lastmod>2020-08-20</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -145,56 +159,63 @@
   
   <url>
     <loc>https://hexo.zhangruiahu.cn/tags/RDMA/</loc>
-    <lastmod>2020-08-06</lastmod>
+    <lastmod>2020-08-20</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://hexo.zhangruiahu.cn/tags/%E5%A4%87%E4%BB%BD%E5%B7%A5%E4%BD%9C/</loc>
-    <lastmod>2020-08-06</lastmod>
+    <lastmod>2020-08-20</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://hexo.zhangruiahu.cn/tags/linux/</loc>
-    <lastmod>2020-08-06</lastmod>
+    <lastmod>2020-08-20</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://hexo.zhangruiahu.cn/tags/%E8%BD%AF%E8%B7%AF%E7%94%B1/</loc>
-    <lastmod>2020-08-06</lastmod>
+    <lastmod>2020-08-20</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://hexo.zhangruiahu.cn/tags/hexo/</loc>
-    <lastmod>2020-08-06</lastmod>
+    <lastmod>2020-08-20</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://hexo.zhangruiahu.cn/tags/%E4%B8%8D%E5%AD%A6%E4%B9%A0/</loc>
-    <lastmod>2020-08-06</lastmod>
+    <lastmod>2020-08-20</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://hexo.zhangruiahu.cn/tags/%E8%A7%86%E9%A2%91/</loc>
-    <lastmod>2020-08-06</lastmod>
+    <lastmod>2020-08-20</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://hexo.zhangruiahu.cn/tags/OneDrive/</loc>
-    <lastmod>2020-08-06</lastmod>
+    <lastmod>2020-08-20</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://hexo.zhangruiahu.cn/tags/MAC-%E4%B8%8D%E5%AD%A6%E4%B9%A0/</loc>
+    <lastmod>2020-08-20</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
@@ -203,35 +224,35 @@
   
   <url>
     <loc>https://hexo.zhangruiahu.cn/categories/%E6%91%B8%E9%B1%BC%E8%AE%B0%E5%BD%95/</loc>
-    <lastmod>2020-08-06</lastmod>
+    <lastmod>2020-08-20</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://hexo.zhangruiahu.cn/categories/linux%E5%BC%80%E5%8F%91/</loc>
-    <lastmod>2020-08-06</lastmod>
+    <lastmod>2020-08-20</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://hexo.zhangruiahu.cn/categories/%E6%91%B8%E9%B1%BC%E5%BF%83%E5%BE%97/</loc>
-    <lastmod>2020-08-06</lastmod>
+    <lastmod>2020-08-20</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://hexo.zhangruiahu.cn/categories/%E8%BD%AC%E8%BD%BD%E6%96%87%E7%AB%A0/</loc>
-    <lastmod>2020-08-06</lastmod>
+    <lastmod>2020-08-20</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://hexo.zhangruiahu.cn/categories/%E5%AD%A6%E4%B9%A0%E7%9F%A5%E8%AF%86/</loc>
-    <lastmod>2020-08-06</lastmod>
+    <lastmod>2020-08-20</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
