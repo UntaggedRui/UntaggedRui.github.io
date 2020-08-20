@@ -591,14 +591,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    370
+                    543
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    2 分
                 </div>
                 
 
@@ -613,8 +613,19 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>由于在宿舍中的网络只能访问内网，而实验室中的电脑可以访问外网。所以通过实验室电脑搭建一个代理服务器，宿舍电脑通过设置代理的方式来实现访问外网。由于有时也要使用clash，所以嫌每次手动设置http代理很麻烦，因此尝试使用脚本的方式来解决这个问题。</p>
+                <p>由于在宿舍中的网络只能访问内网，而实验室中的电脑可以访问外网。所以在实验室电脑搭建一个代理服务器（clash for windows就可以解决这个问题了），宿舍电脑通过设置代理的方式来实现访问外网。由于有时mac也要使用clash，开启后就会将所有的代理都设置为127.0.0.1这个IP，要访问实验室电脑的IP需要再次设置IP和端口。所以嫌每次手动设置http代理很麻烦，因此尝试使用脚本的方式来解决这个问题。</p>
 <p>通常mac中设置代理的方式是通过网络-&gt;高级-&gt;代理中设置http代理和https代理来实现的。为了不想每次都输入IP地址，经过搜寻后发现了使用<code>networksetup</code>命令来设置mac的代理。因此开启了该命令的学习使用过程。</p>
+<p>首先确定你是通过什么方式上网的，可能是有线，wifi或者其他的。通过以下命令获取你的<code>networkservice</code>。</p>
+<pre class=" language-bash"><code class="language-bash">➜  ~ networksetup -listallnetworkservices
+An asterisk <span class="token punctuation">(</span>*<span class="token punctuation">)</span> denotes that a network <span class="token function">service</span> is disabled.
+CDC DEVICE
+AX88179 USB 3.0 to Gigabit Ethernet
+Wi-Fi
+Bluetooth PAN
+Thunderbolt Bridge
+➜  ~
+</code></pre>
+<p>我是用的是wifi进行上网的， 所以我要设置wifi代理，因此我的<code>networkservice=Wi-Fi</code></p>
 <p>详细的使用等我不懒了再来更新…</p>
 <p>先贴出最终的脚本：</p>
 <pre class=" language-bash"><code class="language-bash"><span class="token keyword">function</span> pron<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
@@ -636,6 +647,9 @@
     <span class="token function">sudo</span> networksetup -setsocksfirewallproxystate  <span class="token variable">$networkservice</span> off   <span class="token comment" spellcheck="true">#关闭Web Socks5代理</span>
     <span class="token keyword">echo</span> Done
 <span class="token punctuation">}</span></code></pre>
+<h1 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h1><ol>
+<li>如何优雅地一键实现 macOS 网络代理切换<a href="https://debugtalk.com/post/switch-macOS-web-proxy-in-elegant-way/" target="_blank" rel="noopener">https://debugtalk.com/post/switch-macOS-web-proxy-in-elegant-way/</a></li>
+</ol>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -1260,7 +1274,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">12.6k</span>&nbsp;字
+                class="white-color">12.7k</span>&nbsp;字
             
             
             
