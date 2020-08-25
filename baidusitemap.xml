@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://hexo.zhangruiahu.cn/posts/shixue-ing/</loc>
+    <lastmod>2020-08-25</lastmod>
+  </url>
+  <url>
+    <loc>https://hexo.zhangruiahu.cn/posts/bbbfdfb9/</loc>
+    <lastmod>2020-08-21</lastmod>
+  </url>
+  <url>
     <loc>https://hexo.zhangruiahu.cn/posts/MAC-setup-system-proxy-quickly/</loc>
     <lastmod>2020-08-20</lastmod>
   </url>

@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="繁琐的小知识点记录, 摸鱼记录">
+    <meta name="keywords" content="调研：, 摸鱼记录">
     <meta name="description" content="整天不学习，只知道玩的我">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -27,7 +27,7 @@
 </script>
 
 
-    <title>繁琐的小知识点记录 | 摸鱼记录</title>
+    <title>调研： | 摸鱼记录</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -430,12 +430,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/3.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/9.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">繁琐的小知识点记录</h1>
+                    <h1 class="description center-align post-title">调研：</h1>
                 </div>
             </div>
         </div>
@@ -550,25 +550,12 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                    <div class="article-tag">
-                        
-                            <a href="/tags/linux/">
-                                <span class="chip bg-color">linux</span>
-                            </a>
-                        
-                    </div>
+                          <div class="article-tag">
+                            <span class="chip bg-color">无标签</span>
+                          </div>
                     
                 </div>
                 <div class="col s5 right-align">
-                    
-                    <div class="post-cate">
-                        <i class="fas fa-bookmark fa-fw icon-category"></i>
-                        
-                            <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%9F%A5%E8%AF%86/" class="post-category">
-                                学习知识
-                            </a>
-                        
-                    </div>
                     
                 </div>
             </div>
@@ -577,28 +564,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-07-25
+                    2020-08-21
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-08-20
+                    2020-08-21
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.4k
+                    61
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    6 分
+                    1 分
                 </div>
                 
 
@@ -613,192 +600,8 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <ol>
-<li><p>更新jsDelivr缓存内容</p>
-<p>以下内容转载于<a href="https://mazhuang.org/2020/05/01/cdn-for-github-pages/" target="_blank" rel="noopener">码志</a></p>
-<blockquote>
-<p>可以访问 <code>https://purge.jsdelivr.net/gh/mzlogin/mzlogin.github.io@1.2.0/assets/js/main.js</code> 来清除指定文件的缓存；（将引用的 CDN 链接里的 <code>cdn</code> 改成 <code>purge</code> 就是了）</p>
-</blockquote>
-</li>
-<li><p>查看公网ip</p>
-<pre class=" language-bash"><code class="language-bash">curl ip.sb   <span class="token comment" spellcheck="true"># 这个速度很快</span>
-curl ipv6.ip.sb <span class="token comment" spellcheck="true"># 获取ipv6</span>
-curl ifconfig.me
-
-curl icanhazip.com</code></pre>
-<p>感谢这位<a href="https://github.com/zhongyang219/TrafficMonitor/issues/394" target="_blank" rel="noopener">朋友</a>的提供，这也是一种途径。</p>
-<p><a href="https://v4.yinghualuo.cn/bejson" target="_blank" rel="noopener">https://v4.yinghualuo.cn/bejson</a><br><a href="https://v6.yinghualuo.cn/bejson" target="_blank" rel="noopener">https://v6.yinghualuo.cn/bejson</a></p>
-</li>
-<li><p>iterm2中建立免输入密钥文件的配置文件</p>
-<ol>
-<li><p>创建登录脚本，保存到Documents/login.sh</p>
-<pre class=" language-shell"><code class="language-shell">#!/usr/bin/expect
-set keyfilepath Downloads/id_rsa
-set keyfilepassword kskhJla23kJL
-set user root
-set ip 192.168.101.1
-
-spawn ssh -i $keyfilepath $user@$ip
-expect "Enter passphrase for key '$keyfilepath':"
-send "$keyfilepassword\r"
-interact
-}</code></pre>
-</li>
-<li><p>设置iterm2中的profile</p>
-</li>
-</ol>
-</li>
-<li><p>修改ubuntu用户的shell</p>
-<p><a href="https://blog.csdn.net/iteye_4185/article/details/82564503" target="_blank" rel="noopener">https://blog.csdn.net/iteye_4185/article/details/82564503</a></p>
-</li>
-<li><p>npm临时使用源</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token function">npm</span> --registry https://registry.npmjs.org/ <span class="token function">install</span> hexo-tag-mmedia --save</code></pre>
-</li>
-<li><p>mac录屏文件处理。<a href="https://zhuanlan.zhihu.com/p/86966045" target="_blank" rel="noopener">参考这里</a></p>
-<p>step1 : 转换成 mp4 格式</p>
-<pre class=" language-bash"><code class="language-bash">ffmpeg -i source.mov -vcodec copy -acodec copy temp.mp4</code></pre>
-<p>step2 : 降低帧率</p>
-<pre class=" language-bash"><code class="language-bash">ffmpeg -i temp.mp4 -r 20 des.mp4</code></pre>
-<p>合并视频: ffmpeg -f concat -i file.txt -c copy output.mov</p>
-<p>其中 file.txt 为</p>
-<pre><code>file '1.mov'
-file '2.mov'</code></pre></li>
-<li><p>hexo部署到服务器</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token function">cd</span> ~
-<span class="token function">git</span> init --bare blog.git
-<span class="token function">vi</span> ~/blog.git/hooks/post-receive <span class="token comment" spellcheck="true"># 输入下一行的内容</span>
-<span class="token function">git</span> --work-tree<span class="token operator">=</span>/home/www/website --git-dir<span class="token operator">=</span>/home/git/blog.git checkout -f</code></pre>
-</li>
-</ol>
-<ol start="8">
-<li><p>git远程与本地的操作</p>
-<ol>
-<li><p>git重新设置远程仓库地址</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token function">git</span> remote <span class="token function">rm</span> origin
-<span class="token function">git</span> remote add origin 你的新远程仓库地址</code></pre>
-</li>
-<li><p>git删除远程分支</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token function">git</span> push origin --delete Chapater6  </code></pre>
-</li>
-<li><p>git 建立本地分支与远程分支的关联</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token function">git</span> branch –set-upstream 本地新建分支名 origin/远程分支名</code></pre>
-</li>
-<li><p>git重命名分支</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token function">git</span> branch -m old new</code></pre>
-</li>
-</ol>
-</li>
-</ol>
-<ol start="9">
-<li><p>git放弃本地修改</p>
-<ul>
-<li><p>未使用git add缓存代码</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token function">git</span> checkout -- filepathname <span class="token comment" spellcheck="true"># 放弃指定文件的缓存</span>
-<span class="token function">git</span> checkout <span class="token keyword">.</span>               <span class="token comment" spellcheck="true"># 放弃所有的文件修改</span></code></pre>
-</li>
-<li><p>已经使用git add缓存代码</p>
-<pre class=" language-bash"><code class="language-bash"> <span class="token function">git</span> reset HEAD filepathname <span class="token comment" spellcheck="true">#放弃指定文件的缓存</span>
- <span class="token function">git</span> reset HEAD <span class="token keyword">.</span>            <span class="token comment" spellcheck="true"># 放弃所有的文件修改</span></code></pre>
-</li>
-<li><p>已经用 git commit提交代码</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token function">git</span> reset --hard HEAD^      <span class="token comment" spellcheck="true"># 回到上一次commit的状态</span></code></pre>
-</li>
-</ul>
-</li>
-<li><p>centos查看cpu核数</p>
-<p>1、查看 CPU 物理个数<br>　　grep ‘physical id’ /proc/cpuinfo | sort -u | wc -l</p>
-<p>2、查看 CPU 核心数量<br>　　grep ‘core id’ /proc/cpuinfo | sort -u | wc -l</p>
-<p>3、查看 CPU 线程数<br>　　grep ‘processor’ /proc/cpuinfo | sort -u | wc -l</p>
-<p>4、查看 CPU  型号<br>　　dmidecode -s processor-version</p>
-<p>5、查看 CPU 的详细信息：<br>　　cat /proc/cpuinfo</p>
-</li>
-<li><p>grep查找当前文件夹下包含指定字符串的文件</p>
-<p><a href="https://blog.csdn.net/BabyFish13/article/details/79709028" target="_blank" rel="noopener">https://blog.csdn.net/BabyFish13/article/details/79709028</a></p>
-<pre class=" language-bash"><code class="language-bash">--递归查找目录下含有该字符串的所有文件
-<span class="token function">grep</span> -rn <span class="token string">"data_chushou_pay_info"</span>  /home/hadoop/nisj/automationDemand/
-
---查找当前目录下后缀名过滤的文件
-<span class="token function">grep</span> -Rn <span class="token string">"data_chushou_pay_info"</span> *.py
-
---当前目录及设定子目录下的符合条件的文件
-<span class="token function">grep</span> -Rn <span class="token string">"data_chushou_pay_info"</span> /home/hadoop/nisj/automationDemand/ *.py
-
---结合find命令过滤目录及文件名后缀
-<span class="token function">find</span> /home/hadoop/nisj/automationDemand/ -type f -name <span class="token string">'*.py'</span><span class="token operator">|</span><span class="token function">xargs</span> <span class="token function">grep</span> -n <span class="token string">'data_chushou_pay_info'</span></code></pre>
-<p><strong><em>\</em>Grep选项：**</strong><br>* : 表示当前目录所有文件，也可以是某个文件名<br>-r 是递归查找<br>-n 是显示行号<br>-R 查找所有文件包含子目录<br>-i 忽略大小写</p>
-<p>*<em>有意思的命令行参数：<br>*</em>grep -i pattern files ：不区分大小写地搜索。默认情况区分大小写<br>grep -l pattern files ：只列出匹配的文件名,不列出路径<br>grep -L pattern files ：列出不匹配的文件名<br>grep -w pattern files ：只匹配整个单词，而不是字符串的一部分（如匹配‘magic’，而不是‘magical’）<br>grep -C number pattern files ：匹配的上下文分别显示[number]行<br>grep pattern1 | pattern2 files ：显示匹配 pattern1 或 pattern2 的行<br>grep pattern1 files | grep pattern2 ：显示既匹配 pattern1 又匹配 pattern2 的行</p>
-<p>*<em>有些用于搜索的特殊符号：<br>*</em>&lt; 和 &gt; 分别标注单词的开始与结尾。<br>例如：<br>grep man * 会匹配 ‘Batman’、‘manic’、‘man’等<br>grep ‘&lt;man’ * 匹配‘manic’和‘man’，但不是‘Batman’<br>grep ‘&lt;man&gt;‘ 只匹配‘man’，而不是‘Batman’或‘manic’等其他的字符串。<br>‘^’：指匹配的字符串在行首<br>‘$’：指匹配的字符串在行尾</p>
-</li>
-<li><p>linux文件清理</p>
-<ol>
-<li><p>清除<code>linux-aws-headers-*</code>文件。</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token function">sudo</span> apt autoremove
-<span class="token function">sudo</span> apt autoclean</code></pre>
-</li>
-<li><p>清除日志文件</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token function">sudo</span> journalctl --vacuum-time<span class="token operator">=</span>2d <span class="token comment" spellcheck="true"># 仅保留最近两天的系统日志，多余的都自动删掉</span>
-<span class="token function">sudo</span> journalctl --vacuum-size<span class="token operator">=</span>50M <span class="token comment" spellcheck="true"># 仅保留50M大小的系统日志，多余的都自动删掉</span></code></pre>
-</li>
-</ol>
-</li>
-<li><p>centos非root用户安装软件的一种方法</p>
-<ol>
-<li><p>使用yum搜索包</p>
-<pre class=" language-bash"><code class="language-bash">yum list  <span class="token string">'graphviz*'</span></code></pre>
-</li>
-<li><p>下载rpm包</p>
-<pre class=" language-bash"><code class="language-bash">yumdownloader graphviz.x86_64 </code></pre>
-</li>
-<li><p>解压rpm包</p>
-<pre class=" language-bash"><code class="language-bash">rpm2cpio graphviz-2.30.1-19.el7.x86_64.rpm <span class="token operator">|</span>cpio -idvm</code></pre>
-</li>
-<li><p>将可执行文件路径添加到环境变量</p>
-<pre class=" language-bash"><code class="language-bash">vim  ~/.bashrc
-<span class="token function">export</span> PATH<span class="token operator">=</span><span class="token variable">$PATH</span><span class="token keyword">:</span><span class="token variable">$HOME</span>/usr/bin/</code></pre>
-</li>
-</ol>
-</li>
-<li><p>windows中U盘或者移动硬盘关不掉时，怎么知道是被哪个程序占用了呢？</p>
-<ol>
-<li>按下win键，直接搜索 事件查看器（或者eventvwr)。然后弹出u盘，再次出现错误</li>
-</ol>
-<p><img src="https://pic1.zhimg.com/80/v2-7bb79e4baba7a12c3a7b1aff1336f1bf_720w.jpg?source=1940ef5c" alt="img"></p>
-<ol start="2">
-<li><p>在事件查看器里面对应的时间里找事件</p>
-<p><img src="https://pic1.zhimg.com/80/v2-131a735a1594616aeeedfde58c0ac050_720w.jpg?source=1940ef5c" alt="img"></p>
-</li>
-<li><p>任务管理器结束该进程</p>
-<p><img src="https://pic4.zhimg.com/80/v2-de817e37c68469cd39b5023f9d073d81_720w.jpg?source=1940ef5c" alt="img"></p>
-</li>
-</ol>
-</li>
-<li><p>生成网卡的UUID</p>
-<p><a href="https://blog.csdn.net/quintind/article/details/79437838" target="_blank" rel="noopener">https://blog.csdn.net/quintind/article/details/79437838</a></p>
-</li>
-<li><p>win32 disk imager恢复U盘容量</p>
-<p><a href="https://blog.csdn.net/u012400584/article/details/55506527" target="_blank" rel="noopener">https://blog.csdn.net/u012400584/article/details/55506527</a></p>
-</li>
-<li><p>centos开放端口</p>
-<p>查看防火墙某个端口是否开放</p>
-<p>firewall-cmd –query-port=3306/cp</p>
-<p>开放防火墙端口3306</p>
-<p>firewall-cmd –zone=public -add-port=3306/tcp –permanent</p>
-<p>查看/开启/关闭防火墙</p>
-<p>systemctl status/start/stop firewalld</p>
-<p>开放一段端口</p>
-<p>firewall-cmd –zone=public –add-port=4000-4500/tcp –permanent</p>
-<p>查看开放的端口列表</p>
-<p>firewall-cmd –zone=public –list-ports</p>
-</li>
-<li><p>安装php</p>
-<p><a href="https://www.iemblog.com/?p=2399&amp;lang=zh" target="_blank" rel="noopener">https://www.iemblog.com/?p=2399&amp;lang=zh</a></p>
-</li>
-<li><p>typora标题加上序号</p>
-<p><a href="https://blog.csdn.net/jiangxiulilinux/article/details/100666051" target="_blank" rel="noopener">https://blog.csdn.net/jiangxiulilinux/article/details/100666051</a></p>
-</li>
-<li><p>其他</p>
-</li>
-</ol>
+                <p>调研：</p>
+<p>rdma相关工作调研</p>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -829,11 +632,7 @@ file '2.mov'</code></pre></li>
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            
-                                <a href="/tags/linux/">
-                                    <span class="chip bg-color">linux</span>
-                                </a>
-                            
+                            <span class="chip bg-color">无标签</span>
                         </div>
                     
                 </div>
@@ -876,7 +675,7 @@ file '2.mov'</code></pre></li>
         repo: 'zhangrui.github.io',
         owner: 'UntaggedRui',
         admin: "UntaggedRui",
-        id: '2020-07-25T07-14-27',
+        id: '2020-08-21T19-33-57',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -1183,43 +982,34 @@ file '2.mov'</code></pre></li>
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/posts/bilibili-videos-in-hexo/">
+                <a href="/posts/shixue-ing/">
                     <div class="card-image">
                         
-                        <img src="https://s1.ax1x.com/2020/07/25/UznMss.jpg" class="responsive-img" alt="B站视频记录">
                         
-                        <span class="card-title">B站视频记录</span>
+                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="刷题记录">
+                        
+                        <span class="card-title">刷题记录</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            记录自己喜欢的视频
+                            t526 优美的排列2020年8月24日，25日。
+给出1到N的N个数，组成一个排列，使得第i位置上的数能被i整除或者能够整除i，求这样排列的个数。
+对于这种求种类数的题目，且让你求1个数，2个数，3个数，，，，N个数这样的类型，一般可以用
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-07-25
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-08-25
                         </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E6%91%B8%E9%B1%BC%E8%AE%B0%E5%BD%95/" class="post-category">
-                                    摸鱼记录
-                                </a>
-                            
+                            <i class="fas fa-user fa-fw"></i>
+                            Zhang Rui
                             
                         </span>
                     </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/%E8%A7%86%E9%A2%91/">
-                        <span class="chip bg-color">视频</span>
-                    </a>
-                    
                 </div>
                 
             </div>
@@ -1231,24 +1021,24 @@ file '2.mov'</code></pre></li>
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/posts/Related-Issues-were-not-found-to-comment/">
+                <a href="/posts/MAC-setup-system-proxy-quickly/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="未找到相关的Issues进行评论 请联系XXX初始化创建">
+                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="MAC快速设置系统代理">
                         
-                        <span class="card-title">未找到相关的Issues进行评论 请联系XXX初始化创建</span>
+                        <span class="card-title">MAC快速设置系统代理</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            gitalk无法初始化时的解决方法
+                            使用networksetup设置mac的web代理
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-07-24
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-08-20
                             </span>
                         <span class="publish-author">
                             
@@ -1265,8 +1055,12 @@ file '2.mov'</code></pre></li>
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/hexo/">
-                        <span class="chip bg-color">hexo</span>
+                    <a href="/tags/%E4%B8%8D%E5%AD%A6%E4%B9%A0/">
+                        <span class="chip bg-color">不学习</span>
+                    </a>
+                    
+                    <a href="/tags/MAC/">
+                        <span class="chip bg-color">MAC</span>
                     </a>
                     
                 </div>
@@ -1404,13 +1198,6 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 
 </main>
 
-
-<script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-<script>
-    MathJax.Hub.Config({
-        tex2jax: {inlineMath: [['$', '$'], ['\(', '\)']]}
-    });
-</script>
 
 
 
