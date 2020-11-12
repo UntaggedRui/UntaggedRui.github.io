@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://hexo.zhangruiahu.cn/posts/experience-in-PHD/</loc>
-    <lastmod>2020-10-28</lastmod>
+    <loc>https://hexo.zhangruiahu.cn/posts/hot-news/</loc>
+    <lastmod>2020-11-12</lastmod>
   </url>
   <url>
-    <loc>https://hexo.zhangruiahu.cn/posts/hot-news/</loc>
+    <loc>https://hexo.zhangruiahu.cn/posts/little-knowledge-points-record/</loc>
+    <lastmod>2020-11-09</lastmod>
+  </url>
+  <url>
+    <loc>https://hexo.zhangruiahu.cn/posts/experience-in-PHD/</loc>
     <lastmod>2020-10-28</lastmod>
   </url>
   <url>
@@ -19,10 +23,6 @@
   <url>
     <loc>https://hexo.zhangruiahu.cn/posts/d36c02d3/</loc>
     <lastmod>2020-10-27</lastmod>
-  </url>
-  <url>
-    <loc>https://hexo.zhangruiahu.cn/posts/little-knowledge-points-record/</loc>
-    <lastmod>2020-10-15</lastmod>
   </url>
   <url>
     <loc>https://hexo.zhangruiahu.cn/posts/MAC-setup-system-proxy-quickly/</loc>
