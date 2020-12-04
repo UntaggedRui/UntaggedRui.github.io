@@ -584,21 +584,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-11-09
+                    2020-11-19
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2.1k
+                    2.2k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    9 分
+                    10 分
                 </div>
                 
 
@@ -668,50 +668,6 @@ file '2.mov'</code></pre></li>
 <span class="token function">git</span> init --bare blog.git
 <span class="token function">vi</span> ~/blog.git/hooks/post-receive <span class="token comment" spellcheck="true"># 输入下一行的内容</span>
 <span class="token function">git</span> --work-tree<span class="token operator">=</span>/home/www/website --git-dir<span class="token operator">=</span>/home/git/blog.git checkout -f</code></pre>
-</li>
-</ol>
-<ol start="8">
-<li><p>git远程与本地的操作</p>
-<ol>
-<li><p>git重新设置远程仓库地址</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token function">git</span> remote <span class="token function">rm</span> origin
-<span class="token function">git</span> remote add origin 你的新远程仓库地址</code></pre>
-</li>
-<li><p>git删除远程分支</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token function">git</span> push origin --delete Chapater6  </code></pre>
-</li>
-<li><p>git 建立本地分支与远程分支的关联</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token function">git</span> branch –set-upstream 本地新建分支名 origin/远程分支名</code></pre>
-</li>
-<li><p>git重命名分支</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token function">git</span> branch -m old new</code></pre>
-</li>
-<li><p>git拉取远程分支</p>
-</li>
-<li></li>
-</ol>
-</li>
-<li><p>git放弃本地修改</p>
-<ul>
-<li><p>未使用git add缓存代码</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token function">git</span> checkout -- filepathname <span class="token comment" spellcheck="true"># 放弃指定文件的缓存</span>
-<span class="token function">git</span> checkout <span class="token keyword">.</span>               <span class="token comment" spellcheck="true"># 放弃所有的文件修改</span></code></pre>
-</li>
-<li><p>已经使用git add缓存代码</p>
-<pre class=" language-bash"><code class="language-bash"> <span class="token function">git</span> reset HEAD filepathname <span class="token comment" spellcheck="true">#放弃指定文件的缓存</span>
- <span class="token function">git</span> reset HEAD <span class="token keyword">.</span>            <span class="token comment" spellcheck="true"># 放弃所有的文件修改</span></code></pre>
-</li>
-<li><p>已经用 git commit提交代码</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token function">git</span> reset --hard HEAD^      <span class="token comment" spellcheck="true"># 回到上一次commit的状态</span></code></pre>
-</li>
-</ul>
-</li>
-<li><p>centos查看cpu核数</p>
-<p>1、查看 CPU 物理个数<br>　　grep ‘physical id’ /proc/cpuinfo | sort -u | wc -l</p>
-<p>2、查看 CPU 核心数量<br>　　grep ‘core id’ /proc/cpuinfo | sort -u | wc -l</p>
-<p>3、查看 CPU 线程数<br>　　grep ‘processor’ /proc/cpuinfo | sort -u | wc -l</p>
-<p>4、查看 CPU  型号<br>　　dmidecode -s processor-version</p>
-<p>5、查看 CPU 的详细信息：<br>　　cat /proc/cpuinfo</p>
 </li>
 <li><p>grep查找当前文件夹下包含指定字符串的文件</p>
 <p><a href="https://blog.csdn.net/BabyFish13/article/details/79709028" target="_blank" rel="noopener">https://blog.csdn.net/BabyFish13/article/details/79709028</a></p>
@@ -841,6 +797,13 @@ Flags:                 fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca 
 <p>cat /proc/cpuinfo |grep “processor”|wc -l 查看逻辑CPU的个数</p>
 <p>cat /proc/cpuinfo |grep MHz|uniq 查看CPU的主频</p>
 </li>
+<li><p>centos查看cpu核数</p>
+<p>1、查看 CPU 物理个数<br>　　grep ‘physical id’ /proc/cpuinfo | sort -u | wc -l</p>
+<p>2、查看 CPU 核心数量<br>　　grep ‘core id’ /proc/cpuinfo | sort -u | wc -l</p>
+<p>3、查看 CPU 线程数<br>　　grep ‘processor’ /proc/cpuinfo | sort -u | wc -l</p>
+<p>4、查看 CPU  型号<br>　　dmidecode -s processor-version</p>
+<p>5、查看 CPU 的详细信息：<br>　　cat /proc/cpuinfo</p>
+</li>
 <li><p>查询硬盘数量及大小。 <code>lsblk</code></p>
 <pre class=" language-bash"><code class="language-bash">NAME            MAJ:MIN RM   SIZE RO TYPE MOUNTPOINT
 sda               8:0    0 931.5G  0 disk
@@ -883,7 +846,52 @@ nvme0n1         259:0    0 349.3G  0 disk</code></pre>
     Size: No Module Installed</code></pre>
 </li>
 </ol>
-<ol start="5">
+<ol start="6">
+<li></li>
+</ol>
+<h1 id="Git-操作"><a href="#Git-操作" class="headerlink" title="Git 操作"></a>Git 操作</h1><ol>
+<li><p>git远程与本地的操作</p>
+<ol>
+<li><p>git重新设置远程仓库地址</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token function">git</span> remote <span class="token function">rm</span> origin
+<span class="token function">git</span> remote add origin 你的新远程仓库地址</code></pre>
+</li>
+<li><p>git删除远程分支</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token function">git</span> push origin --delete Chapater6  </code></pre>
+</li>
+<li><p>git 建立本地分支与远程分支的关联</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token function">git</span> branch –set-upstream 本地新建分支名 origin/远程分支名</code></pre>
+</li>
+<li><p>git重命名分支</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token function">git</span> branch -m old new</code></pre>
+</li>
+<li><p>git拉取远程分支</p>
+</li>
+</ol>
+</li>
+<li><p>git放弃本地修改</p>
+<ul>
+<li><p>未使用git add缓存代码</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token function">git</span> checkout -- filepathname <span class="token comment" spellcheck="true"># 放弃指定文件的缓存</span>
+<span class="token function">git</span> checkout <span class="token keyword">.</span>               <span class="token comment" spellcheck="true"># 放弃所有的文件修改</span></code></pre>
+</li>
+<li><p>已经使用git add缓存代码</p>
+<pre class=" language-bash"><code class="language-bash"> <span class="token function">git</span> reset HEAD filepathname <span class="token comment" spellcheck="true">#放弃指定文件的缓存</span>
+ <span class="token function">git</span> reset HEAD <span class="token keyword">.</span>            <span class="token comment" spellcheck="true"># 放弃所有的文件修改</span></code></pre>
+</li>
+<li><p>已经用 git commit提交代码</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token function">git</span> reset --hard HEAD^      <span class="token comment" spellcheck="true"># 回到上一次commit的状态</span></code></pre>
+</li>
+</ul>
+</li>
+<li><p>git使用远程仓库代码覆盖本地代码</p>
+<pre class=" language-bash"><code class="language-bash"> <span class="token function">git</span> fetch --all
+ <span class="token function">git</span> reset --hard origin/master
+ <span class="token function">git</span> pull</code></pre>
+<p>第一个是：拉取所有更新，不同步；</p>
+<p>第二个是：本地代码同步线上最新版本(会覆盖本地所有与远程仓库上同名的文件)；</p>
+<p>第三个是：再更新一次（其实也可以不用，第二步命令做过了其实）</p>
+</li>
 <li></li>
 </ol>
 <script>
@@ -1514,7 +1522,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">22.5k</span>&nbsp;字
+                class="white-color">29.3k</span>&nbsp;字
             
             
             
