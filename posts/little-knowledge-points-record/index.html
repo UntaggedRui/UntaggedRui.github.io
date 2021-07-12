@@ -584,21 +584,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-11-19
+                    2021-04-05
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2.2k
+                    2.6k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    10 分
+                    12 分
                 </div>
                 
 
@@ -757,7 +757,12 @@ file '2.mov'</code></pre></li>
 <p>方式一：</p>
 <pre><code>cat /proc/[pid]/status</code></pre><p>展示结果中，Threads后边对应的数字就是进程拥有的线程数量</p>
 <p>方式二：</p>
-<pre><code>ps hH p 3805|wc -l</code></pre><h1 id="centos硬件信息查询"><a href="#centos硬件信息查询" class="headerlink" title="centos硬件信息查询"></a>centos硬件信息查询</h1></li>
+<pre><code>ps hH p 3805|wc -l</code></pre></li>
+<li><p>dpdk插入IgbUIO驱动报错：## ERROR: Target does not have the DPDK UIO Kernel Module.To fix, please try to rebuild target.</p>
+<p>解决方法：<br>[root@localhost dpdk-18.11]# modprobe uio<br>[root@localhost dpdk-18.11]# cd build/kmod/<br>[root@localhost kmod]# insmod igb_uio.ko<br>[root@localhost kmod]# lsmod | grep uio<br>再次运次<br>[root@localhost dpdk-18.11]# ./usertools/dpdk-devbind.py –bind=uio_pci_generic enp0s8</p>
+</li>
+<li><p>ubuntu安装gcc10 <a href="https://www.itcoder.tech/posts/how-to-install-gcc-on-ubuntu-20-04/" target="_blank" rel="noopener">https://www.itcoder.tech/posts/how-to-install-gcc-on-ubuntu-20-04/</a></p>
+<h1 id="centos硬件信息查询"><a href="#centos硬件信息查询" class="headerlink" title="centos硬件信息查询"></a>centos硬件信息查询</h1></li>
 <li><p>查询服务器型号:<code>sudo dmidecode | grep "Product"</code></p>
 <pre class=" language-bash"><code class="language-bash">    Product Name: PowerEdge R730
     Product Name: 072T6D</code></pre>
@@ -847,6 +852,60 @@ nvme0n1         259:0    0 349.3G  0 disk</code></pre>
 </li>
 </ol>
 <ol start="6">
+<li><p>ubuntu lvm扩容</p>
+<p>抄袭自<a href="https://blog.csdn.net/Fly_1213/article/details/105142427" target="_blank" rel="noopener">https://blog.csdn.net/Fly_1213/article/details/105142427</a></p>
+<pre class=" language-bash"><code class="language-bash">// 按百分比进行磁盘扩容
+root@ubuntu:~<span class="token comment" spellcheck="true"># lvextend -l +100%FREE /dev/mapper/ubuntu--vg-ubuntu--lv</span>
+  Size of logical volume ubuntu-vg/ubuntu-lv changed from 4.00 GiB <span class="token punctuation">(</span>1024 extents<span class="token punctuation">)</span> to <span class="token operator">&lt;</span>19.00 GiB <span class="token punctuation">(</span>4863 extents<span class="token punctuation">)</span>.
+  Logical volume ubuntu-vg/ubuntu-lv successfully resized.
+
+// 刷新分区 
+root@ubuntu:~<span class="token comment" spellcheck="true"># resize2fs /dev/mapper/ubuntu--vg-ubuntu--lv </span>
+resize2fs 1.44.1 <span class="token punctuation">(</span>24-Mar-2018<span class="token punctuation">)</span>
+Filesystem at /dev/mapper/ubuntu--vg-ubuntu--lv is mounted on /<span class="token punctuation">;</span> on-line resizing required
+old_desc_blocks <span class="token operator">=</span> 3, new_desc_blocks <span class="token operator">=</span> 3
+The filesystem on /dev/mapper/ubuntu--vg-ubuntu--lv is now 4979712 <span class="token punctuation">(</span>4k<span class="token punctuation">)</span> blocks long.
+
+// 查看文件系统磁盘空间的使用情况（发现此时已经扩容到19G）
+root@ubuntu:~<span class="token comment" spellcheck="true"># df -h</span>
+Filesystem                         Size  Used Avail Use% Mounted on
+udev                               451M     0  451M   0% /dev
+tmpfs                               97M  1.3M   96M   2% /run
+/dev/mapper/ubuntu--vg-ubuntu--lv   19G  3.9G   14G  22% /
+tmpfs                              482M     0  482M   0% /dev/shm
+tmpfs                              5.0M     0  5.0M   0% /run/lock
+tmpfs                              482M     0  482M   0% /sys/fs/cgroup
+/dev/loop0                          92M   92M     0 100% /snap/core/8689
+/dev/loop1                          90M   90M     0 100% /snap/core/8268
+/dev/sda2                          976M   77M  832M   9% /boot
+tmpfs                               97M     0   97M   0% /run/user/0
+
+// 再次查看LVM卷组的信息（可扩容的空间已经成为0）
+root@ubuntu:~<span class="token comment" spellcheck="true"># vgdisplay</span>
+  --- Volume group ---
+  VG Name               ubuntu-vg
+  System ID             
+  Format                lvm2
+  Metadata Areas        1
+  Metadata Sequence No  4
+  VG Access             read/write
+  VG Status             resizable
+  MAX LV                0
+  Cur LV                1
+  Open LV               1
+  Max PV                0
+  Cur PV                1
+  Act PV                1
+  VG Size               <span class="token operator">&lt;</span>19.00 GiB
+  PE Size               4.00 MiB
+  Total PE              4863
+  Alloc PE / Size       4863 / <span class="token operator">&lt;</span>19.00 GiB
+  Free  PE / Size       0 / 0   
+  VG UUID               hZPoxm-kSBU-fmKs-2yXD-hHoe-3T7e-PCIFSe
+</code></pre>
+</li>
+</ol>
+<ol start="7">
 <li></li>
 </ol>
 <h1 id="Git-操作"><a href="#Git-操作" class="headerlink" title="Git 操作"></a>Git 操作</h1><ol>
@@ -1522,7 +1581,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">29.7k</span>&nbsp;字
+                class="white-color">39.2k</span>&nbsp;字
             
             
             
