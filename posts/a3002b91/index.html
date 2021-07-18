@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="重装系统时所要备份的文件, 摸鱼记录">
+    <meta name="keywords" content="mac使用小技巧, 摸鱼记录">
     <meta name="description" content="整天不学习，只知道玩的我">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -27,7 +27,7 @@
 </script>
 
 
-    <title>重装系统时所要备份的文件 | 摸鱼记录</title>
+    <title>mac使用小技巧 | 摸鱼记录</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -430,12 +430,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://s1.ax1x.com/2020/08/06/a6XfHI.png')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/2.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">重装系统时所要备份的文件</h1>
+                    <h1 class="description center-align post-title">mac使用小技巧</h1>
                 </div>
             </div>
         </div>
@@ -550,25 +550,12 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                    <div class="article-tag">
-                        
-                            <a href="/tags/%E5%A4%87%E4%BB%BD%E5%B7%A5%E4%BD%9C/">
-                                <span class="chip bg-color">备份工作</span>
-                            </a>
-                        
-                    </div>
+                          <div class="article-tag">
+                            <span class="chip bg-color">无标签</span>
+                          </div>
                     
                 </div>
                 <div class="col s5 right-align">
-                    
-                    <div class="post-cate">
-                        <i class="fas fa-bookmark fa-fw icon-category"></i>
-                        
-                            <a href="/categories/%E6%91%B8%E9%B1%BC%E5%BF%83%E5%BE%97/" class="post-category">
-                                摸鱼心得
-                            </a>
-                        
-                    </div>
                     
                 </div>
             </div>
@@ -577,28 +564,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-08-06
+                    2021-07-17
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-08-20
+                    2021-07-18
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    358
+                    642
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    3 分
                 </div>
                 
 
@@ -613,66 +600,67 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>鉴于系统长时间使用后，会留下各种垃圾占用磁盘空间。看着不爽，所以计划在存储空间仅剩一点时给电脑重装系统。</p>
-<h1 id="MAC电脑"><a href="#MAC电脑" class="headerlink" title="MAC电脑"></a>MAC电脑</h1><h2 id="需要备份的文件"><a href="#需要备份的文件" class="headerlink" title="需要备份的文件"></a>需要备份的文件</h2><h3 id="常规文件"><a href="#常规文件" class="headerlink" title="常规文件"></a>常规文件</h3><ol>
-<li>各种课程中的课程文件。</li>
-<li>图片</li>
-<li>音乐-Music文件夹中的歌曲</li>
-<li>桌面文件</li>
-<li>看看下载文件夹中有没有需要的。</li>
+                <ol>
+<li><p>查看端口占用</p>
+<pre><code>lsof -i :9090</code></pre><p>至于加不加sudo，还没搞清楚区别。</p>
+</li>
+<li><p>查看进程使用的文件句柄</p>
+<pre><code>sudo lsof -p 14865</code></pre></li>
+<li><p>mac修改文件句柄</p>
+<blockquote>
+<p>复制于<a href="https://blog.abreto.net/archives/2020/02/macos-too-many-open-files.html" target="_blank" rel="noopener">https://blog.abreto.net/archives/2020/02/macos-too-many-open-files.html</a></p>
+<h2 id="内核的限制"><a href="#内核的限制" class="headerlink" title="内核的限制"></a>内核的限制</h2><p>整个操作系统可以打开的文件数受内核参数影响，可以通过以下命令查看</p>
+<pre class=" language-sh"><code class="language-sh">$ sysctl kern.maxfiles
+$ sysctl kern.maxfilesperproc</code></pre>
+<p>在我电脑上输出如下</p>
+<pre><code>kern.maxfiles: 49152
+kern.maxfilesperproc: 42576</code></pre><p>好像已经很大了。</p>
+<p>如果需要临时修改的话，运行如下命令</p>
+<pre><code>$ sudo sysctl -w kern.maxfiles=20480 # 或其他你选择的数字
+$ sudo sysctl -w kern.maxfilesperproc=18000 # 或其他你选择的数字</code></pre><p>永久修改，需要在 <code>/etc/sysctl.conf</code> 里加上类似的下述内容</p>
+<pre><code>kern.maxfiles=20480
+kern.maxfilesperproc=18000</code></pre><p>这个文件可能需要自行创建</p>
+<h2 id="launchd-对进程的限制"><a href="#launchd-对进程的限制" class="headerlink" title="launchd 对进程的限制"></a>launchd 对进程的限制</h2><p>获取当前的限制：</p>
+<pre><code>$ launchctl limit maxfiles</code></pre><p>输出类似这样：</p>
+<pre><code>   maxfiles    256            unlimited</code></pre><p>其中前一个是软限制，后一个是硬件限制。</p>
+<p>临时修改：</p>
+<pre><code>$ sudo launchctl limit maxfiles 65536 200000</code></pre><p>系统范围内修改则需要在文件夹 <code>/Library/LaunchDaemons</code> 下创建一个 plist 文件 <code>limit.maxfiles.plist</code>：</p>
+<pre><code>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd"&gt;
+&lt;plist version="1.0"&gt;
+ &lt;dict&gt;
+   &lt;key&gt;Label&lt;/key&gt;
+   &lt;string&gt;limit.maxfiles&lt;/string&gt;
+   &lt;key&gt;ProgramArguments&lt;/key&gt;
+   &lt;array&gt;
+     &lt;string&gt;launchctl&lt;/string&gt;
+     &lt;string&gt;limit&lt;/string&gt;
+     &lt;string&gt;maxfiles&lt;/string&gt;
+     &lt;string&gt;65536&lt;/string&gt;
+     &lt;string&gt;200000&lt;/string&gt;
+   &lt;/array&gt;
+   &lt;key&gt;RunAtLoad&lt;/key&gt;
+   &lt;true/&gt;
+   &lt;key&gt;ServiceIPC&lt;/key&gt;
+   &lt;false/&gt;
+ &lt;/dict&gt;
+&lt;/plist&gt;</code></pre><p>修改文件权限</p>
+<pre><code>$ sudo chown root:wheel /Library/LaunchDaemons/limit.maxfiles.plist
+$ sudo chmod 644 /Library/LaunchDaemons/limit.maxfiles.plist</code></pre><p>载入新设定</p>
+<pre><code>$ sudo launchctl load -w /Library/LaunchDaemons/limit.maxfiles.plist</code></pre><h2 id="shell-的限制"><a href="#shell-的限制" class="headerlink" title="shell 的限制"></a>shell 的限制</h2><p>通过下述命令查看现有限制</p>
+<pre><code>$ ulimit -a</code></pre><p>得到如下输出</p>
+<pre><code>...
+-n: file descriptors                256
+...</code></pre><p>通过 <code>ulimit -S -n 4096</code> 来修改。如果需要保持修改，可以将这一句命令加入你的 <code>.bash_profile</code> 或 <code>.zshrc</code> 等。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>一般来说，修改了上述三个限制，重启一下，这个问题就可以解决了。</p>
+<p>在实际操作中，我修改到第二步重启，第三个就自动修改了。</p>
+</blockquote>
+</li>
+<li><p>微信文件存储位置</p>
+<pre><code>/Users/zhangrui/Library/Containers/com.tencent.xinWeChat/Data/Library/Application Support/com.tencent.xinWeChat/2.0b4.0.9</code></pre></li>
 </ol>
-<h3 id="软件使用记录"><a href="#软件使用记录" class="headerlink" title="软件使用记录"></a>软件使用记录</h3><ol>
-<li>微信聊天记录</li>
-<li>qq发送到我的电脑记录</li>
-<li>telegram传输文件记录</li>
-</ol>
-<h3 id="开发类文件"><a href="#开发类文件" class="headerlink" title="开发类文件"></a>开发类文件</h3><ol>
-<li>ClionProjects</li>
-<li>IdeaProjects</li>
-<li>mygopath</li>
-<li>PycharmProjects</li>
-<li>VscodeProjects</li>
-</ol>
-<h2 id="需要下载的软件"><a href="#需要下载的软件" class="headerlink" title="需要下载的软件"></a>需要下载的软件</h2><h3 id="必装软件"><a href="#必装软件" class="headerlink" title="必装软件"></a>必装软件</h3><ol>
-<li>clashx：<a href="https://github.com/yichengchen/clashX/releases" target="_blank" rel="noopener">https://github.com/yichengchen/clashX/releases</a></li>
-<li>chrome</li>
-<li>vscode</li>
-<li>itrem2</li>
-<li>微信，qq，telegram</li>
-<li>IINA</li>
-<li>App Cleaner &amp; Uninstaller</li>
-<li>Typora</li>
-<li>istat menus</li>
-</ol>
-<h3 id="开发类软件"><a href="#开发类软件" class="headerlink" title="开发类软件"></a>开发类软件</h3><ol>
-<li>JB全家桶，使用toolbox下载</li>
-<li>easyconnect</li>
-<li>microsoft remote desktop（天翼云盘-我的应用-mac软件）</li>
-</ol>
-<h3 id="办公类软件"><a href="#办公类软件" class="headerlink" title="办公类软件"></a>办公类软件</h3><ol>
-<li>正版软件官网下载的office全家桶</li>
-<li>latex</li>
-<li>腾讯会议，钉钉</li>
-<li>Mendeley </li>
-<li>copytranslator</li>
-<li>PDF Expert</li>
-<li>有道云笔记</li>
-<li>天翼云盘</li>
-</ol>
-<h3 id="其他软件"><a href="#其他软件" class="headerlink" title="其他软件"></a>其他软件</h3><ol>
-<li>QQ音乐</li>
-<li>NeatDownloadManager</li>
-<li>PicGo</li>
-<li>ScreenFlow</li>
-<li>Loopback</li>
-</ol>
-<hr>
-<h1 id="windows电脑"><a href="#windows电脑" class="headerlink" title="windows电脑"></a>windows电脑</h1><p>等我回学校了实际操作起来了再来更新。</p>
-<h1 id="安卓手机"><a href="#安卓手机" class="headerlink" title="安卓手机"></a>安卓手机</h1><ol>
-<li>备份微信聊天记录，qq聊天记录</li>
-<li>备份相册图片</li>
-<li>备份通话录音</li>
-<li>同步通讯录</li>
+<ol start="5">
+<li></li>
 </ol>
 <script>
         document.querySelectorAll('.github-emoji')
@@ -704,11 +692,7 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            
-                                <a href="/tags/%E5%A4%87%E4%BB%BD%E5%B7%A5%E4%BD%9C/">
-                                    <span class="chip bg-color">备份工作</span>
-                                </a>
-                            
+                            <span class="chip bg-color">无标签</span>
                         </div>
                     
                 </div>
@@ -751,7 +735,7 @@
         repo: 'zhangrui.github.io',
         owner: 'UntaggedRui',
         admin: "UntaggedRui",
-        id: '2020-08-06T07-22-45',
+        id: '2021-07-17T11-21-21',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -1054,45 +1038,38 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/posts/d36c02d3/">
+                <a href="/posts/a3002b91/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="OneDrive5T注册地址">
+                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="mac使用小技巧">
                         
-                        <span class="card-title">OneDrive5T注册地址</span>
+                        <span class="card-title">mac使用小技巧</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
                             
-https://www.shanyemangfu.com/office-365.html
+查看端口占用
+lsof -i :9090至于加不加sudo，还没搞清楚区别。
 
+查看进程使用的文件句柄
+sudo lsof -p 14865
+mac修改文件句柄
 
-
-
-Licence
-URL
-Domain
-OD
-Mail
-AZ
-
-
-
-A1
-https://a1_free365.a1od.workers.de
+复制于https://blog.abreto.net/archives/2
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-08-08
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-07-17
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -1101,6 +1078,7 @@ https://a1_free365.a1od.workers.de
                         </span>
                     </div>
                 </div>
+
                 
             </div>
         </div>
@@ -1111,43 +1089,38 @@ https://a1_free365.a1od.workers.de
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/posts/Use-Webhook-To-Update-Blog/">
+                <a href="/posts/45b20c9c/">
                     <div class="card-image">
                         
-                        <img src="https://image.cugxuan.cn/git/webhook_header.png" class="responsive-img" alt="使用 webhook 自动更新博客">
                         
-                        <span class="card-title">使用 webhook 自动更新博客</span>
+                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="Alpine安装gcc编译环境">
+                        
+                        <span class="card-title">Alpine安装gcc编译环境</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            使用webhook自动更新vps上的hexo仓库。
+                            
+先运行一个容器吧.
+docker run -d --name=gcc alpine
+让我们进入容器，以后在容器里面执行接下来的命令。
+docker run -it -d gcc sh
+换源
+echo "https://mirror.tun
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-08-04
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-07-14
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E8%BD%AC%E8%BD%BD%E6%96%87%E7%AB%A0/" class="post-category">
-                                    转载文章
-                                </a>
-                            
+                            <i class="fas fa-user fa-fw"></i>
+                            Zhang Rui
                             
                         </span>
                     </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/hexo/">
-                        <span class="chip bg-color">hexo</span>
-                    </a>
-                    
                 </div>
                 
             </div>

@@ -571,7 +571,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-07-14
+                    2021-07-15
                 </div>
                 
 
@@ -987,36 +987,37 @@ echo "https://mirror.tuna.tsinghua.edu.cn/alpine/v3.8/community" &gt;&gt; /etc/a
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/posts/45b20c9c/">
+                <a href="/posts/a3002b91/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="Alpine安装gcc编译环境">
+                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="mac使用小技巧">
                         
-                        <span class="card-title">Alpine安装gcc编译环境</span>
+                        <span class="card-title">mac使用小技巧</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
                             
-先运行一个容器吧.
-docker run -d --name=gcc alpine
-让我们进入容器，以后在容器里面执行接下来的命令。
-docker run -it -d gcc sh
-换源
-echo "https://mirror.tun
+查看端口占用
+lsof -i :9090至于加不加sudo，还没搞清楚区别。
+
+查看进程使用的文件句柄
+sudo lsof -p 14865
+mac修改文件句柄
+
+复制于https://blog.abreto.net/archives/2
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-07-14
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-07-17
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -1025,7 +1026,6 @@ echo "https://mirror.tun
                         </span>
                     </div>
                 </div>
-
                 
             </div>
         </div>
@@ -1226,7 +1226,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">39.3k</span>&nbsp;字
+                class="white-color">40k</span>&nbsp;字
             
             
             
