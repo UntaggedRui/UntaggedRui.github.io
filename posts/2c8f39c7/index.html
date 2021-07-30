@@ -578,7 +578,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.5k
+                    1.6k
                 </div>
                 
 
@@ -600,7 +600,7 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><p>以下内容搬运于<a href="https://www.jianshu.com/p/380afd870d50" target="_blank" rel="noopener">https://www.jianshu.com/p/380afd870d50</a></p>
+                <h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><p>以下内容搬运于<a href="#jump1">搭建 NFS 网络文件共享服务</a></p>
 <h2 id="服务器端"><a href="#服务器端" class="headerlink" title="服务器端"></a>服务器端</h2><ol>
 <li><p>安装 nfs 与 rpc 相关软件包：</p>
 <pre class=" language-bash"><code class="language-bash">yum <span class="token function">install</span> nfs-utils rpcbind -y
@@ -765,6 +765,11 @@ searchfile<span class="token punctuation">(</span><span class="token punctuation
 <p>   }<br>   changefile()<br>   {<br>       for element in “${array_name[@]}”<br>       #也可以写成for element in ${array[*]}<br>       do<br>           echo “changing $element”<br>           find $element -user ${OLD_UID} -exec chown -h ${USER_NAME} {} ; &amp;<br>           find $element -group ${OLD_GID} -exec chgrp -h ${GROUP_NAME} {} ; &amp;<br>       done<br>   }<br>   #changID;<br>   searchfile ${HOME_PATH};<br>   changefile;</p>
 <pre><code>
 
+
+# 参考资料
+
+1. 搭建 NFS 网络文件共享服务 https://www.jianshu.com/p/380afd870d50&lt;a name=&quot;jump1&quot;&gt;&lt;/a&gt;
+2. nfs共享目录权限问题解决方案https://blog.csdn.net/weixin_43885834/article/details/105308021
 
 
 </code></pre>
@@ -1142,12 +1147,12 @@ searchfile<span class="token punctuation">(</span><span class="token punctuation
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            安装以下内容搬运于https://www.jianshu.com/p/380afd870d50
+                            安装以下内容搬运于搭建 NFS 网络文件共享服务
 服务器端
 安装 nfs 与 rpc 相关软件包：
 yum install nfs-utils rpcbind -y
 # for ubuntu
-#
+# apt install -y nfs-ker
                         
                     </div>
                     <div class="publish-info">
