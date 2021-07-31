@@ -584,21 +584,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-04-05
+                    2021-07-30
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2.6k
+                    2.9k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    12 分
+                    13 分
                 </div>
                 
 
@@ -661,8 +661,8 @@ interact
 <pre class=" language-bash"><code class="language-bash">ffmpeg -i temp.mp4 -r 20 des.mp4</code></pre>
 <p>合并视频: ffmpeg -f concat -i file.txt -c copy output.mov</p>
 <p>其中 file.txt 为</p>
-<pre><code>file '1.mov'
-file '2.mov'</code></pre></li>
+<pre><code>file &#39;1.mov&#39;
+file &#39;2.mov&#39;</code></pre></li>
 <li><p>hexo部署到服务器</p>
 <pre class=" language-bash"><code class="language-bash"><span class="token function">cd</span> ~
 <span class="token function">git</span> init --bare blog.git
@@ -762,8 +762,16 @@ file '2.mov'</code></pre></li>
 <p>解决方法：<br>[root@localhost dpdk-18.11]# modprobe uio<br>[root@localhost dpdk-18.11]# cd build/kmod/<br>[root@localhost kmod]# insmod igb_uio.ko<br>[root@localhost kmod]# lsmod | grep uio<br>再次运次<br>[root@localhost dpdk-18.11]# ./usertools/dpdk-devbind.py –bind=uio_pci_generic enp0s8</p>
 </li>
 <li><p>ubuntu安装gcc10 <a href="https://www.itcoder.tech/posts/how-to-install-gcc-on-ubuntu-20-04/" target="_blank" rel="noopener">https://www.itcoder.tech/posts/how-to-install-gcc-on-ubuntu-20-04/</a></p>
-<h1 id="centos硬件信息查询"><a href="#centos硬件信息查询" class="headerlink" title="centos硬件信息查询"></a>centos硬件信息查询</h1></li>
-<li><p>查询服务器型号:<code>sudo dmidecode | grep "Product"</code></p>
+</li>
+<li><p>LIBRARY_PATH和LD_LIBRARY_PATH环境变量的区别</p>
+<p>LIBRARY_PATH环境变量用于在<strong><em>程序编译期间</em></strong>查找动态链接库时指定查找共享库的路径，例如，指定gcc编译需要用到的动态链接库的目录。设置方法如下（其中，LIBDIR1和LIBDIR2为两个库目录）：</p>
+<pre><code>export LIBRARY_PATH=LIBDIR1:LIBDIR2:$LIBRARY_PATH</code></pre><p>LD_LIBRARY_PATH环境变量用于在<strong><em>程序加载运行期间</em></strong>查找动态链接库时指定除了系统默认路径之外的其他路径，注意，LD_LIBRARY_PATH中指定的路径会在系统默认路径之前进行查找。设置方法如下（其中，LIBDIR1和LIBDIR2为两个库目录）：</p>
+<pre><code>export LD_LIBRARY_PATH=LIBDIR1:LIBDIR2:$LD_LIBRARY_PATH</code></pre><p>举个例子，我们开发一个程序，经常会需要使用某个或某些动态链接库，为了保证程序的可移植性，可以先将这些编译好的动态链接库放在自己指定的目录下，然后按照上述方式将这些目录加入到LD_LIBRARY_PATH环境变量中，这样自己的程序就可以动态链接后加载库文件运行了。</p>
+<p>开发时，设置LIBRARY_PATH，以便gcc能够找到编译时需要的动态链接库。</p>
+<p>发布时，设置LD_LIBRARY_PATH，以便程序加载运行时能够自动找到需要的动态链接库。</p>
+</li>
+<li><h1 id="centos硬件信息查询"><a href="#centos硬件信息查询" class="headerlink" title="centos硬件信息查询"></a>centos硬件信息查询</h1></li>
+<li><p>查询服务器型号:<code>sudo dmidecode | grep &quot;Product&quot;</code></p>
 <pre class=" language-bash"><code class="language-bash">    Product Name: PowerEdge R730
     Product Name: 072T6D</code></pre>
 </li>
@@ -824,7 +832,7 @@ sr0              11:0    1  1024M  0 rom
 nvme0n1         259:0    0 349.3G  0 disk</code></pre>
 <p>这表示该机器游三块硬盘，分别是sda,sdb,nvme0n1.</p>
 </li>
-<li><p>查询内存条数量: <code>sudo dmidecode|grep -P -A5 "Memory\s+Device"|grep Size|grep -v Range</code> 有数据的表示插了内存条</p>
+<li><p>查询内存条数量: <code>sudo dmidecode|grep -P -A5 &quot;Memory\s+Device&quot;|grep Size|grep -v Range</code> 有数据的表示插了内存条</p>
 <pre class=" language-bash"><code class="language-bash">Size: 16384 MB
     Size: 16384 MB
     Size: 16384 MB
@@ -953,25 +961,7 @@ root@ubuntu:~<span class="token comment" spellcheck="true"># vgdisplay</span>
 </li>
 <li></li>
 </ol>
-<script>
-        document.querySelectorAll('.github-emoji')
-          .forEach(el => {
-            if (!el.dataset.src) { return; }
-            const img = document.createElement('img');
-            img.style = 'display:none !important;';
-            img.src = el.dataset.src;
-            img.addEventListener('error', () => {
-              img.remove();
-              el.style.color = 'inherit';
-              el.style.backgroundImage = 'none';
-              el.style.background = 'none';
-            });
-            img.addEventListener('load', () => {
-              img.remove();
-            });
-            document.body.appendChild(img);
-          });
-      </script>
+
             </div>
             <hr/>
 
@@ -1581,7 +1571,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">42.8k</span>&nbsp;字
+                class="white-color">43.4k</span>&nbsp;字
             
             
             

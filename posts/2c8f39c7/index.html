@@ -571,7 +571,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-07-30
+                    2021-07-31
                 </div>
                 
 
@@ -611,13 +611,16 @@
 <ol start="2">
 <li><p>NFS默认的配置文件是 /etc/exports ,配置格式为：  </p>
 <pre><code> NFS共享目录绝对路径    NFS客户端地址（参数）</code></pre><p>常用参数：</p>
-<pre><code>rw             read-write   读写
-ro             read-only    只读
-sync           请求或写入数据时，数据同步写入到NFS server的硬盘后才返回。数据安全，但性能降低了
-async          优先将数据保存到内存，硬盘有空档时再写入硬盘，效率更高，但可能造成数据丢失。
-root_squash    当NFS 客户端使用root 用户访问时，映射为NFS 服务端的匿名用户
-no_root_squash 当NFS 客户端使用root 用户访问时，映射为NFS 服务端的root 用户
-all_squash     不论NFS 客户端使用任何帐户，均映射为NFS 服务端的匿名用户</code></pre></li>
+<pre class=" language-bash"><code class="language-bash"> rw             read-write   读写
+ ro             read-only    只读
+ <span class="token function">sync</span>           请求或写入数据时，数据同步写入到NFS server的硬盘后才返回。数据安全，但性能降低了
+ async          优先将数据保存到内存，硬盘有空档时再写入硬盘，效率更高，但可能造成数据丢失。
+ root_squash    当NFS 客户端使用root 用户访问时，映射为NFS 服务端的匿名用户
+ no_root_squash 当NFS 客户端使用root 用户访问时，映射为NFS 服务端的root 用户
+ all_squash     不论NFS 客户端使用任何帐户，均映射为NFS 服务端的匿名用户</code></pre>
+</li>
+</ol>
+<ol start="3">
 <li><p>配置 /etc/exports：</p>
 <pre class=" language-bash"><code class="language-bash">/sharedir 192.168.239.0/24<span class="token punctuation">(</span>rw,sync,root_squash<span class="token punctuation">)</span></code></pre>
 </li>
@@ -626,7 +629,7 @@ all_squash     不论NFS 客户端使用任何帐户，均映射为NFS 服务端
 <li><p>创建共享目录以及测试文件并添加权限：</p>
 <pre class=" language-bash"><code class="language-bash"> <span class="token function">mkdir</span> -p /sharedir
  <span class="token function">touch</span> /sharedir/Welcom.file
- <span class="token keyword">echo</span> <span class="token string">"Welcome to onlylink.top"</span> <span class="token operator">></span>/sharedir/Welcom.file
+ <span class="token keyword">echo</span> <span class="token string">"Welcome to onlylink.top"</span> <span class="token operator">&gt;</span>/sharedir/Welcom.file
  <span class="token function">chown</span> -R nfsnobody.nfsnobody /sharedir/
  <span class="token comment" spellcheck="true"># 把NFS共享目录赋予 NFS默认用户nfsnobody用户和用户组权限，如不设置，会导致NFS客户端无法在挂载好的共享目录中写入数据</span></code></pre>
 </li>
@@ -671,7 +674,7 @@ Export list <span class="token keyword">for</span> 192.168.239.131:
 <pre class=" language-bash"><code class="language-bash"><span class="token punctuation">[</span>root@test ~<span class="token punctuation">]</span><span class="token comment" spellcheck="true"># cat /sharedir/Welcom.file </span>
 Welcome to onlylink.top                
 <span class="token punctuation">[</span>root@test ~<span class="token punctuation">]</span><span class="token comment" spellcheck="true"># mkdir -p /sharedir/hello</span>
-<span class="token punctuation">[</span>root@test ~<span class="token punctuation">]</span><span class="token comment" spellcheck="true"># echo "Hello" >> /sharedir/Welcom.file </span>
+<span class="token punctuation">[</span>root@test ~<span class="token punctuation">]</span><span class="token comment" spellcheck="true"># echo "Hello" &gt;&gt; /sharedir/Welcom.file </span>
 <span class="token punctuation">[</span>root@test ~<span class="token punctuation">]</span><span class="token comment" spellcheck="true"># cat /share/Welcom.file</span>
 Welcome to onlylink.top
 Hello</code></pre>
@@ -689,7 +692,10 @@ Hello</code></pre>
 </blockquote>
 <p>修改用户uid和组gid的命令分别是usermod和groupmod，思路很简单。先使用usermod修改用户的uid，然后使用groupmod修改组的gid，最后使用chown和chgrp命令修改原来用户文件和目录的属主属组。</p>
 <p>例如测试用户foo和测试组foo。</p>
-<p>foo old UID: 1005<br>foo new UID: 2005<br>foo old GID: 2000<br>foo new GID: 3000</p>
+<pre class=" language-bash"><code class="language-bash">foo old UID: 1005
+foo new UID: 2005
+foo old GID: 2000
+foo new GID: 3000</code></pre>
 <p>*<em>可以使用最后的脚本快速处理 *</em></p>
 <p>命令：</p>
 <ol>
@@ -777,7 +783,25 @@ changefile<span class="token punctuation">;</span></code></pre>
 <li><span id="jump1">搭建 NFS 网络文件共享服务 <a href="https://www.jianshu.com/p/380afd870d50" target="_blank" rel="noopener">https://www.jianshu.com/p/380afd870d50</a></span></li>
 <li>nfs共享目录权限问题解决方案<a href="https://blog.csdn.net/weixin_43885834/article/details/105308021" target="_blank" rel="noopener">https://blog.csdn.net/weixin_43885834/article/details/105308021</a></li>
 </ol>
-
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
             </div>
             <hr/>
 
@@ -1135,35 +1159,37 @@ changefile<span class="token punctuation">;</span></code></pre>
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/posts/2c8f39c7/">
+                <a href="/posts/a82212ee/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="linux搭建nfs系统">
+                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="[得到]脱不花·怎样成为高效学习的人">
                         
-                        <span class="card-title">linux搭建nfs系统</span>
+                        <span class="card-title">[得到]脱不花·怎样成为高效学习的人</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            安装以下内容搬运于搭建 NFS 网络文件共享服务
-服务器端
-安装 nfs 与 rpc 相关软件包：
-yum install nfs-utils rpcbind -y
-# for ubuntu
-# apt install -y nfs-ker
+                            欢迎词：让我们一起学会学习
+
+主要分为六讲：
+怎么找到更好的学习资源？
+怎么制定更有价值的学习目标？
+怎么比别人学得更快更好？
+怎么能学以致用，把学到的东西融会贯通，还能用到自己的工作和生活里？
+怎么让学习的过程变得更愉快？
+不同阶段的学习
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-07-30
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-07-31
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -1172,7 +1198,6 @@ yum install nfs-utils rpcbind -y
                         </span>
                     </div>
                 </div>
-
                 
             </div>
         </div>
@@ -1369,7 +1394,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">42.8k</span>&nbsp;字
+                class="white-color">43.4k</span>&nbsp;字
             
             
             
