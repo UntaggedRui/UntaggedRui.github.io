@@ -598,7 +598,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    18 分
+                    19 分
                 </div>
                 
 
@@ -669,7 +669,7 @@
 <li><p>1月9日，蔚来NIOday发布旗舰轿车ET7，同时发布150度电池和第二代换电技术。</p>
 <h2 id="4月"><a href="#4月" class="headerlink" title="4月"></a>4月</h2></li>
 <li><p>25日，<a href="https://www.reddit.com/r/China_irl/comments/mxynrf/%E6%B7%B1%E6%88%BF%E7%90%86%E4%BA%8B%E4%BB%B6%E4%B9%9F%E5%A4%AA%E6%81%90%E6%80%96%E4%BA%86%E6%9C%89%E6%97%A0%E6%87%82%E5%93%A5%E6%9D%A5%E8%AE%B2%E8%AE%B2/" target="_blank" rel="noopener">深房理</a>。集资买房。</p>
-<img src="https://img.hifool.cn/typora/20210425193746.png" alt="image-20210425193746573" style="zoom:11%;" />
+<img src="https://img.hifool.cn/typora/20210425193746.png" alt="image-20210425193746573" style="zoom:11%;">
 </li>
 <li><p>晋江月逝水</p>
 <blockquote>
@@ -695,7 +695,25 @@
 </li>
 <li></li>
 </ol>
-
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
             </div>
             <hr/>
 
@@ -1294,7 +1312,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">43.4k</span>&nbsp;字
+                class="white-color">43.8k</span>&nbsp;字
             
             
             

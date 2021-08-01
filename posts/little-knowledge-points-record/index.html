@@ -661,8 +661,8 @@ interact
 <pre class=" language-bash"><code class="language-bash">ffmpeg -i temp.mp4 -r 20 des.mp4</code></pre>
 <p>合并视频: ffmpeg -f concat -i file.txt -c copy output.mov</p>
 <p>其中 file.txt 为</p>
-<pre><code>file &#39;1.mov&#39;
-file &#39;2.mov&#39;</code></pre></li>
+<pre><code>file '1.mov'
+file '2.mov'</code></pre></li>
 <li><p>hexo部署到服务器</p>
 <pre class=" language-bash"><code class="language-bash"><span class="token function">cd</span> ~
 <span class="token function">git</span> init --bare blog.git
@@ -771,7 +771,7 @@ file &#39;2.mov&#39;</code></pre></li>
 <p>发布时，设置LD_LIBRARY_PATH，以便程序加载运行时能够自动找到需要的动态链接库。</p>
 </li>
 <li><h1 id="centos硬件信息查询"><a href="#centos硬件信息查询" class="headerlink" title="centos硬件信息查询"></a>centos硬件信息查询</h1></li>
-<li><p>查询服务器型号:<code>sudo dmidecode | grep &quot;Product&quot;</code></p>
+<li><p>查询服务器型号:<code>sudo dmidecode | grep "Product"</code></p>
 <pre class=" language-bash"><code class="language-bash">    Product Name: PowerEdge R730
     Product Name: 072T6D</code></pre>
 </li>
@@ -832,7 +832,7 @@ sr0              11:0    1  1024M  0 rom
 nvme0n1         259:0    0 349.3G  0 disk</code></pre>
 <p>这表示该机器游三块硬盘，分别是sda,sdb,nvme0n1.</p>
 </li>
-<li><p>查询内存条数量: <code>sudo dmidecode|grep -P -A5 &quot;Memory\s+Device&quot;|grep Size|grep -v Range</code> 有数据的表示插了内存条</p>
+<li><p>查询内存条数量: <code>sudo dmidecode|grep -P -A5 "Memory\s+Device"|grep Size|grep -v Range</code> 有数据的表示插了内存条</p>
 <pre class=" language-bash"><code class="language-bash">Size: 16384 MB
     Size: 16384 MB
     Size: 16384 MB
@@ -961,7 +961,25 @@ root@ubuntu:~<span class="token comment" spellcheck="true"># vgdisplay</span>
 </li>
 <li></li>
 </ol>
-
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
             </div>
             <hr/>
 
@@ -1571,7 +1589,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">43.4k</span>&nbsp;字
+                class="white-color">43.8k</span>&nbsp;字
             
             
             

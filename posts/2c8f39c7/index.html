@@ -629,7 +629,7 @@
 <li><p>创建共享目录以及测试文件并添加权限：</p>
 <pre class=" language-bash"><code class="language-bash"> <span class="token function">mkdir</span> -p /sharedir
  <span class="token function">touch</span> /sharedir/Welcom.file
- <span class="token keyword">echo</span> <span class="token string">"Welcome to onlylink.top"</span> <span class="token operator">&gt;</span>/sharedir/Welcom.file
+ <span class="token keyword">echo</span> <span class="token string">"Welcome to onlylink.top"</span> <span class="token operator">></span>/sharedir/Welcom.file
  <span class="token function">chown</span> -R nfsnobody.nfsnobody /sharedir/
  <span class="token comment" spellcheck="true"># 把NFS共享目录赋予 NFS默认用户nfsnobody用户和用户组权限，如不设置，会导致NFS客户端无法在挂载好的共享目录中写入数据</span></code></pre>
 </li>
@@ -674,7 +674,7 @@ Export list <span class="token keyword">for</span> 192.168.239.131:
 <pre class=" language-bash"><code class="language-bash"><span class="token punctuation">[</span>root@test ~<span class="token punctuation">]</span><span class="token comment" spellcheck="true"># cat /sharedir/Welcom.file </span>
 Welcome to onlylink.top                
 <span class="token punctuation">[</span>root@test ~<span class="token punctuation">]</span><span class="token comment" spellcheck="true"># mkdir -p /sharedir/hello</span>
-<span class="token punctuation">[</span>root@test ~<span class="token punctuation">]</span><span class="token comment" spellcheck="true"># echo "Hello" &gt;&gt; /sharedir/Welcom.file </span>
+<span class="token punctuation">[</span>root@test ~<span class="token punctuation">]</span><span class="token comment" spellcheck="true"># echo "Hello" >> /sharedir/Welcom.file </span>
 <span class="token punctuation">[</span>root@test ~<span class="token punctuation">]</span><span class="token comment" spellcheck="true"># cat /share/Welcom.file</span>
 Welcome to onlylink.top
 Hello</code></pre>
@@ -1394,7 +1394,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">43.4k</span>&nbsp;字
+                class="white-color">43.8k</span>&nbsp;字
             
             
             

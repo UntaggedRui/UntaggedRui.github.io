@@ -571,21 +571,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-07-12
+                    2021-08-01
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    287
+                    434
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    2 分
                 </div>
                 
 
@@ -600,7 +600,7 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>原文：<a href="https://www.codenong.com/cs106399531/" target="_blank" rel="noopener">https://www.codenong.com/cs106399531/</a></p>
+                <h1 id="使用apt安装"><a href="#使用apt安装" class="headerlink" title="使用apt安装"></a>使用apt安装</h1><p>原文：<a href="https://www.codenong.com/cs106399531/" target="_blank" rel="noopener">https://www.codenong.com/cs106399531/</a></p>
 <ol>
 <li><p>加入并更新下载源(否则在sudo时可能找不到4.8版本)</p>
 <pre><code>sudo vim /etc/apt/sources.list</code></pre></li>
@@ -638,6 +638,36 @@ sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-9 50</code></pr
 </li>
 <li><p>查看当前gcc版本</p>
 <pre><code>gcc -v</code></pre></li>
+</ol>
+<h1 id="编译安装"><a href="#编译安装" class="headerlink" title="编译安装"></a>编译安装</h1><ol>
+<li><p>下载源码并解压。</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token function">wget</span> https://mirrors.tuna.tsinghua.edu.cn/gnu/gcc/gcc-9.3.0/gcc-9.3.0.tar.gz
+<span class="token function">tar</span> -xvf gcc-9.3.0.tar.gz
+<span class="token function">cd</span> gcc-9.3.0</code></pre>
+</li>
+</ol>
+<ol start="2">
+<li><p>安装必要的工具。</p>
+<pre class=" language-bash"><code class="language-bash">./contrib/download_prerequisites</code></pre>
+</li>
+</ol>
+<ol start="3">
+<li><p>创建文件夹并编译。</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token function">mkdir</span> gcc-build
+<span class="token function">cd</span> gcc-build
+<span class="token punctuation">..</span>/configure --prefix<span class="token operator">=</span>/home/rui/software/myInstalled/gcc-930 --disable-multilib --enable-languages<span class="token operator">=</span>c,c++
+<span class="token function">make</span> -j64</code></pre>
+</li>
+</ol>
+<ol start="4">
+<li><p>启用新的gcc。将如下的内容添加到环境变量文件<code>~/.bashrc</code>或者<code>~/.zshrc</code>中。</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token function">export</span> PATH<span class="token operator">=</span>/home/rui/software/myInstalled/gcc-930/bin:<span class="token variable">$PATH</span>
+<span class="token function">export</span> LD_LIBRARY_PATH<span class="token operator">=</span>/home/rui/software/myInstalled/gcc-930/lib:<span class="token variable">$LD_LIBRARY_PATH</span>
+<span class="token function">export</span> MANPATH<span class="token operator">=</span>home/rui/software/myInstalled/gcc-930/share/man:<span class="token variable">$MANPATH</span></code></pre>
+</li>
+<li><p>验证。</p>
+<pre class=" language-bash"><code class="language-bash">gcc -v</code></pre>
+</li>
 </ol>
 <script>
         document.querySelectorAll('.github-emoji')
@@ -1247,7 +1277,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">43.4k</span>&nbsp;字
+                class="white-color">43.8k</span>&nbsp;字
             
             
             
