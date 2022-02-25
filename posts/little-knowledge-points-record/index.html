@@ -584,21 +584,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-07-30
+                    2022-02-24
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2.9k
+                    3.2k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    13 分
+                    14 分
                 </div>
                 
 
@@ -770,7 +770,75 @@ file '2.mov'</code></pre></li>
 <p>开发时，设置LIBRARY_PATH，以便gcc能够找到编译时需要的动态链接库。</p>
 <p>发布时，设置LD_LIBRARY_PATH，以便程序加载运行时能够自动找到需要的动态链接库。</p>
 </li>
-<li><h1 id="centos硬件信息查询"><a href="#centos硬件信息查询" class="headerlink" title="centos硬件信息查询"></a>centos硬件信息查询</h1></li>
+<li><p>更改用户组信息</p>
+<p><a href="https://blog.csdn.net/train006l/article/details/79007483" target="_blank" rel="noopener">Linux中修改用户UID和组GID的方法_train006l的博客-CSDN博客_linux 修改uid</a></p>
+<blockquote>
+<p>例如测试用户foo和测试组foo。</p>
+</blockquote>
+<blockquote>
+<p>foo old UID: 1005</p>
+</blockquote>
+<blockquote>
+<p>foo new UID: 2005</p>
+</blockquote>
+<blockquote>
+<p>foo old GID: 2000</p>
+</blockquote>
+<blockquote>
+<p>foo new GID: 3000</p>
+</blockquote>
+<blockquote>
+<p>命令：</p>
+</blockquote>
+<blockquote>
+<p>1、修改foo用户的uid</p>
+</blockquote>
+<blockquote>
+<p>usermod -u 2005 foo</p>
+</blockquote>
+<blockquote>
+<p>2、修改foo组的gid</p>
+</blockquote>
+<blockquote>
+<p>groupmod -g 3000 foo</p>
+</blockquote>
+<blockquote>
+<p>3、foo用户的家目录下面的文件属主和属组会在1、2命令执行后自动修改成新的uid、gid对应的属主属组，但是其他文件目录需要手动修改。手动修改的命令也比较简单。</p>
+</blockquote>
+<blockquote>
+<p>find / -user 1005 -exec chown -h foo {} ;</p>
+</blockquote>
+<blockquote>
+<p>find / -group 2000 -exec chgrp -h foo {} ;</p>
+</blockquote>
+<blockquote>
+<p>这样用户和组的uid、gid就修改好了。可以用id命令看下是否修改的如我们所愿。</p>
+</blockquote>
+<blockquote>
+<p>ls -l /home/foo/</p>
+</blockquote>
+<blockquote>
+<p>id -u foo</p>
+</blockquote>
+<blockquote>
+<p>id -g foo</p>
+</blockquote>
+<blockquote>
+<p>grep foo /etc/passwd</p>
+</blockquote>
+<blockquote>
+<p>grep foo /etc/group</p>
+</blockquote>
+</li>
+<li><p>创建用户并添加到admin和docker组</p>
+<p>useradd rui -m -s /bin/zsh -G docker,admin</p>
+</li>
+<li><p>添加rui用户到docker用户组</p>
+<p>Sudo usermod -aG docker rui</p>
+</li>
+<li></li>
+</ol>
+<h1 id="centos硬件信息查询"><a href="#centos硬件信息查询" class="headerlink" title="centos硬件信息查询"></a>centos硬件信息查询</h1><ol>
 <li><p>查询服务器型号:<code>sudo dmidecode | grep "Product"</code></p>
 <pre class=" language-bash"><code class="language-bash">    Product Name: PowerEdge R730
     Product Name: 072T6D</code></pre>
@@ -1589,7 +1657,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">43.9k</span>&nbsp;字
+                class="white-color">44.3k</span>&nbsp;字
             
             
             
