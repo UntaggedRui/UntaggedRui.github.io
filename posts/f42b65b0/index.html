@@ -585,7 +585,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    9 分
+                    10 分
                 </div>
                 
 
@@ -642,7 +642,11 @@
       <span class="token punctuation">-</span> jichang2</code></pre>
 <p>经过上面两个步骤之后，我们就可以在自己定义的配置文件中使用机场提供的节点了，规则完全由我们自己来制定。每次更新只会获取到节点信息，不会覆盖我们本地写的规则。</p>
 <p>类似的，也有rule-providers的功能。从指定url处获取别人提供的规则，而不用自己来制定。</p>
-<p>最后附上完成的配置文件。大家只用替换proxy-providers中的url为自己的就可以。</p>
+<h1 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h1><ol>
+<li>在clash的配置文件夹中创建一个新的文件，并把下面的内容复制进去。</li>
+<li>替换proxy-providers中的url为自己的订阅链接。</li>
+<li>在clash中选择使用这个配置文件。</li>
+</ol>
 <pre class=" language-yaml"><code class="language-yaml"><span class="token key atrule">mixed-port</span><span class="token punctuation">:</span> <span class="token number">7890</span>
 <span class="token comment" spellcheck="true">#---------------------------------------------------#</span>
 <span class="token comment" spellcheck="true">## 更新：2020-07-11 10:36:22</span>
