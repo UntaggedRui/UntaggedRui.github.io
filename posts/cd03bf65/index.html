@@ -578,7 +578,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    857
+                    854
                 </div>
                 
 
@@ -610,37 +610,42 @@
 <li><p>配置repository</p>
 <ol>
 <li><p>Update the <code>apt</code> package index and install packages to allow <code>apt</code> to use a repository over HTTPS:</p>
-<pre><code>$ sudo apt-get update
+<pre class=" language-bash"><code class="language-bash">$ <span class="token function">sudo</span> <span class="token function">apt-get</span> update
 
-$ sudo apt-get install \
+$ <span class="token function">sudo</span> <span class="token function">apt-get</span> <span class="token function">install</span> \
     ca-certificates \
     curl \
     gnupg \
-    lsb-release</code></pre></li>
+    lsb-release</code></pre>
+</li>
 <li><p>Add Docker’s official GPG key:</p>
 <pre><code>$ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg</code></pre></li>
 <li><p>Use the following command to set up the <strong>stable</strong> repository. To add the <strong>nightly</strong> or <strong>test</strong> repository, add the word <code>nightly</code> or <code>test</code> (or both) after the word <code>stable</code> in the commands below. <a href="https://docs.docker.com/engine/install/" target="_blank" rel="noopener">Learn about <strong>nightly</strong> and <strong>test</strong> channels</a>.</p>
-<pre><code>$ echo \
-  "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \
-  $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list &gt; /dev/null</code></pre></li>
+<pre class=" language-bash"><code class="language-bash">$ <span class="token keyword">echo</span> \
+  <span class="token string">"deb [arch=<span class="token variable"><span class="token variable">$(</span>dpkg --print-architecture<span class="token variable">)</span></span> signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \
+  <span class="token variable"><span class="token variable">$(</span>lsb_release -cs<span class="token variable">)</span></span> stable"</span> <span class="token operator">|</span> <span class="token function">sudo</span> <span class="token function">tee</span> /etc/apt/sources.list.d/docker.list <span class="token operator">></span> /dev/null</code></pre>
+</li>
 </ol>
 </li>
 </ol>
 <ol start="3">
 <li><p>安装docker</p>
-<pre><code>sudo apt-get update
-sudo apt-get install docker-ce docker-ce-cli containerd.io</code></pre></li>
+<pre class=" language-bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">apt-get</span> update
+<span class="token function">sudo</span> <span class="token function">apt-get</span> <span class="token function">install</span> docker-ce docker-ce-cli containerd.io</code></pre>
+</li>
 </ol>
 <ol start="4">
 <li><p>如果需要安装指定版本</p>
-<pre><code>apt-cache madison docker-ce
-sudo apt-get install docker-ce=&lt;VERSION_STRING&gt; docker-ce-cli=&lt;VERSION_STRING&gt; containerd.io</code></pre></li>
+<pre class=" language-bash"><code class="language-bash">apt-cache madison docker-ce
+<span class="token function">sudo</span> <span class="token function">apt-get</span> <span class="token function">install</span> docker-ce<span class="token operator">=</span><span class="token operator">&lt;</span>VERSION_STRING<span class="token operator">></span> docker-ce-cli<span class="token operator">=</span><span class="token operator">&lt;</span>VERSION_STRING<span class="token operator">></span> containerd.io</code></pre>
+</li>
 </ol>
 <h1 id="安装docker-compose"><a href="#安装docker-compose" class="headerlink" title="安装docker-compose"></a>安装docker-compose</h1><p>来源：<a href="https://docs.docker.com/compose/install/" target="_blank" rel="noopener">https://docs.docker.com/compose/install/</a></p>
 <ol>
 <li><p>下载安装并赋予可执行权限</p>
-<pre><code>sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
-sudo chmod +x /usr/local/bin/docker-compose</code></pre></li>
+<pre class=" language-bash"><code class="language-bash"><span class="token function">sudo</span> curl -L <span class="token string">"https://github.com/docker/compose/releases/download/1.29.2/docker-compose-<span class="token variable"><span class="token variable">$(</span><span class="token function">uname</span> -s<span class="token variable">)</span></span>-<span class="token variable"><span class="token variable">$(</span><span class="token function">uname</span> -m<span class="token variable">)</span></span>"</span> -o /usr/local/bin/docker-compose
+<span class="token function">sudo</span> <span class="token function">chmod</span> +x /usr/local/bin/docker-compose</code></pre>
+</li>
 </ol>
 <h1 id="docker-pull镜像时加速"><a href="#docker-pull镜像时加速" class="headerlink" title="docker pull镜像时加速"></a>docker pull镜像时加速</h1><p>我这里用的是阿里云的docker源镜像。</p>
 <pre class=" language-bash"><code class="language-bash"><span class="token function">mkdir</span> -p  /etc/docker/
@@ -686,8 +691,8 @@ vim /etc/docker/daemon.json</code></pre>
 <h2 id="重启生效"><a href="#重启生效" class="headerlink" title="重启生效"></a><strong>重启生效</strong></h2><p>代理配置完成后，<code>reboot</code> 重启当然可以生效，但不重启也行。</p>
 <p><code>docker build</code> 代理是在执行前设置的，所以修改后，下次执行立即生效。Container 代理的修改也是立即生效的，但是只针对以后启动的 Container，对已经启动的 Container 无效。</p>
 <p><code>dockerd</code> 代理的修改比较特殊，它实际上是改 <code>systemd</code> 的配置，因此需要重载 <code>systemd</code> 并重启 <code>dockerd</code> 才能生效。</p>
-<pre class=" language-javascript"><code class="language-javascript">sudo systemctl daemon<span class="token operator">-</span>reload
-sudo systemctl restart docker</code></pre>
+<pre class=" language-bash"><code class="language-bash"><span class="token function">sudo</span> systemctl daemon-reload
+<span class="token function">sudo</span> systemctl restart docker</code></pre>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
