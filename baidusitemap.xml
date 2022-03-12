@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://blog.hifool.cn/posts/bilibili-videos-in-hexo/</loc>
+    <lastmod>2022-03-12</lastmod>
+  </url>
+  <url>
     <loc>https://blog.hifool.cn/posts/e1ceeb7b/</loc>
     <lastmod>2022-03-11</lastmod>
   </url>
@@ -94,10 +98,6 @@
   </url>
   <url>
     <loc>https://blog.hifool.cn/posts/Files-to-be-backed-up-when-reinstalling-the-system/</loc>
-    <lastmod>2020-08-20</lastmod>
-  </url>
-  <url>
-    <loc>https://blog.hifool.cn/posts/bilibili-videos-in-hexo/</loc>
     <lastmod>2020-08-20</lastmod>
   </url>
   <url>
