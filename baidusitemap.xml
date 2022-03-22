@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://blog.hifool.cn/posts/hot-news/</loc>
+    <lastmod>2022-03-22</lastmod>
+  </url>
+  <url>
     <loc>https://blog.hifool.cn/posts/my-own-cinema/</loc>
     <lastmod>2022-03-21</lastmod>
   </url>
@@ -19,10 +23,6 @@
   <url>
     <loc>https://blog.hifool.cn/posts/e87c49a0/</loc>
     <lastmod>2022-03-17</lastmod>
-  </url>
-  <url>
-    <loc>https://blog.hifool.cn/posts/hot-news/</loc>
-    <lastmod>2022-03-14</lastmod>
   </url>
   <url>
     <loc>https://blog.hifool.cn/posts/e1ceeb7b/</loc>
