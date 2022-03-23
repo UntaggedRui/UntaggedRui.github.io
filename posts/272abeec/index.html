@@ -578,7 +578,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    321
+                    327
                 </div>
                 
 
@@ -633,6 +633,7 @@ jobs:
         script: ${{ secrets.AFTER_COMMAND }} # Secrets中的配置：scp二进制文件到vps服务器上后需要执行的相关shell命令重启服务</code></pre>
 <p>然后创建对应的密码。</p>
 <p>之后在每次执行<code>hexo d</code>时，会上传到githubpage上，同时会触发这个工作流，更新vps上的内容。</p>
+<p>经过测试，不行。</p>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
