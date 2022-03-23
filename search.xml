@@ -4,6 +4,19 @@
   
     
     <entry>
+      <title>hexo博客同步到VPS</title>
+      <link href="/posts/272abeec/"/>
+      <url>/posts/272abeec/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>参考<code>https://blog.lancitou.net/using-github-actions-to-deploy-hugo-blog-to-self-hosted-vps/</code>和<code>https://axiaoxin.com/article/255/</code>,主要是利用github actions来完成。</p><p>首先要在服务器上生成一对密钥供ssh访问，需要将该密钥对的公钥放到authorized_keys中。</p><p>创建的workflow工作流为</p><pre class=" language-yml"><code class="language-yml">name: deploy hexoon:  push:    branches: [ master ] # main分支上push触发部署jobs:  build:    # 在ubuntu上进行构建操作    runs-on: ubuntu-latest    steps:   # 拉取代码    - uses: actions/checkout@v2    # 通过ssh远程执行命令重启vps上的服务    - name: SSH Remote Commands      uses: appleboy/ssh-action@master      with:        host: ${{ secrets.REMOTE_HOST }} # Secrets中的配置：vps IP地址        username: ${{ secrets.REMOTE_USER }} # Secrets中的配置：vps 登录用户名        port: ${{ secrets.REMOTE_PORT }} # Secrets中的配置：vps 端口        key: ${{ secrets.SERVER_SSH_KEY }} # Secrets中的配置：vps 上创建的ssh key的私钥内容        script: ${{ secrets.AFTER_COMMAND }} # Secrets中的配置：scp二进制文件到vps服务器上后需要执行的相关shell命令重启服务</code></pre><p>然后创建对应的密码。</p><p>之后在每次执行<code>hexo d</code>时，会上传到githubpage上，同时会触发这个工作流，更新vps上的内容。</p><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>linux中格式化装过系统的硬盘</title>
       <link href="/posts/ca43f4fa/"/>
       <url>/posts/ca43f4fa/</url>

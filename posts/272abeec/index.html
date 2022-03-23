@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="软路由做旁路由时电脑无法上网, 摸鱼记录">
+    <meta name="keywords" content="hexo博客同步到VPS, 摸鱼记录">
     <meta name="description" content="整天不学习，只知道玩的我">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -27,7 +27,7 @@
 </script>
 
 
-    <title>软路由做旁路由时电脑无法上网 | 摸鱼记录</title>
+    <title>hexo博客同步到VPS | 摸鱼记录</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -430,12 +430,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/4.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/10.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">软路由做旁路由时电脑无法上网</h1>
+                    <h1 class="description center-align post-title">hexo博客同步到VPS</h1>
                 </div>
             </div>
         </div>
@@ -550,25 +550,12 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                    <div class="article-tag">
-                        
-                            <a href="/tags/%E8%BD%AF%E8%B7%AF%E7%94%B1/">
-                                <span class="chip bg-color">软路由</span>
-                            </a>
-                        
-                    </div>
+                          <div class="article-tag">
+                            <span class="chip bg-color">无标签</span>
+                          </div>
                     
                 </div>
                 <div class="col s5 right-align">
-                    
-                    <div class="post-cate">
-                        <i class="fas fa-bookmark fa-fw icon-category"></i>
-                        
-                            <a href="/categories/%E6%91%B8%E9%B1%BC%E5%BF%83%E5%BE%97/" class="post-category">
-                                摸鱼心得
-                            </a>
-                        
-                    </div>
                     
                 </div>
             </div>
@@ -577,21 +564,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-07-17
+                    2022-03-23
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-08-06
+                    2022-03-23
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    363
+                    321
                 </div>
                 
 
@@ -613,18 +600,39 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h1><p>本科用了四年的华硕笔记本，淘汰下来放在那里吃灰。最近不想学习，所以折腾起了软路由玩。按照网上的教程装好了openwrt，在设置电脑时却无论如何都无法上网，断断续续尝试了一个星期后终于解决了。</p>
-<h1 id="基本设置"><a href="#基本设置" class="headerlink" title="基本设置"></a>基本设置</h1><p>基本设置大家应该都知道，软路由的ip设置为主路由ip段中的某个合法ip，网关为主路由的ip地址，dns啥的可以是主路由地址也可以是114.114.114.114啥的。这个都可以。dhcp关掉，使用主路由的dhcp。</p>
-<p>电脑端设置为静态ip，ip地址为主路由ip段中的某个合法ip，子网掩码为225.225.225.0，网关为软路由的ip地址。但是设置为这些后还是无法上网，我很郁闷。</p>
-<h1 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h1><p>（暂时没有贴图，等我有图了我就来贴上）</p>
-<ol>
-<li><p>在接口中的高级设置中取消桥接。</p>
-</li>
-<li><p>防火墙的自定义规则中添加如下规则，并让他生效。</p>
-<pre class=" language-shell"><code class="language-shell">iptables -t nat -I POSTROUTING -o eth0 -j MASQUERADE</code></pre>
-</li>
-</ol>
-<p>进行这些设置后应该就可以了。如果还不行那我也不知道了。</p>
+                <p>参考<code>https://blog.lancitou.net/using-github-actions-to-deploy-hugo-blog-to-self-hosted-vps/</code>和<code>https://axiaoxin.com/article/255/</code>,主要是利用github actions来完成。</p>
+<p>首先要在服务器上生成一对密钥供ssh访问，需要将该密钥对的公钥放到authorized_keys中。</p>
+<p>创建的workflow工作流为</p>
+<pre class=" language-yml"><code class="language-yml">name: deploy hexo
+
+on:
+  push:
+    branches: [ master ] # main分支上push触发部署
+
+
+jobs:
+
+  build:
+    # 在ubuntu上进行构建操作
+    runs-on: ubuntu-latest
+
+    steps:
+   # 拉取代码
+    - uses: actions/checkout@v2
+
+
+
+    # 通过ssh远程执行命令重启vps上的服务
+    - name: SSH Remote Commands
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.REMOTE_HOST }} # Secrets中的配置：vps IP地址
+        username: ${{ secrets.REMOTE_USER }} # Secrets中的配置：vps 登录用户名
+        port: ${{ secrets.REMOTE_PORT }} # Secrets中的配置：vps 端口
+        key: ${{ secrets.SERVER_SSH_KEY }} # Secrets中的配置：vps 上创建的ssh key的私钥内容
+        script: ${{ secrets.AFTER_COMMAND }} # Secrets中的配置：scp二进制文件到vps服务器上后需要执行的相关shell命令重启服务</code></pre>
+<p>然后创建对应的密码。</p>
+<p>之后在每次执行<code>hexo d</code>时，会上传到githubpage上，同时会触发这个工作流，更新vps上的内容。</p>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -655,11 +663,7 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            
-                                <a href="/tags/%E8%BD%AF%E8%B7%AF%E7%94%B1/">
-                                    <span class="chip bg-color">软路由</span>
-                                </a>
-                            
+                            <span class="chip bg-color">无标签</span>
                         </div>
                     
                 </div>
@@ -702,7 +706,7 @@
         repo: 'zhangrui.github.io',
         owner: 'UntaggedRui',
         admin: "UntaggedRui",
-        id: '2020-07-17T22-22-36',
+        id: '2022-03-23T22-10-07',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -1005,49 +1009,39 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/posts/Related-Issues-were-not-found-to-comment/">
+                <a href="/posts/272abeec/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="未找到相关的Issues进行评论 请联系XXX初始化创建">
+                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="hexo博客同步到VPS">
                         
-                        <span class="card-title">未找到相关的Issues进行评论 请联系XXX初始化创建</span>
+                        <span class="card-title">hexo博客同步到VPS</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            gitalk无法初始化时的解决方法
+                            参考https://blog.lancitou.net/using-github-actions-to-deploy-hugo-blog-to-self-hosted-vps/和https://axiaoxin.com/article/25
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-07-24
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-03-23
+                            </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E6%91%B8%E9%B1%BC%E5%BF%83%E5%BE%97/" class="post-category">
-                                    摸鱼心得
-                                </a>
-                            
+                            <i class="fas fa-user fa-fw"></i>
+                            Zhang Rui
                             
                         </span>
                     </div>
                 </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/hexo/">
-                        <span class="chip bg-color">hexo</span>
-                    </a>
-                    
-                </div>
+
                 
             </div>
         </div>
@@ -1058,44 +1052,34 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/posts/5f54a3c8/">
+                <a href="/posts/ca43f4fa/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="gdb的学习与错误解决">
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="linux中格式化装过系统的硬盘">
                         
-                        <span class="card-title">gdb的学习与错误解决</span>
+                        <span class="card-title">linux中格式化装过系统的硬盘</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            gdb调试过程中一些错误
+                            在网上搜到格式化硬盘的命令大多数为sudo mkfs.ext4 /dev/sdc。但是如果这个硬盘装过操作系统，就无法进行这个操作。
+$ sudo mkfs.ext4 /dev/sdc
+mke2fs 1.42.9 (28-Dec-2013)
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-07-03
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-03-23
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/linux%E5%BC%80%E5%8F%91/" class="post-category">
-                                    linux开发
-                                </a>
-                            
+                            <i class="fas fa-user fa-fw"></i>
+                            Zhang Rui
                             
                         </span>
                     </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/linux/">
-                        <span class="chip bg-color">linux</span>
-                    </a>
-                    
                 </div>
                 
             </div>
