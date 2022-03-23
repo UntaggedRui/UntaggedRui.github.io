@@ -9,14 +9,14 @@
   </url>
   
   <url>
-    <loc>https://blog.hifool.cn/posts/ca43f4fa/</loc>
+    <loc>https://blog.hifool.cn/posts/5efeab17/</loc>
     
     <lastmod>2022-03-23</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.hifool.cn/posts/5efeab17/</loc>
+    <loc>https://blog.hifool.cn/posts/ca43f4fa/</loc>
     
     <lastmod>2022-03-23</lastmod>
     
@@ -319,13 +319,6 @@
 
   
   <url>
-    <loc>https://blog.hifool.cn/tags/%E8%A7%86%E9%A2%91/</loc>
-    <lastmod>2022-03-23</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://blog.hifool.cn/tags/MAC/</loc>
     <lastmod>2022-03-23</lastmod>
     <changefreq>daily</changefreq>
@@ -334,6 +327,13 @@
   
   <url>
     <loc>https://blog.hifool.cn/tags/%E4%B8%8D%E5%AD%A6%E4%B9%A0/</loc>
+    <lastmod>2022-03-23</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.hifool.cn/tags/%E8%A7%86%E9%A2%91/</loc>
     <lastmod>2022-03-23</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -391,14 +391,14 @@
 
   
   <url>
-    <loc>https://blog.hifool.cn/categories/%E6%91%B8%E9%B1%BC%E8%AE%B0%E5%BD%95/</loc>
+    <loc>https://blog.hifool.cn/categories/%E6%91%B8%E9%B1%BC%E5%BF%83%E5%BE%97/</loc>
     <lastmod>2022-03-23</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://blog.hifool.cn/categories/%E6%91%B8%E9%B1%BC%E5%BF%83%E5%BE%97/</loc>
+    <loc>https://blog.hifool.cn/categories/%E6%91%B8%E9%B1%BC%E8%AE%B0%E5%BD%95/</loc>
     <lastmod>2022-03-23</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
