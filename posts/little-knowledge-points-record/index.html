@@ -584,7 +584,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-02-24
+                    2022-03-23
                 </div>
                 
 
@@ -598,7 +598,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    14 分
+                    15 分
                 </div>
                 
 
@@ -834,7 +834,10 @@ file '2.mov'</code></pre></li>
 <p>useradd rui -m -s /bin/zsh -G docker,admin</p>
 </li>
 <li><p>添加rui用户到docker用户组</p>
-<p>Sudo usermod -aG docker rui</p>
+<p>sudo usermod -aG docker rui</p>
+</li>
+<li><p>apt-get换源方法：<a href="https://mirrors.bfsu.edu.cn/help/ubuntu/" target="_blank" rel="noopener">https://mirrors.bfsu.edu.cn/help/ubuntu/</a></p>
+<p>注意：再换源之前要先执行sudo  apt install –reinstall ca-certificates重新安装证书，否则再替换后执行apt-get update的时候会出现<code>Certificate verification failed: The certificate is NOT trusted. The certificate chain uses expired certificate. Could not handshake: Error in the certificate verification.</code></p>
 </li>
 <li></li>
 </ol>
@@ -1657,7 +1660,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">47.2k</span>&nbsp;字
+                class="white-color">48.2k</span>&nbsp;字
             
             
             

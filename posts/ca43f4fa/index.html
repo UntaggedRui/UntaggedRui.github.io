@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="使用 webhook 自动更新博客, 摸鱼记录">
+    <meta name="keywords" content="linux中格式化装过系统的硬盘, 摸鱼记录">
     <meta name="description" content="整天不学习，只知道玩的我">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -27,7 +27,7 @@
 </script>
 
 
-    <title>使用 webhook 自动更新博客 | 摸鱼记录</title>
+    <title>linux中格式化装过系统的硬盘 | 摸鱼记录</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -430,12 +430,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://image.cugxuan.cn/git/webhook_header.png')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">使用 webhook 自动更新博客</h1>
+                    <h1 class="description center-align post-title">linux中格式化装过系统的硬盘</h1>
                 </div>
             </div>
         </div>
@@ -550,25 +550,12 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                    <div class="article-tag">
-                        
-                            <a href="/tags/hexo/">
-                                <span class="chip bg-color">hexo</span>
-                            </a>
-                        
-                    </div>
+                          <div class="article-tag">
+                            <span class="chip bg-color">无标签</span>
+                          </div>
                     
                 </div>
                 <div class="col s5 right-align">
-                    
-                    <div class="post-cate">
-                        <i class="fas fa-bookmark fa-fw icon-category"></i>
-                        
-                            <a href="/categories/%E8%BD%AC%E8%BD%BD%E6%96%87%E7%AB%A0/" class="post-category">
-                                转载文章
-                            </a>
-                        
-                    </div>
                     
                 </div>
             </div>
@@ -577,28 +564,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-08-04
+                    2022-03-23
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-08-06
+                    2022-03-23
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.3k
+                    517
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    5 分
+                    2 分
                 </div>
                 
 
@@ -613,70 +600,53 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="声明"><a href="#声明" class="headerlink" title="声明"></a>声明</h1><p>以下文章转载自<a href="https://blog.cugxuan.cn/2019/03/23/Git/Use-Webhook-To-Update-Blog/" target="_blank" rel="noopener">Xuan’s blog</a>, 为了防止博主删除文章后找不到，所以复制一份到此进行保存。如果有侵权现象，请联系博主<a href="mailto:zhangrui@zhangruiahu.cn">zhangrui@zhangruiahu.cn</a>进行删除。感谢理解</p>
-<ul>
-<li><strong>本文作者：</strong> 泫</li>
-<li><strong>本文链接：</strong> <a href="https://blog.cugxuan.cn/2019/03/23/Git/Use-Webhook-To-Update-Blog/" target="_blank" rel="noopener">https://blog.cugxuan.cn/2019/03/23/Git/Use-Webhook-To-Update-Blog/</a></li>
-<li><strong>版权声明：</strong> 本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="noopener">BY-NC-ND</a> 许可协议。转载请注明出处！</li>
-</ul>
-<p>因为实在受不了 <code>Coding Page</code> 的速度，腾讯云的 CDN 感觉也很不好用，将自己的博客挂在了自己的服务器上。但是每次在写完之后都需要到服务器上执行 <code>git pull</code>过于麻烦，所以使用了 GitHub 上面的开源项目 <a href="https://github.com/adnanh/webhook" target="_blank" rel="noopener">webhook</a>，<strong>当然 webhook 的作用不仅仅是自动更新部署博客啊，啥都能干 O__O …</strong></p>
-<h1 id="Webhook"><a href="#Webhook" class="headerlink" title="Webhook"></a>Webhook</h1><p>对于 webhook 来说，可以自己写一个脚本来接受信息，思路很简单，运行一个 <code>HTTP Server</code>，监听服务器的某个端口，如果有消息传递过来，那么就运行事先写好的脚本，来完成 webhook 的功能即可。<br><img src="https://image.cugxuan.cn/git/webhook.png" alt="webhook.png"></p>
-<p>但是为了方便使用和维护，还是选择了开源的项目</p>
-<h1 id="什么是-webhook？"><a href="#什么是-webhook？" class="headerlink" title="什么是 webhook？"></a>什么是 webhook？</h1><p>webhook 的目标只是做他应该做的事</p>
-<ol>
-<li>接受 request</li>
-<li>解析 HTTP 首部，负载内容和请求变量</li>
-<li>检测是否满足钩子的特定条件</li>
-<li>通过命令行参数或环境变量将指定的参数传递给指定的命令</li>
-</ol>
-<p>其他所有的事情都是 <code>命令作者</code> 的责任</p>
-<h1 id="如何使用"><a href="#如何使用" class="headerlink" title="如何使用"></a>如何使用</h1><p>我的博客是 hexo 构建，构建出来的结果都是静态文件，使用 Nginx 挂在服务器上的，以下的内容都需要在服务器上执行</p>
-<h2 id="安装-webhook"><a href="#安装-webhook" class="headerlink" title="安装 webhook"></a>安装 webhook</h2><p>这里推荐三种安装方法，<strong>github 下载速度可能很慢</strong>，推荐使用系统源安装的方式</p>
-<h3 id="使用系统源的安装方式"><a href="#使用系统源的安装方式" class="headerlink" title="使用系统源的安装方式"></a>使用系统源的安装方式</h3><p>如果是 Ubuntu 系统，可以直接使用下面的命令进行安装：</p>
-<pre><code>$ sudo apt-get update
-$ sudo apt-get install webhook</code></pre><h3 id="使用-github-下载"><a href="#使用-github-下载" class="headerlink" title="使用 github 下载"></a>使用 github 下载</h3><p>webhook 的 <a href="https://github.com/adnanh/webhook/releases" target="_blank" rel="noopener">release 链接</a>，找到对应的选项 <code>webhook-linux-amd64.tar.gz</code> 右键复制链接 ，当前写博客时的最新版本链接为 <a href="https://github.com/adnanh/webhook/releases/download/2.6.11/webhook-linux-amd64.tar.gz" target="_blank" rel="noopener">https://github.com/adnanh/webhook/releases/download/2.6.11/webhook-linux-amd64.tar.gz</a></p>
-<p>具体操作如下：</p>
-<pre><code>// 下载对应的软件
-$ wget https://github.com/adnanh/webhook/releases/download/2.6.11/webhook-linux-amd64.tar.gz
-// 解压进入
-$ tar -zxf tar -zxf webhook-linux-amd64.tar.gz &amp;&amp; cd webhook-linux-amd64/
-$ ./webhook
-[webhook] 2020/02/23 22:44:43 couldn't load any hooks from file!
-aborting webhook execution since the -verbose flag is set to false.
-If, for some reason, you want webhook to start without the hooks, either use -verbose flag, or -nopanic</code></pre><h3 id="Golang-环境下安装"><a href="#Golang-环境下安装" class="headerlink" title="Golang 环境下安装"></a>Golang 环境下安装</h3><p>首先安装 Golang 环境（这里略过），然后安装 webhook，这里注意需要已经设置了 GOPATH</p>
-<pre><code>// 安装对应的工具
-$ go get github.com/adnanh/webhook
-// 安装完成之后可以在 $GOPATH/bin 下找到对应的执行文件
-$ echo $GOPATH
-/root/go
-$ ls /root/go/bin
-webhook
-// 将路径写入到 shell 可以直接执行
-$ vi ~/.bash_profile
-// 在文件最后一行加入对应内容
-export PATH="/root/go/bin:$PATH"
-// 更新文件使其生效
-$ source ~/.bash_profile
-// 测试命令是否已经成功安装，得到输出说明安装完成
-$ webhook
-[webhook] 2020/02/23 22:44:43 couldn't load any hooks from file!
-aborting webhook execution since the -verbose flag is set to false.
-If, for some reason, you want webhook to start without the hooks, either use -verbose flag, or -nopanic</code></pre><h2 id="配置-webhook"><a href="#配置-webhook" class="headerlink" title="配置 webhook"></a>配置 webhook</h2><p>下一步是定义您希望 <a href="https://github.com/adnanh/webhook" target="_blank" rel="noopener">webhook</a> 提供的一些钩子，新建一个 <code>hook.json</code> 文件<br>该文件将包含 webhook 将提供的一系列钩子。检查 <a href="https://github.com/adnanh/webhook/blob/master/docs/Hook-Definition.md" target="_blank" rel="noopener">Hook 定义页面</a> 以查看钩子可以包含的属性的详细描述以及如何使用它们。</p>
-<h2 id="定义和部署"><a href="#定义和部署" class="headerlink" title="定义和部署"></a>定义和部署</h2><p>下面的内容在 <code>~/notes-hooks</code> 文件夹下执行<br>让我们定义一个名为 <code>redeploy-webhook</code> 的简单钩子，新建一个 <code>redeploy.sh</code> 文件，确保你的 bash 脚本在顶部有 <code>#!/bin/sh</code></p>
-<pre><code>#!/bin/sh
-git pull</code></pre><p>写完之后注意需要给文件增加执行权限<br><code>$ chmod a+x redeploy.sh</code><br>然后新建一个 <code>hooks.json</code> 文件，看代码就可以知道意思了</p>
-<pre><code>[
-  {
-    "id": "redeploy-blog",
-    "execute-command": "/home/ubuntu/notes-hooks/redeploy.sh",
-    "command-working-directory": "/home/ubuntu/blog.cugxuan.cn"
-  }
-]</code></pre><p>这个 <code>hooks.json</code> 文件中各项的作用一看便知，注意 id 和监听的 URL 对应，webhook 默认监听的端口是 9000，根据上面写的可知监听的 URL 为 <code>http://yoursite.com:9000/hooks/redeploy-blog</code>，接下来执行命令部署即可</p>
-<pre><code># 前台运行的方法，可以方便测试
-$ ./webhook -hooks hooks.json -verbose
-# 守护进程简单运行，这样就可以部署了
-$ nohup ./webhook -hooks hooks.json -verbose &amp;</code></pre><p>然后将 <code>http://yoursite.com:9000/hooks/redeploy-blog</code> 填到你的 GitHub 网站对应项目页面 <code>Settings → Webhooks</code> 中即可</p>
-<h2 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h2><p>写好博客然后 push，GitHub 收到你的更新之后就会触发 webhook 发送到服务器的监听位置，然后服务器完成更新部署<br>同时你可以在 GitHub 的 webhook 页面中看到发送的情况，还可以点击 Redeliver 重新测试<br><img src="https://image.cugxuan.cn/git/webhook-redeliver.png" alt="webhook-redeliver"></p>
+                <p>在网上搜到格式化硬盘的命令大多数为sudo mkfs.ext4 /dev/sdc。但是如果这个硬盘装过操作系统，就无法进行这个操作。</p>
+<pre class=" language-bash"><code class="language-bash">$ <span class="token function">sudo</span> mkfs.ext4 /dev/sdc
+mke2fs 1.42.9 <span class="token punctuation">(</span>28-Dec-2013<span class="token punctuation">)</span>
+/dev/sdc is entire device, not just one partition<span class="token operator">!</span>
+无论如何也要继续? <span class="token punctuation">(</span>y,n<span class="token punctuation">)</span> y
+/dev/sdc is apparently <span class="token keyword">in</span> use by the system<span class="token punctuation">;</span> will not <span class="token function">make</span> a 文件系统 here<span class="token operator">!</span>
+
+<span class="token comment" spellcheck="true"># 以下为中文提示</span>
+$ <span class="token function">sudo</span> mkfs.ext4 /dev/nvme0n1
+mke2fs 1.45.5 <span class="token punctuation">(</span>07-Jan-2020<span class="token punctuation">)</span>
+Found a gpt partition table <span class="token keyword">in</span> /dev/nvme0n1
+Proceed anyway? <span class="token punctuation">(</span>y,N<span class="token punctuation">)</span> y
+/dev/nvme0n1 is apparently <span class="token keyword">in</span> use by the system<span class="token punctuation">;</span> will not <span class="token function">make</span> a filesystem here<span class="token operator">!</span></code></pre>
+<p>此时系统中硬盘的信息为</p>
+<pre class=" language-bash"><code class="language-bash">$ lsblk
+NAME              MAJ:MIN RM   SIZE RO TYPE MOUNTPOINT
+sda                 8:0    0 558.9G  0 disk
+├─sda1              8:1    0   200M  0 part /boot/efi
+├─sda2              8:2    0     1G  0 part /boot
+└─sda3              8:3    0 557.7G  0 part
+  ├─centos00-root 253:0    0   250G  0 lvm  /
+  ├─centos00-swap 253:1    0     4G  0 lvm  <span class="token punctuation">[</span>SWAP<span class="token punctuation">]</span>
+  └─centos00-home 253:4    0 303.7G  0 lvm  /home
+sdb                 8:16   0 558.9G  0 disk
+├─sdb1              8:17   0     1G  0 part
+├─sdb2              8:18   0     1G  0 part
+└─sdb3              8:19   0 556.9G  0 part
+sdc                 8:32   0   3.7T  0 disk
+└─sdc3              8:35   0   3.7T  0 part
+  ├─centos-root   253:2    0  1003G  0 lvm
+  └─centos-swap   253:3    0    51G  0 lvm
+sr0                11:0    1  1024M  0 rom
+nvme0n1           259:0    0 349.3G  0 disk
+└─nvme0n1p1       259:1    0 349.3G  0 part /nvme</code></pre>
+<p>由于sdc中存在lvm，所以无法进行格式化。要删除lvm的信息。</p>
+<p>首先查看lvm的信息</p>
+<pre class=" language-bash"><code class="language-bash">$ <span class="token function">sudo</span> dmsetup status
+centos00-home: 0 636928000 linear
+centos00-swap: 0 8388608 linear
+centos00-root: 0 104857600 linear
+centos00-root: 104857600 419430400 linear
+centos-swap: 0 106954752 linear
+centos-root: 0 2103435264 linear</code></pre>
+<p>然后删除没有用到的lvm，由于我们的硬盘装在sda中（可以通过df -h中的根目录和home目录的大小对比lsblk的内容确定我们的系统装在哪个盘中），所以我们删除sdc中的lvm信息</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token function">sudo</span> dmsetup remove centos-swap centos-root</code></pre>
+<p>接下来我们就可以格式化sdc磁盘了。</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token function">sudo</span> mkfs.ext4 /dev/sdc</code></pre>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -707,11 +677,7 @@ $ nohup ./webhook -hooks hooks.json -verbose &amp;</code></pre><p>然后将 <cod
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            
-                                <a href="/tags/hexo/">
-                                    <span class="chip bg-color">hexo</span>
-                                </a>
-                            
+                            <span class="chip bg-color">无标签</span>
                         </div>
                     
                 </div>
@@ -754,7 +720,7 @@ $ nohup ./webhook -hooks hooks.json -verbose &amp;</code></pre><p>然后将 <cod
         repo: 'zhangrui.github.io',
         owner: 'UntaggedRui',
         admin: "UntaggedRui",
-        id: '2020-08-04T16-41-56',
+        id: '2022-03-23T20-55-58',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -1057,48 +1023,41 @@ $ nohup ./webhook -hooks hooks.json -verbose &amp;</code></pre><p>然后将 <cod
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/posts/Files-to-be-backed-up-when-reinstalling-the-system/">
+                <a href="/posts/ca43f4fa/">
                     <div class="card-image">
                         
-                        <img src="https://s1.ax1x.com/2020/08/06/a6XfHI.png" class="responsive-img" alt="重装系统时所要备份的文件">
                         
-                        <span class="card-title">重装系统时所要备份的文件</span>
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="linux中格式化装过系统的硬盘">
+                        
+                        <span class="card-title">linux中格式化装过系统的硬盘</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            重装系统时需要备份的文件以及要安装的软件
+                            在网上搜到格式化硬盘的命令大多数为sudo mkfs.ext4 /dev/sdc。但是如果这个硬盘装过操作系统，就无法进行这个操作。
+$ sudo mkfs.ext4 /dev/sdc
+mke2fs 1.42.9 (28-Dec-2013)
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-08-06
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-03-23
+                            </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E6%91%B8%E9%B1%BC%E5%BF%83%E5%BE%97/" class="post-category">
-                                    摸鱼心得
-                                </a>
-                            
+                            <i class="fas fa-user fa-fw"></i>
+                            Zhang Rui
                             
                         </span>
                     </div>
                 </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/%E5%A4%87%E4%BB%BD%E5%B7%A5%E4%BD%9C/">
-                        <span class="chip bg-color">备份工作</span>
-                    </a>
-                    
-                </div>
+
                 
             </div>
         </div>
@@ -1109,43 +1068,36 @@ $ nohup ./webhook -hooks hooks.json -verbose &amp;</code></pre><p>然后将 <cod
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/posts/my-own-cinema/">
+                <a href="/posts/5efeab17/">
                     <div class="card-image">
                         
-                        <img src="https://s1.ax1x.com/2020/08/03/aNs6nH.md.jpg" class="responsive-img" alt="外链视频测试">
                         
-                        <span class="card-title">外链视频测试</span>
+                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="linux中常用环境变量">
+                        
+                        <span class="card-title">linux中常用环境变量</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            打造一个属于自己的电影院
+                            常用的环境变量# 配置时区
+export TZ="Asia/Shanghai"
+
+# 通过pip安装的可执行文件路径与自己编译产生的可执行文件路径
+export PATH=/home/rui/.local/bin:/home/rui/sof
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-08-02
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-03-23
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E6%91%B8%E9%B1%BC%E8%AE%B0%E5%BD%95/" class="post-category">
-                                    摸鱼记录
-                                </a>
-                            
+                            <i class="fas fa-user fa-fw"></i>
+                            Zhang Rui
                             
                         </span>
                     </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/%E4%B8%8D%E5%AD%A6%E4%B9%A0/">
-                        <span class="chip bg-color">不学习</span>
-                    </a>
-                    
                 </div>
                 
             </div>
