@@ -40,7 +40,11 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 4.2.1"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+<meta name="generator" content="Hexo 4.2.1">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+</head>
 
 
 <body>
@@ -578,7 +582,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    183
+                    131
                 </div>
                 
 
@@ -603,25 +607,7 @@
                 <p>下面总结了一下已有论文中给出的qp共享的方法。</p>
 <h1 id="OSDI16-FaSST-Fast-Scalable-and-Simple-Distributed-Transactions-with-Two-sided-RDMA-Datagram-RPCs"><a href="#OSDI16-FaSST-Fast-Scalable-and-Simple-Distributed-Transactions-with-Two-sided-RDMA-Datagram-RPCs" class="headerlink" title="OSDI16- FaSST: Fast, Scalable and Simple Distributed Transactions with Two-sided (RDMA) Datagram RPCs"></a>OSDI16- FaSST: Fast, Scalable and Simple Distributed Transactions with Two-sided (RDMA) Datagram RPCs</h1><p>FaSST [24] shares QPs among threads, which subsequently lowers the CPU efﬁciency and performance due to the lock contention of QPs between threads.</p>
 <h1 id="X-srq-improving-scalability-and-performance-of-multi-core-inﬁniband-clusters"><a href="#X-srq-improving-scalability-and-performance-of-multi-core-inﬁniband-clusters" class="headerlink" title="X-srq-improving scalability and performance of multi-core inﬁniband clusters"></a>X-srq-improving scalability and performance of multi-core inﬁniband clusters</h1><p>An alternative heuristic is the inclusion of a dedicated proxy thread that manages all receive and send requests [41]. However, switching to/from a dedicated proxy thread increases latency. Furthermore, it is difﬁcult to saturate the full network bandwidth with a single thread. Moreover, the proxy solution is not transparent to the underlying RDMA libraries.</p>
-<h1 id="nsdi22-When-Cloud-Storage-Meets-RDMA"><a href="#nsdi22-When-Cloud-Storage-Meets-RDMA" class="headerlink" title="nsdi22-When Cloud Storage Meets RDMA"></a>nsdi22-When Cloud Storage Meets RDMA</h1><script>
-        document.querySelectorAll('.github-emoji')
-          .forEach(el => {
-            if (!el.dataset.src) { return; }
-            const img = document.createElement('img');
-            img.style = 'display:none !important;';
-            img.src = el.dataset.src;
-            img.addEventListener('error', () => {
-              img.remove();
-              el.style.color = 'inherit';
-              el.style.backgroundImage = 'none';
-              el.style.background = 'none';
-            });
-            img.addEventListener('load', () => {
-              img.remove();
-            });
-            document.body.appendChild(img);
-          });
-      </script>
+<h1 id="nsdi22-When-Cloud-Storage-Meets-RDMA"><a href="#nsdi22-When-Cloud-Storage-Meets-RDMA" class="headerlink" title="nsdi22-When Cloud Storage Meets RDMA"></a>nsdi22-When Cloud Storage Meets RDMA</h1>
             </div>
             <hr/>
 
@@ -1185,7 +1171,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 </main>
 
 
-<script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script src="https://cdn.bootcdn.net/ajax/libs/mathjax/3.2.0/es5/a11y/assistive-mml.js"></script>
 <script>
     MathJax.Hub.Config({
         tex2jax: {inlineMath: [['$', '$'], ['\(', '\)']]}
@@ -1207,7 +1193,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">48.5k</span>&nbsp;字
+                class="white-color">46.6k</span>&nbsp;字
             
             
             
