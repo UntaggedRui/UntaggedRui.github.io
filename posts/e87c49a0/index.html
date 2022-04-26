@@ -4,7 +4,7 @@
  * @Author: Rui Zhang
  * @Date: 2020-07-01 21:49:58
  * @LastEditors: Rui Zhang
- * @LastEditTime: 2022-04-08 23:21:20
+ * @LastEditTime: 2022-04-26 22:43:05
  * @Description: 
  * Copyright (c) 2022 by Rui Zhang/hhh, All Rights Reserved. 
 -->
@@ -17,7 +17,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
-    <meta name="referrer" content="no-referrer" />
+    <!-- <meta name="referrer" content="no-referrer" /> -->
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
@@ -613,7 +613,7 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>下面总结了一下已有论文中给出的qp共享的方法。</p>
+                <link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>下面总结了一下已有论文中给出的qp共享的方法。</p>
 <h1 id="OSDI16-FaSST-Fast-Scalable-and-Simple-Distributed-Transactions-with-Two-sided-RDMA-Datagram-RPCs"><a href="#OSDI16-FaSST-Fast-Scalable-and-Simple-Distributed-Transactions-with-Two-sided-RDMA-Datagram-RPCs" class="headerlink" title="OSDI16- FaSST: Fast, Scalable and Simple Distributed Transactions with Two-sided (RDMA) Datagram RPCs"></a>OSDI16- FaSST: Fast, Scalable and Simple Distributed Transactions with Two-sided (RDMA) Datagram RPCs</h1><p>FaSST [24] shares QPs among threads, which subsequently lowers the CPU efﬁciency and performance due to the lock contention of QPs between threads.</p>
 <h1 id="X-srq-improving-scalability-and-performance-of-multi-core-inﬁniband-clusters"><a href="#X-srq-improving-scalability-and-performance-of-multi-core-inﬁniband-clusters" class="headerlink" title="X-srq-improving scalability and performance of multi-core inﬁniband clusters"></a>X-srq-improving scalability and performance of multi-core inﬁniband clusters</h1><p>An alternative heuristic is the inclusion of a dedicated proxy thread that manages all receive and send requests [41]. However, switching to/from a dedicated proxy thread increases latency. Furthermore, it is difﬁcult to saturate the full network bandwidth with a single thread. Moreover, the proxy solution is not transparent to the underlying RDMA libraries.</p>
 <h1 id="nsdi22-When-Cloud-Storage-Meets-RDMA"><a href="#nsdi22-When-Cloud-Storage-Meets-RDMA" class="headerlink" title="nsdi22-When Cloud Storage Meets RDMA"></a>nsdi22-When Cloud Storage Meets RDMA</h1>
@@ -1202,7 +1202,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">48.5k</span>&nbsp;字
+                class="white-color">48.6k</span>&nbsp;字
             
             
             

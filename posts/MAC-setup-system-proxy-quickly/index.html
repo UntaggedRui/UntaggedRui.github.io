@@ -4,7 +4,7 @@
  * @Author: Rui Zhang
  * @Date: 2020-07-01 21:49:58
  * @LastEditors: Rui Zhang
- * @LastEditTime: 2022-04-08 23:21:20
+ * @LastEditTime: 2022-04-26 22:43:05
  * @Description: 
  * Copyright (c) 2022 by Rui Zhang/hhh, All Rights Reserved. 
 -->
@@ -17,7 +17,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
-    <meta name="referrer" content="no-referrer" />
+    <!-- <meta name="referrer" content="no-referrer" /> -->
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
@@ -630,7 +630,7 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>由于在宿舍中的网络只能访问内网，而实验室中的电脑可以访问外网。所以在实验室电脑搭建一个代理服务器（clash for windows就可以解决这个问题了），宿舍电脑通过设置代理的方式来实现访问外网。由于有时mac也要使用clash，开启后就会将所有的代理都设置为127.0.0.1这个IP，要访问实验室电脑的IP需要再次设置IP和端口。所以嫌每次手动设置http代理很麻烦，因此尝试使用脚本的方式来解决这个问题。</p>
+                <link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>由于在宿舍中的网络只能访问内网，而实验室中的电脑可以访问外网。所以在实验室电脑搭建一个代理服务器（clash for windows就可以解决这个问题了），宿舍电脑通过设置代理的方式来实现访问外网。由于有时mac也要使用clash，开启后就会将所有的代理都设置为127.0.0.1这个IP，要访问实验室电脑的IP需要再次设置IP和端口。所以嫌每次手动设置http代理很麻烦，因此尝试使用脚本的方式来解决这个问题。</p>
 <p>通常mac中设置代理的方式是通过网络-&gt;高级-&gt;代理中设置http代理和https代理来实现的。为了不想每次都输入IP地址，经过搜寻后发现了使用<code>networksetup</code>命令来设置mac的代理。因此开启了该命令的学习使用过程。</p>
 <p>首先确定你是通过什么方式上网的，可能是有线，wifi或者其他的。通过以下命令获取你的<code>networkservice</code>。</p>
 <pre class=" language-bash"><code class="language-bash">➜  ~ networksetup -listallnetworkservices
@@ -1286,7 +1286,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">48.5k</span>&nbsp;字
+                class="white-color">48.6k</span>&nbsp;字
             
             
             
