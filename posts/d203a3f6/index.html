@@ -584,14 +584,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-07-24
+                    2022-04-27
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    803
+                    890
                 </div>
                 
 
@@ -613,7 +613,7 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>摸鱼了一下午+一晚上，终于搞好了。</p>
+                <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>摸鱼了一下午+一晚上，终于搞好了。</p>
 <p>之前总是偷懒想用别人搭建好的docker镜像来弄，结果报错了一下午还没搞好。最后自己动手，丰衣足食。</p>
 <p>学到的教训：不要偷懒，多看官方文档。</p>
 <h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><p>以下教程主要基于工具<code>acme.sh</code>, 如果有不懂的地方请参考<a href="[*https://github.com/Neilpang/acme.sh/wiki/说明*](https://github.com/Neilpang/acme.sh/wiki/说明)">官方文档</a>。</p>
@@ -670,7 +670,13 @@
 <p>至于是否能自动更新，我还不知道。</p>
 </li>
 </ol>
-
+<h1 id="手动dns申请"><a href="#手动dns申请" class="headerlink" title="手动dns申请"></a>手动dns申请</h1><p>参考<a href="https://wuuconix.link/2022/01/29/acme-sh/" target="_blank" rel="noopener">https://wuuconix.link/2022/01/29/acme-sh/</a></p>
+<pre><code>acme.sh --issue --dns -d "*.realfakenews.cf" -d "realfakenews.cf" --yes-I-know-dns-manual-mode-enough-go-ahead-please
+acme.sh --renew --dns -d "*.realfakenews.cf" -d "realfakenews.cf" --yes-I-know-dns-manual-mode-enough-go-ahead-please
+acme.sh --install-cert -d "*.realfakenews.cf" -d "realfakenews.cf" \
+--key-file       /home/rui/acmeNB/realfakenews.cf/key.pem  \
+--fullchain-file /home/rui/acmeNB/realfakenews.cf/cert.pem \
+--reloadcmd     "service nginx force-reload"</code></pre>
             </div>
             <hr/>
 
@@ -1263,7 +1269,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">48.7k</span>&nbsp;字
+                class="white-color">48.9k</span>&nbsp;字
             
             
             
