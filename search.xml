@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>好玩的软件和工具收集</title>
+      <link href="/posts/sofware-tools/"/>
+      <url>/posts/sofware-tools/</url>
+      
+        <content type="html"><![CDATA[<h1 id="效率类"><a href="#效率类" class="headerlink" title="效率类"></a>效率类</h1><h2 id="utools"><a href="#utools" class="headerlink" title="utools"></a>utools</h2><p>感觉和alferd很像，似乎功能更多一些。</p><div id="mmedia-YNmqbYCv"></div><script src="https://cdn.jsdelivr.net/npm/dplayer/dist/DPlayer.min.js"></script>      <script>        var dp_YNmqbYCv = new DPlayer({            container: document.getElementById('mmedia-YNmqbYCv'),            autoplay: false,            theme: '#b7daff',            loop: false,            lang: navigator.language,            screenshot: false,            hotkey: true,            preload: 'auto',            logo: '',            volume: 0.7,            mutex: true,            video: { url: 'https://res.u-tools.cn/website/utools-H264.mp4', pic: '', thumbnails: '', type: 'auto'},                                    contextmenu: [{text: 'hexo-tag-mmedia', link: 'https://github.com/MonoLogueChi/hexo-tag-mmedia'}],            highlight: [],            undefined        });        dp_YNmqbYCv.on("fullscreen", function () { if (/Android|webOS|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) { screen.orientation.lock("landscape"); }});              </script>        ]]></content>
+      
+      
+      <categories>
+          
+          <category> 不学习 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>ffmpeg的常用功能</title>
       <link href="/posts/1a63d4c3/"/>
       <url>/posts/1a63d4c3/</url>
