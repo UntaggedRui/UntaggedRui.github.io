@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://blog.hifool.cn/posts/my-own-cinema/</loc>
+    <lastmod>2022-05-02</lastmod>
+  </url>
+  <url>
+    <loc>https://blog.hifool.cn/posts/1a63d4c3/</loc>
+    <lastmod>2022-04-30</lastmod>
+  </url>
+  <url>
     <loc>https://blog.hifool.cn/posts/sofware-tools/</loc>
     <lastmod>2022-04-30</lastmod>
   </url>
@@ -11,14 +19,6 @@
   <url>
     <loc>https://blog.hifool.cn/posts/d203a3f6/</loc>
     <lastmod>2022-04-27</lastmod>
-  </url>
-  <url>
-    <loc>https://blog.hifool.cn/posts/my-own-cinema/</loc>
-    <lastmod>2022-04-26</lastmod>
-  </url>
-  <url>
-    <loc>https://blog.hifool.cn/posts/1a63d4c3/</loc>
-    <lastmod>2022-03-27</lastmod>
   </url>
   <url>
     <loc>https://blog.hifool.cn/posts/DELL-reinstall-system/</loc>

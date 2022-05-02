@@ -584,14 +584,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-03-27
+                    2022-04-30
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    146
+                    233
                 </div>
                 
 
@@ -613,7 +613,7 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>cuda版安装<a href="https://blog.csdn.net/TracelessLe/article/details/108205992" target="_blank" rel="noopener">https://blog.csdn.net/TracelessLe/article/details/108205992</a></p>
+                <p>cuda版安装<a href="https://blog.csdn.net/TracelessLe/article/details/108205992" target="_blank" rel="noopener">https://blog.csdn.net/TracelessLe/article/details/108205992</a></p>
 <h1 id="视频格式转换"><a href="#视频格式转换" class="headerlink" title="视频格式转换"></a>视频格式转换</h1><ol>
 <li><p>mov转mp4</p>
 <pre class=" language-bash"><code class="language-bash">ffmpeg -i <span class="token punctuation">{</span>in-video<span class="token punctuation">}</span>.mov -vcodec h264 -acodec aac <span class="token punctuation">{</span>out-video<span class="token punctuation">}</span>.mp4</code></pre>
@@ -638,6 +638,13 @@
 </blockquote>
 </li>
 </ol>
+<h1 id="裁剪视频"><a href="#裁剪视频" class="headerlink" title="裁剪视频"></a>裁剪视频</h1><pre class=" language-bash"><code class="language-bash">ffmpeg -ss 00:00:00 -t 00:00:30 -i test.mp4 -vcodec copy -acodec copy output.mp4
+* -ss 指定从什么时间开始
+* -t 指定需要截取多长时间
+* -i 指定输入文件</code></pre>
+<p>配合编码一起使用，裁剪出来后直接进行编码</p>
+<pre class=" language-bash"><code class="language-bash">ffmpeg -ss 00:00:00 -t 00:00:30 -i test.mp4 -vcodec h264 -acodec aac output.mp4
+</code></pre>
 
             </div>
             <hr/>
@@ -1012,11 +1019,7 @@
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            效率类utools感觉和alferd很像，似乎功能更多一些。
-
-      
-        var dp_YNmqbYCv = new DPlayer({
-            container: document.getElemen
+                            记录一些自己认为比较好用的软件
                         
                     </div>
                     <div class="publish-info">
@@ -1230,7 +1233,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">49k</span>&nbsp;字
+                class="white-color">49.2k</span>&nbsp;字
             
             
             
