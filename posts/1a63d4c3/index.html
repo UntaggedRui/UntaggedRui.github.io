@@ -584,14 +584,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-04-30
+                    2022-05-31
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    233
+                    264
                 </div>
                 
 
@@ -641,7 +641,9 @@
 <h1 id="裁剪视频"><a href="#裁剪视频" class="headerlink" title="裁剪视频"></a>裁剪视频</h1><pre class=" language-bash"><code class="language-bash">ffmpeg -ss 00:00:00 -t 00:00:30 -i test.mp4 -vcodec copy -acodec copy output.mp4
 * -ss 指定从什么时间开始
 * -t 指定需要截取多长时间
-* -i 指定输入文件</code></pre>
+* -i 指定输入文件
+ffmpeg -i input.wmv -ss 30 -c copy -to 40 output.wmv
+也可以用 -ss 和 -to 选项， 从第 30 秒截取到第 40 秒</code></pre>
 <p>配合编码一起使用，裁剪出来后直接进行编码</p>
 <pre class=" language-bash"><code class="language-bash">ffmpeg -ss 00:00:00 -t 00:00:30 -i test.mp4 -vcodec h264 -acodec aac output.mp4
 </code></pre>
@@ -1233,7 +1235,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">49.4k</span>&nbsp;字
+                class="white-color">49.7k</span>&nbsp;字
             
             
             

@@ -1,3 +1,4 @@
+https://blog.hifool.cn/posts/systemted/
 https://blog.hifool.cn/posts/sofware-tools/
 https://blog.hifool.cn/posts/1a63d4c3/
 https://blog.hifool.cn/posts/DELL-reinstall-system/
@@ -11,9 +12,9 @@ https://blog.hifool.cn/posts/e1ceeb7b/
 https://blog.hifool.cn/posts/f42b65b0/
 https://blog.hifool.cn/posts/1ed1e3fb/
 https://blog.hifool.cn/posts/a82212ee/
-https://blog.hifool.cn/posts/2c8f39c7/
+https://blog.hifool.cn/posts/nfs/
 https://blog.hifool.cn/posts/54437c4d/
-https://blog.hifool.cn/posts/d203a3f6/
+https://blog.hifool.cn/posts/acmesh/
 https://blog.hifool.cn/posts/a3002b91/
 https://blog.hifool.cn/posts/45b20c9c/
 https://blog.hifool.cn/posts/3c75ae5d/

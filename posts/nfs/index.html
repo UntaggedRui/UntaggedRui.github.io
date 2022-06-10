@@ -12,7 +12,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="[转载]读博的一些感想/经验/教训, 摸鱼记录">
+    <meta name="keywords" content="linux搭建nfs系统, 摸鱼记录">
     <meta name="description" content="整天不学习，只知道玩的我">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -36,7 +36,7 @@
 </script>
 
 
-    <title>[转载]读博的一些感想/经验/教训 | 摸鱼记录</title>
+    <title>linux搭建nfs系统 | 摸鱼记录</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -443,12 +443,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/18.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/6.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">[转载]读博的一些感想/经验/教训</h1>
+                    <h1 class="description center-align post-title">linux搭建nfs系统</h1>
                 </div>
             </div>
         </div>
@@ -577,28 +577,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-10-28
+                    2021-07-30
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-10-28
+                    2022-06-09
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    7k
+                    1.6k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    23 分
+                    6 分
                 </div>
                 
 
@@ -613,24 +613,189 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>原文 <a href="https://zhuanlan.zhihu.com/p/264999492" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/264999492</a></p>
-<p>六年了，我终于毕业了，也彻底结束了我的求学生涯。现在还未拿到学位证，但答辩已经圆满完成，相关手续也基本办完，目前在家投简历、找工作，在答辩前的一个月里，就计划着毕业后写下这几年读研究生的一些经历和感想，一方面希望能给年轻的师弟师妹们少许启发，另一方面也算是回望、总结一下这六年的人生经验，给自己一个交代。</p>
-<p>六年前我本科毕业，一个普通的211院校，当时成绩优秀，却对校门外的事情知之甚少，一心只想着趁自己年轻，到大城市、到更好的学校去读书，开拓眼界、体验不同的人生，在学业上更进一步。通过一个学长的推荐，我联系上了现在的导师，几次通话，他对我比较满意，我也觉得他为人和蔼可亲，又听学长说，中科院的招生指标少，每个老师的学生都不多，平摊下来，想必会在每个学生身上倾注更多的心血；这位老师项目还多，读研就是要找有经费的老师啊，因为跑野外、做实验、参加学术会议等都需要钱，同时，我对中科院系统内学生待遇较好这一点早有耳闻，因此就这样敲定了，以推免研究生的身份到北京读书。</p>
-<p>对于这一点，我当时没有丝毫的犹豫，办理成绩差不多的同学都在考研，我又没有别的特长或兴趣，还好成绩不错，那就保研吧，对本校虽有感情，但总觉得应该到外面去闯一闯，做出一番成就，到时再回到本科学校教书，岂不是春风得意、衣锦还乡，那个时候真是年轻啊。不善与人交际，尤其是不善与学院里的年轻老师交流，我对整个行业的发展、以后工作的定位根本一无所知，一心幻想着到北京拿个博士学位，就能轻松返校任教。</p>
-<p>对于我读研，家里是坚决支持的。我家住在一个三线城市，父亲在市立小学任职，母亲是个普通工人，当时已快退休，父母给我在市里买了房子，留作结婚时用，虽然由于种种原因一直未完工，但比起我的很多同学来说真的好太多了，我很感激他们。也正因为此，我读研没有太多顾虑，不用天天惦记着早点儿毕业了去找工作，要知道，读研尤其是读博，绝大多数学生都会承受很大的压力，除了少数家境优越的，父母已帮联系好工作，来读研就是来镀层金的以外，多数学生回家就要面对亲戚们、邻居们甚至父母的质疑和冷嘲热讽。以前小地方出了个大学生是很光彩的事，现在不同了，你读完书毕了业已经快三十岁了，很多同龄人早就娶妻生子、有了稳定工作、买车买房，毕了业后发现，现今的高学历并没有想象中那么吃香，要看个人能力，更惨的是，还要看你的专业。除了拔尖儿的几个学生能够走各种人才引进项目找到份人人称羡的工作外，更多的普通学生都处在一个高不成低不就的尴尬境地，闷在学门里二十多年，除了看文献、做实验、打理简单的校园人际关系外，我不知道自己还有什么出众的能力，所学专业显然也不是社会紧需的，相关行业一直在走下坡路，想转行吧，又没有那个勇气，终究是不舍得放弃这个来之不易的学位。</p>
-<p>再说回正题吧，研一入学时，可以说我的内心是激动和自豪的，感觉自己要出人头地了。第一年是集中教学阶段，课程很多，导师又经常出差不在学校，我过了一年自由自在的“放养”生活，以为跟在本科时一样，好好听课、认真完成作业、考试，就能收获荣誉。那一年导师基本上也没找我干什么，我就一直问师兄有什么我能做的，想要早点儿接触科研工作、早点儿发文章，但我又没什么想法，就干等着导师给选题、布置任务，这种清闲让我很焦虑；那段时间每次导师上完课，我都把他送到教学楼外他的车上，不会来事儿的我就想着能多跟导师接触接触，向他表明，我有时间有精力，同时也很上进、能吃苦，眼巴巴的期待着他能给我安排活儿干。就这样晃晃荡荡了一年，我选了很多课，每天白天上课、傍晚锻炼身体、晚上找个教室上自习，学校组织的一些活动，诸如合唱比赛等我也积极报名参加，一切都和本科时一样，第一学年我的最大目标就是拿到国家奖学金，最终所有条件都满足了，但研究生的国奖评选，成绩不太重要，文章才重要，我没有文章。回头再看，当时正是“十二五”末期，很多项目的钱都已经花光了，而“十三五”的项目还没开始，我导师花钱又十分谨慎，甚至抠门，看我没有主动列出研究计划、实验方案等，也就把我先搁着了。而作为一名研究生，应该学会自己发现问题、设计方案、解决问题，但当时的我面对陌生的科研工作，完全不知道从哪里入手，自身又缺少那种敢拼敢闯的劲头，一味的等待导师的指导，或者说安排，就这样耽搁了一年。</p>
-<p>很快研二了，通过与学院里的师兄师姐交流，我大概开了点儿窍，参照着导师主持的项目的申请书，自己也尝试着写了个研究计划，毕竟很快就要做研究生开题报告了。我发给导师看，他不置可否，一直说自己很忙，让我先别管这个开题报告，等他忙完了再讨论。那一学期的确很忙，导师要组织一个不小的会议，而我们这边显然人手不够，我和几个师兄师弟跑前跑后，虽然忙但也还算充实，毕竟终于接触到“学术圈”的生活了。通过那几个月与导师的接触交流，我对他的了解也更深了一些，很多东西真的没有看上去那么光鲜。他把自己的事看得比别人的事都重要，对他的同事——学院里的其他教授——尚且如此，更别说对待我们这些学生了，我的开题答辩整整比学院规定的截止日期晚了一个月。这也体现出他的另一个特点：拖延，任何事情，不论是他的还是学生的，几乎都要拖到最后一刻，没到截止日期，哪怕有时间也不做，似乎拖到最后就能省下不少精力，因为没时间再做进一步的修改或是完善了，大概这样他会觉得心安理得，毕竟自己“努力”工作到了最后一刻；这种性格也体现在每天的工作中，他总是吹嘘——不只向我们，也向其他愿意听他说话的同事或者合作者——自己工作多么辛苦，每天都晚上一点以后才睡，且只睡四五个小时，现在我知道了，他是典型的晚上不睡觉、白天不起床，晚上睡得晚并不是说工作到深夜，而是饭后到夜里10点左右这段时间，基本就在看手机，进行他所谓的“社交”、“联络”，或者更甚，就是在刷新闻、朋友圈。几次和他出差，从来都是晚上十点多了叫我们过去，说是讨论问题，其实基本是在帮他处理一些杂事，真正轮到讨论我们的实验或者论文的时候，都快12点了，所谓“讨论”，也只是改改题目和摘要、加加参考文献，对着我们的实验计划一通指点，嫌这贵嫌那贵，不停的逼问做这些实验能够发什么级别的文章，每次都这样草草了事，他在嘴上还不吃亏，说是为了我们的事又忙到深夜。是的，在他看来，这些工作都是我们的事，他为之花一点儿时间都是作出了莫大的奉献，我们发文章时，他说都是他的思想、他的贡献最大，因此逐渐不满足于当通讯作者，几次要当一作和通讯。</p>
-<p>又扯远了。我的研二生活总体还是在晃荡，从一开学就发给他采样计划、实验方案，硬生生拖了一年都没同意，或者说根本就没看。第二学期我进行了硕转博答辩，还跟他，一方面是早就想读博士，感觉读书是自己唯一的特长，硕转博总共五年，相当于还能提前一年毕业；另一方面是的确没任何成果，当时深感自己都没法正常硕士毕业，当然咯，那时还没把导师看得这么透彻。也是觉得自己年轻，且眼看科研工作马上步入正轨，想着给自己缓一缓，再用三四年时间做出一番成就。没想到导师也是这么个想法，我要是不转博，他可能还着急一些，毕竟我要样品没样品、要实验没实验、要文章没文章，想毕业一切都得抓紧；结果我转博了，一下多出三四年时间，导师不急了，我的采样计划也就一拖再拖，直到当年十月底才成行，相当于两年多过去了，我才刚拿到自己的实验样品。期间的几次寒暑假我也很少在家呆着，因为导师总想把我们拴在学校，我自己也想通过在时间上的大量投入来抵消效率的低下，但不肯动笔总是不行的，趁着假期我一直在自学编程和英语，想着这两样以后总要用到，先打好基础，现在看来，这都是当时给自己的懒惰找的借口，让自己忙起来以缓解科研工作上没有实质进展的焦虑。</p>
-<p>出野外前，我们是要从项目里借钱的，光借钱这件事，不知道跟导师商量了多少次，从那年三月一直说到十月，第一次见识了导师最大的癖好：喜欢拿捏学生。每次跟他谈这个事，他都能找出不同的理由，包括：先准备硕转博答辩、先替我去做个学术报告、先等我整理完项目申请书、夏天那边山洪泥石流多不安全等等，总之就是他一直在忙，没时间管我采样的事儿，后来还挑我的日程安排的毛病，根本不问我需要采什么样品、到哪里去采，就一直说我计划的采样时间太长，长期出差不在学校会影响他的工作（就是说我出差采样这段时间没法随叫随到、给他干活儿了）。最终成行是在十月底，刚去了一个星期，导师就天天发短信催问什么时候能返校，并且多次质疑我效率太低，浪费了课题组的经费，野外采样这种事儿，本来该导师带领，或者由他动用关系联系当地的老师或向导带着我们，但我导师似乎对出野外采样这件事有着天生的厌恶，大概是觉得自己身份尊贵不应做这些脏活儿累活儿吧。我之前从未去过采样区域，所有的计划都是基于文献和相关网站上提取的信息，完全是摸着石头过河，因此怎么可能保证在XX地点采集到XX样品呢？他口口声声说自己认识多少位专家，真请他帮忙联系时，他每次又支支吾吾岔开话题，不仅对我们这些学生这样，对其他很多老师也是这样。</p>
-<p>十一月初回到学校，又要经历另一场恶战：做实验，因为我们学校里没什么像样的检测分析设备，采回来的样品一般都是拿到或者寄到其他高校及生产单位完成相关实验，好处是可以选择不同的单位做实验，发挥它们各自的优势，坏处自然是费用较高。因此从列出实验方案到到寄出第一批样品又用了大约半年时间，期间多次讨论、协商，导师觉得基础实验不用做，可以直接引用研究区文献中的相关数据，高端的实验又太贵，要少做，同时要做一些别人没做过的实验，以显示创新性，可真等我列出一些比较新颖、国内较少见的实验时，他又不停的逼问做这么贵的实验等得到什么结果，能不能发好文章，说白了，就是想空手套白狼，不花钱、多办事。回头来看，那时的我也太实诚，或者说太死板了些，总担心没有得到他的点头同意就擅自进行实验，他会耍无赖不给报销测试费，因此一拖再拖，最后我忍无可忍不听他的废话了，他也没说什么，只是在报销测试费的时候再说一堆废话，并且明里暗里要求我给他熬几次夜干活儿。现在我明白了，导师是个很实际的人，他看重的是成果，测试费花多了就分多次报销，不一次给他太大的刺激，只要有了第一手数据，发表出漂亮的文章，他哪里还记得你花多少钱的事儿。</p>
-<p>关于采样和做实验，前前后后拖了这么久，每次和导师协商基本都以争吵结束，但有件事给了我安慰，一个在国外混的不错的师兄要回国完成一个生产单位的开放基金，我读过他的很多文章，很有想法并且自成体系，他的单位什么的都在国外，因此做这个小项目需要挂靠一个国内的教授，就找上了我的导师。导师多次跟我说让我在这个项目上协助师兄，并且可以从他那儿学习研究方法和思路，一定能多发好文章。现在我明白了，这叫画饼，只是随口一说好安抚我不要总是跟他嚷嚷着出野外采样，但我当真了，靠着这种精神上的安慰慢慢放松了，天天只看文献不动笔，有一搭没一搭的学习绘图软件，看似每天都在用功学习、为以后奠定基础，实质上效率不高，而且一直在“奠定基础”，完全没有更进一步的尝试。更惨的是，所谓的“协助”就是帮取样品、帮拷数据、帮整理并打印研究报告这些杂活儿，师兄在国外有工作，所以只能偶尔回中国一趟，导师日理万机，于是所有这些边边角角的活儿都落在了我头上，而我的名字甚至不会出现在结题报告的致谢名单里，在这个项目里我只是一个秘书。导师最爱说你去做XX事，这对你也是一种锻炼，能学到XXX，然而，我发现自己根本无法从这个小项目里学到太多，师兄做的东西主要基于生产单位提供的第一手资料，而获取这些资料是签了保密书的，我拿到了也无权使用，我当时跟导师申请做那么点儿实验都费劲，何况如此大量的系统的数据。认清现实后，就抓紧进行自己的实验工作了，一方面导师看拖了我这么久，渐渐的松了口，另一方面我也学会了先斩后奏，先把实验做了，报账的时候再跟导师说好话或者做保证：一定发一区等等。</p>
-<p>进入我读研的第四个年头，事情终于逐渐步入正轨，但我太贪婪了，根本没有理清自己的研究方向和思路，一张张接住导师画得饼，这也想做，能出好成果，那也想干，不会费太多精力。总之就是感觉自己能放开手脚了，哪一样也舍不得放弃，但我本身工作效率并不高，如此大范围的铺开进行实验工作，就导致真正写文章的时候发现，每个方向都只能浅浅的讨论一下，一是精力有限，二是样品数量、实验种类不足，反倒不如专攻于一两个研究方向，所谓把力量集中于一个点，同样的实验经费就能做的更细、更专精。我本身眼高手低，在已经有了大量实验数据的前提下，还总想接着做更多实验，获得更完善、全面的数据后再动笔，这实际上是一种逃避，总给自己找理由以逃避未知的写文章、发文章领域，一方面我深知文章对毕业、对以后工作的重要性，另一方面我就是没有勇气没有决心动笔，最后竟然是在导师的催促下，草草完成了篇专刊文章，至今都不好意思拿出手。</p>
-<p>在这第四个年头里，我萌生了出国交流一年的念头，原因有三：一、我向往国外的留学生活，既然家境条件无法支持我出国读书，那我就申请公派留学，去国外访问交流一年；二、导师逐渐开明，不十分反对我们作为联培博士生出国交流了；三、跟导师商量好了，出国一年我就延期一年，相当于多给自己一年时间来写文章，为自己的拖延症买单。之前总觉得自己文章不行，没有竞争力，后来想到与其这样干等着，不如做出点儿行动，拼一把。于是我开始了边搞科研边准备雅思考试的紧张生活，当时还没敢告诉导师我的出国想法，准备等到木已成舟时再跟他讨价还价，结果雅思没考过，又赶紧报了留基委的英语培训班，集中学习了将近二十天，总算拿到了通行证。当时已快放寒假，我赶忙回学校跟导师谈这件事，跟他说我虽然出国了但也要延期一年，相当于多给他干一年的活儿，而且能促进他和国外相关专家的交流布拉布拉，最终导师不仅同意了，还给我推荐了个外导，我就这样搭上了当年的公派留学申请末班车。</p>
-<p>申请手续之繁琐超乎了我的想象，需提交各式材料，还要找多位领导、教授签字，同时还要跟外导联系，请他发邀请信等，忙碌了一个寒假，终于在截止日期前提交了所有材料，然后就开始进行新的实验工作，争取在出国前完成计划的测试分析工作量，在国外就安心处理数据写文章。那一年真的很忙碌，不仅有学习工作上的事，也有家里生活上的事，我感到自己起步的太晚，于是更加绷紧神经快步向前。现今做毕业论文的很多数据都是那一年完成的，做实验的同时，文章也没有落下，连着发了两篇，虽然级别不是太高，至少达到了毕业要求，腰板也硬了。</p>
-<p>由于我去的是一个没啥名气的偏文科学校，所以在国外交流的一年没什么机会进行实验工作或是与同专业的同学交流，我的数据也够多了，因此就埋头写文章，我对自己的要求比较高，总认为之前发的几篇文章拿不出手，想要发两三篇有分量的。在国外的一年我的学习工作状态很好，不用听导师絮絮叨叨，也不用再为实验经费跟他争的面红耳赤，更不用给他熬夜干杂活儿，而且我越写越顺手，感到自己没那么差，亡羊补牢，要抓紧时间把失去的都补回来。我没有按照导师之前指点的研究方向来写，因为有几个关键问题我自己都解释不了，我选了一个相近的方向，自以为很新颖好出成果，之前也做了不少相关实验，比较有底气。此时我又犯了个错误，觉得自己积压了这么多的数据，一定要写一篇大文章，篇幅太长就拆成两篇，从不同的方面研究、讨论问题，然而，正如我之前说的，我做的实验太杂太散，研究区铺的太大，看似数据丰富，但能够相互佐证的很少，不成系统。总之，成文后自我感觉良好，试投了几个中意的期刊后，屡屡连编辑那关都过不了，着实给了我很大打击，本来计划的是在国外至少中两篇文章，回国后用小半年时间把这几篇文章汇总整理一下，作为学位论文并进行答辩。结果第一步就出了岔子，多位编辑和审稿人的意见都很一致，就是我的文章没有新意、思路不清、数据匮乏、结构混乱、内容空洞等等，我想到可能会被拒稿，但真的没预料到如此负面的评价，那段日子很难熬，一方面要应对导师的催促和质问，另一方面要缓解自己的焦虑和控制几近崩溃的神经，我可能是从小受的挫折太少，抗打击能力太弱，这一点挫折就几乎击溃了我。</p>
-<p>匆匆结束国外交流后回国，已接近除夕了，我放下投稿、毕业的这些烦恼，好好的在家里放松了一下，和爸妈一年没见，有很多喜悦想要分享。然而快乐的日子总是过的很快，我总是得正面面对这些挫折，正赶上新冠疫情不能返校，我就在家中准备学位论文，效率虽然不高，但行动起来总是让人安心。很多同学的学位论文写的很快，因为可以将已发表论文翻译成中文，拼拼凑凑就是一篇不错的学位论文，我发表的文章很散，甚至研究的东西都不太一样，很难拼凑，没发表的攒在手里的这几篇却又出师不利，屡屡被拒，我没有信心将它们改成学位论文，即便这么做了，工作量也不够。没办法，只能一边修改要发表的文章，一边从零开始写学位论文，还按照导师之前指点的研究方向来写，这种紧迫感使我非常焦虑，进一步降低了工作效率，好在实验数据比较丰富，能够自圆其说。5月份的答辩我没赶上，延期到了8月份，当时自然是松了一口气，毕竟又多出了三个月的准备时间，但实际上内心更加急躁，我已经读了六年研究生了，家人和朋友会在明里暗里让我感受到压力，6月份一篇文章被接收，我也没太多时间高兴。因为我无法腾出精力来找工作，投了几份简历大多不了了之，好的去不了，一般的不想去，高不成低不就。而且越是这种紧张焦虑的思想状态，我就越是效率低，越是效率低越是从早到晚坐在电脑前敲字，进而身心俱疲。我知道这种工作模式很不好，是个恶性循环，但我当时没有心力去做改变，只是尽可能保证自己作息规律，想着再坚持一下，就快到达终点了。</p>
-<p>临近答辩前的两周，精神紧绷到了极点，各种不良情绪纷至沓来，导师也开始一天好几遍的催促，那时学校还在封校状态，我和导师都是通过视频会议联系，他提出我的论文要大改、要加东西，我知道自己写的不好，论文中的很多部分都没经过深思熟虑和严谨论证，甚至还有不少错别字，我一面尽力和他协商，一面尽力完善，用了三四天时间又加了一章内容，并补充了些图片，大改了摘要、结论、创新点等部分，用了一天多的时间做好了PPT，然后也是反复的修改。我的导师喜欢在前期拖着、最后关头发力，这一习惯显然也影响到了我，甚至到答辩前15分钟了，我都还在往PPT里插图片。好在和师兄师姐们说的一样，答辩本身倒没有那么大的难度了，尤其我是视频答辩，坐在家中讲自己的研究成果，心理上总体是放松的，由于只有我一个学生答辩，时间稍长了些，前后共两个半小时，终于圆满完成。</p>
-<p>曾经看过很多文章谈及年轻人的迷茫和彷徨，我一度很庆幸自己没有这样的困扰，甚至有些自豪：我不平凡。我今年28岁半，博士毕业了，却突然有了这种不知所措的感觉，我在学校呆了二十多年，之前说起未来，我就只有一个目标：继续读下去，仿佛这样就能够出人头地，现在我毕业了，站在人生的十字路口，却不知该何去何从。我不是一个优秀的博士毕业生，不能通过各种人才引进计划到高校去教书，小城市里的工薪家庭，口碑不太好的导师，也让我没有什么人脉或关系能够进一些大企业工作，所学专业比较冷门，又在走下坡路，甚至考公务员都只能选报“不限专业”的岗位。我为自己读研前几年的过失和不成熟付出了代价，挣扎着毕业后发现，连份像样的offer都没有，告别校园，踏上慢慢求职路，人生迅速的翻到了下一页，快得我猝不及防。</p>
+                <h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><p>以下内容搬运于<a href="#jump1">搭建 NFS 网络文件共享服务</a></p>
+<h2 id="服务器端"><a href="#服务器端" class="headerlink" title="服务器端"></a>服务器端</h2><ol>
+<li><p>安装 nfs 与 rpc 相关软件包：</p>
+<pre class=" language-bash"><code class="language-bash">yum <span class="token function">install</span> nfs-utils rpcbind -y
+<span class="token comment" spellcheck="true"># for ubuntu</span>
+<span class="token comment" spellcheck="true"># apt install -y nfs-kernel-server</span></code></pre>
+</li>
+</ol>
+<ol start="2">
+<li><p>NFS默认的配置文件是 /etc/exports ,配置格式为：  </p>
+<pre><code> NFS共享目录绝对路径    NFS客户端地址（参数）</code></pre><p>常用参数：</p>
+<pre class=" language-bash"><code class="language-bash"> rw             read-write   读写
+ ro             read-only    只读
+ <span class="token function">sync</span>           请求或写入数据时，数据同步写入到NFS server的硬盘后才返回。数据安全，但性能降低了
+ async          优先将数据保存到内存，硬盘有空档时再写入硬盘，效率更高，但可能造成数据丢失。
+ root_squash    当NFS 客户端使用root 用户访问时，映射为NFS 服务端的匿名用户
+ no_root_squash 当NFS 客户端使用root 用户访问时，映射为NFS 服务端的root 用户
+ all_squash     不论NFS 客户端使用任何帐户，均映射为NFS 服务端的匿名用户</code></pre>
+</li>
+</ol>
+<ol start="3">
+<li><p>配置 /etc/exports：</p>
+<pre class=" language-bash"><code class="language-bash">/sharedir 192.168.239.0/24<span class="token punctuation">(</span>rw,sync,root_squash<span class="token punctuation">)</span></code></pre>
+</li>
+</ol>
+<ol start="4">
+<li><p>创建共享目录以及测试文件并添加权限：</p>
+<pre class=" language-bash"><code class="language-bash"> <span class="token function">mkdir</span> -p /sharedir
+ <span class="token function">touch</span> /sharedir/Welcom.file
+ <span class="token keyword">echo</span> <span class="token string">"Welcome to onlylink.top"</span> <span class="token operator">></span>/sharedir/Welcom.file
+ <span class="token function">chown</span> -R nfsnobody.nfsnobody /sharedir/
+ <span class="token comment" spellcheck="true"># 把NFS共享目录赋予 NFS默认用户nfsnobody用户和用户组权限，如不设置，会导致NFS客户端无法在挂载好的共享目录中写入数据</span></code></pre>
+</li>
+</ol>
+<ol start="5">
+<li><p>启动 rpc服务并设置成开机自启动,启动 nfs服务并设置成开机自启动.</p>
+<p>以下命令仅在centos7下试用，ubuntu下请自行搜索</p>
+<pre class=" language-bash"><code class="language-bash">systemctl <span class="token function">enable</span> rpcbind
+systemctl start rpcbind
+systemctl <span class="token function">enable</span> nfs
+systemctl start nfs</code></pre>
+</li>
+</ol>
+<h2 id="客户端"><a href="#客户端" class="headerlink" title="客户端"></a>客户端</h2><ol>
+<li><p>安装nfs 与 rpc 相关软件包,启动 rpc服务并设置成开机自启动（不需要启动 NFS服务)。</p>
+<pre class=" language-bash"><code class="language-bash">yum <span class="token function">install</span> nfs-utils rpcbind -y
+<span class="token comment" spellcheck="true"># for ubuntu</span>
+<span class="token comment" spellcheck="true"># apt install -y nfs-kernel-server</span>
+systemctl <span class="token function">enable</span> rpcbind
+systemctl start rpcbind</code></pre>
+</li>
+</ol>
+<ol start="2">
+<li><p>查询远程NFS 服务端中可用的共享资源：</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token punctuation">[</span>root@test ~<span class="token punctuation">]</span><span class="token comment" spellcheck="true"># showmount -e 192.168.239.131</span>
+Export list <span class="token keyword">for</span> 192.168.239.131:
+/sharedir 192.168.239.0/24</code></pre>
+<p>如果报如下的错误多数是防火墙导致：<br>   <code>lnt_create: RPC: Port mapper failure - Unable to receive: errno 113 (No route to host)</code><br>到服务端清空 iptables默认规则 或关闭 iptables：<br>   <code>iptables -F</code>    或   <code>service iptables stop</code></p>
+</li>
+<li><p>创建挂载目录，并挂载 NFS共享目录 /sharedir</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token function">mkdir</span> -p /sharedir
+<span class="token function">mount</span> -t nfs 192.168.239.131:/sharedir/ /sharedir/</code></pre>
+</li>
+</ol>
+<ol start="4">
+<li><p>如果想要开机自动将共享目录挂载到本地,往/etc/fstab 中追加：</p>
+<pre class=" language-bash"><code class="language-bash">192.168.239.131:/sharedir/ /sharedir/ nfs defaults 0 0</code></pre>
+</li>
+</ol>
+<ol start="5">
+<li><p>验证是否有 rw 权限：</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token punctuation">[</span>root@test ~<span class="token punctuation">]</span><span class="token comment" spellcheck="true"># cat /sharedir/Welcom.file </span>
+Welcome to onlylink.top                
+<span class="token punctuation">[</span>root@test ~<span class="token punctuation">]</span><span class="token comment" spellcheck="true"># mkdir -p /sharedir/hello</span>
+<span class="token punctuation">[</span>root@test ~<span class="token punctuation">]</span><span class="token comment" spellcheck="true"># echo "Hello" >> /sharedir/Welcom.file </span>
+<span class="token punctuation">[</span>root@test ~<span class="token punctuation">]</span><span class="token comment" spellcheck="true"># cat /share/Welcom.file</span>
+Welcome to onlylink.top
+Hello</code></pre>
+</li>
+</ol>
+<h1 id="操作权限问题"><a href="#操作权限问题" class="headerlink" title="操作权限问题"></a>操作权限问题</h1><p>普通用户在操作nfs挂载的文件夹时会有权限问题。如果想在多台机器上都挂载nfs文件夹并且可以让普通用户有操作权限时，可以参考如下操作。</p>
+<h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><p>以下内容摘抄于<a href="https://blog.csdn.net/weixin_43885834/article/details/105308021" target="_blank" rel="noopener">https://blog.csdn.net/weixin_43885834/article/details/105308021</a></p>
+<blockquote>
+<p>nfs会把客户端访问共享目录的用户做一个匹配映射，匹配的原则就是根据uid和gid，加入访问用户uid是1000，而恰好服务器端也有uid1000的用户，则会被映射成服务器端uid1000的用户权限，上文中我服务器端共享目录的权限是775 主用户是anytxnv2 用户uid和gid是502，所以我把所有客户端服务器需要访问共享目录的用户gid改成502后，再访问共享目录，会匹配到服务器端gid为502的用户组，既anytxnv2组，而此组对于共享目录有读写执行权限</p>
+</blockquote>
+<h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><p>将不同机器上的用户都修改为统一UID（如果你的uid已经统一了就不用做如下操作）</p>
+<p>修改用户uid的方法搬运于<a href="https://blog.csdn.net/train006l/article/details/79007483" target="_blank" rel="noopener">https://blog.csdn.net/train006l/article/details/79007483</a></p>
+<blockquote>
+<p>我在部署nfs的时候，共享了一个文件夹。为了让远程nfs客户端挂载这个文件夹的时候都有可读写权限，我需要把服务器上的用户uid、gid设置成nfs服务端文件夹一样的权限。不过因为之前新建的用户uid、gid都是系统自动生成的，几台服务器之前某个用户的uid、gid可能都不一样，所以现在需要把这个uid、gid都设置成统一某个值。</p>
+</blockquote>
+<p>修改用户uid和组gid的命令分别是usermod和groupmod，思路很简单。先使用usermod修改用户的uid，然后使用groupmod修改组的gid，最后使用chown和chgrp命令修改原来用户文件和目录的属主属组。</p>
+<p>例如测试用户foo和测试组foo。</p>
+<pre class=" language-bash"><code class="language-bash">foo old UID: 1005
+foo new UID: 2005
+foo old GID: 2000
+foo new GID: 3000</code></pre>
+<p>*<em>可以使用最后的脚本快速处理 *</em></p>
+<p>命令：</p>
+<ol>
+<li><p>修改foo用户的uid</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token function">usermod</span> -u 2005 foo</code></pre>
+</li>
+</ol>
+<ol start="2">
+<li><p>修改foo组的gid</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token function">groupmod</span> -g 3000 foo</code></pre>
+</li>
+</ol>
+<ol start="3">
+<li><p>foo用户的家目录下面的文件属主和属组会在1、2命令执行后自动修改成新的uid、gid对应的属主属组，但是其他文件目录需要手动修改。手动修改的命令也比较简单。</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token function">find</span> / -user 1005 -exec <span class="token function">chown</span> -h foo <span class="token punctuation">{</span><span class="token punctuation">}</span> \<span class="token punctuation">;</span>
+<span class="token function">find</span> / -group 2000 -exec <span class="token function">chgrp</span> -h foo <span class="token punctuation">{</span><span class="token punctuation">}</span> \<span class="token punctuation">;</span></code></pre>
+</li>
+</ol>
+<ol start="4">
+<li><p>这样用户和组的uid、gid就修改好了。可以用id命令看下是否修改的如我们所愿。</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token function">ls</span> -l /home/foo/
+<span class="token function">id</span> -u foo
+<span class="token function">id</span> -g foo
+<span class="token function">grep</span> foo /etc/passwd
+<span class="token function">grep</span> foo /etc/group</code></pre>
+</li>
+</ol>
+<ol start="5">
+<li><p>为了加快find那一步骤的速度，我整理了脚本如下。</p>
+<p>需要修改脚本前面的大写字母变量的值为你对应的情况。MAX_DEPTH表示一次find的文件夹最大深度。</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token shebang important">#!/bin/bash</span>
+<span class="token keyword">set</span> -ex
+OLD_UID<span class="token operator">=</span>1004
+NEW_UID<span class="token operator">=</span>6666
+OLD_GID<span class="token operator">=</span>1004
+NEW_GID<span class="token operator">=</span>6666
+USER_NAME<span class="token operator">=</span>rui
+GROUP_NAME<span class="token operator">=</span>rui
+HOME_PATH<span class="token operator">=</span>/home/rui
+MAX_DEPTH<span class="token operator">=</span>3
+NOW_DEPTH<span class="token operator">=</span>0
+array_name<span class="token operator">=</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+changID<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token function">usermod</span> -u <span class="token variable">${NEW_UID}</span> <span class="token variable">${USER_NAME}</span>
+    <span class="token function">groupmod</span> -g <span class="token variable">${NEW_GID}</span> <span class="token variable">${GROUP_NAME}</span>
+<span class="token punctuation">}</span>
+searchfile<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+     <span class="token keyword">for</span> <span class="token function">file</span> <span class="token keyword">in</span> <span class="token variable"><span class="token variable">$(</span><span class="token function">ls</span> -a $1<span class="token variable">)</span></span>       <span class="token comment" spellcheck="true">#注意此处这是两个反引号，表示运行系统命令</span>
+        <span class="token keyword">do</span>
+            <span class="token keyword">if</span> <span class="token punctuation">[</span> -d <span class="token variable">$1</span><span class="token string">"/"</span><span class="token variable">$file</span> <span class="token punctuation">]</span>  <span class="token comment" spellcheck="true">#注意此处之间一定要加上空格，否则会报错</span>
+            <span class="token keyword">then</span>
+                NOW_DEPTH<span class="token operator">=</span><span class="token variable"><span class="token variable">$((</span>NOW_DEPTH<span class="token operator">+</span><span class="token number">1</span><span class="token variable">))</span></span>
+                <span class="token keyword">if</span> <span class="token punctuation">[</span> <span class="token variable">${NOW_DEPTH}</span> -gt <span class="token variable">${MAX_DEPTH}</span> <span class="token punctuation">]</span>
+                <span class="token keyword">then</span>
+                    array_name<span class="token punctuation">[</span><span class="token variable">${#array_name[@]}</span><span class="token punctuation">]</span><span class="token operator">=</span><span class="token variable">$1</span><span class="token string">"/"</span><span class="token variable">$file</span>
+                <span class="token keyword">else</span>
+                    searchfile <span class="token variable">$1</span><span class="token string">"/"</span><span class="token variable">$file</span>
+                <span class="token keyword">fi</span>
+            <span class="token keyword">else</span>
+                <span class="token comment" spellcheck="true"># echo $1"/"$file   #在此处处理文件即可</span>
+
+                array_name<span class="token punctuation">[</span><span class="token variable">${#array_name[@]}</span><span class="token punctuation">]</span><span class="token operator">=</span><span class="token variable">$1</span><span class="token string">"/"</span><span class="token variable">$file</span>
+            <span class="token keyword">fi</span>
+        <span class="token keyword">done</span>
+<span class="token punctuation">}</span>
+changefile<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword">for</span> element <span class="token keyword">in</span> <span class="token string">"<span class="token variable">${array_name[@]}</span>"</span>
+    <span class="token comment" spellcheck="true">#也可以写成for element in ${array[*]}</span>
+    <span class="token keyword">do</span>
+        <span class="token keyword">echo</span> <span class="token string">"changing <span class="token variable">$element</span>"</span>
+        <span class="token function">find</span> <span class="token variable">$element</span> -user <span class="token variable">${OLD_UID}</span> -exec <span class="token function">chown</span> -h <span class="token variable">${USER_NAME}</span> <span class="token punctuation">{</span><span class="token punctuation">}</span> \<span class="token punctuation">;</span> <span class="token operator">&amp;</span>
+        <span class="token function">find</span> <span class="token variable">$element</span> -group <span class="token variable">${OLD_GID}</span> -exec <span class="token function">chgrp</span> -h <span class="token variable">${GROUP_NAME}</span> <span class="token punctuation">{</span><span class="token punctuation">}</span> \<span class="token punctuation">;</span> <span class="token operator">&amp;</span>
+    <span class="token keyword">done</span>
+<span class="token punctuation">}</span>
+<span class="token comment" spellcheck="true">#changID;</span>
+searchfile <span class="token variable">${HOME_PATH}</span><span class="token punctuation">;</span>
+changefile<span class="token punctuation">;</span></code></pre>
+</li>
+</ol>
+<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ol>
+<li><span id="jump1">搭建 NFS 网络文件共享服务 <a href="https://www.jianshu.com/p/380afd870d50" target="_blank" rel="noopener">https://www.jianshu.com/p/380afd870d50</a></span></li>
+<li>nfs共享目录权限问题解决方案<a href="https://blog.csdn.net/weixin_43885834/article/details/105308021" target="_blank" rel="noopener">https://blog.csdn.net/weixin_43885834/article/details/105308021</a></li>
+</ol>
 
             </div>
             <hr/>
@@ -686,7 +851,7 @@
         repo: 'zhangrui.github.io',
         owner: 'UntaggedRui',
         admin: "UntaggedRui",
-        id: '2020-10-28T20-39-42',
+        id: '2021-07-30T12-36-14',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -993,27 +1158,32 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/posts/1995ca3f/">
+                <a href="/posts/a82212ee/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="zsh配置教程">
+                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="[得到]脱不花·怎样成为高效学习的人">
                         
-                        <span class="card-title">zsh配置教程</span>
+                        <span class="card-title">[得到]脱不花·怎样成为高效学习的人</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            安装sudo yum install -y zsh  # 安装
-chsh -s /bin/zsh  # 将zsh设置为默认的shell环境
-执行上述后需要输入自己的账户密码，然后重新启动一个会话窗口以便使用zsh。
-初次进入zsh环境时需要
+                            欢迎词：让我们一起学会学习
+
+主要分为六讲：
+怎么找到更好的学习资源？
+怎么制定更有价值的学习目标？
+怎么比别人学得更快更好？
+怎么能学以致用，把学到的东西融会贯通，还能用到自己的工作和生活里？
+怎么让学习的过程变得更愉快？
+不同阶段的学习
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-11-16
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-07-31
                         </span>
                         <span class="publish-author">
                             
@@ -1033,44 +1203,34 @@ chsh -s /bin/zsh  # 将zsh设置为默认的shell环境
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/posts/hot-news/">
+                <a href="/posts/54437c4d/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="当下热点记录">
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="ipfs图床">
                         
-                        <span class="card-title">当下热点记录</span>
+                        <span class="card-title">ipfs图床</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            每个月的热点，简单小结。
+                            公共的网关帖子里给的
+
+cf-ipfs.com183.252.17.149:82ipfs.genenetwork.orgipfs.fleek.coipfs.azurewebsites.netipfs.kaleido.artipfs.glob
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-10-26
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-07-26
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E6%91%B8%E9%B1%BC%E8%AE%B0%E5%BD%95/" class="post-category">
-                                    摸鱼记录
-                                </a>
-                            
+                            <i class="fas fa-user fa-fw"></i>
+                            Zhang Rui
                             
                         </span>
                     </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/%E4%B8%8D%E5%AD%A6%E4%B9%A0/">
-                        <span class="chip bg-color">不学习</span>
-                    </a>
-                    
                 </div>
                 
             </div>
