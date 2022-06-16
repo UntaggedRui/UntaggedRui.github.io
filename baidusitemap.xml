@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://blog.hifool.cn/posts/a3002b91/</loc>
+    <lastmod>2022-06-16</lastmod>
+  </url>
+  <url>
     <loc>https://blog.hifool.cn/posts/hot-news/</loc>
-    <lastmod>2022-06-10</lastmod>
+    <lastmod>2022-06-13</lastmod>
   </url>
   <url>
     <loc>https://blog.hifool.cn/posts/systemted/</loc>
@@ -23,10 +27,6 @@
   <url>
     <loc>https://blog.hifool.cn/posts/1a63d4c3/</loc>
     <lastmod>2022-05-31</lastmod>
-  </url>
-  <url>
-    <loc>https://blog.hifool.cn/posts/a3002b91/</loc>
-    <lastmod>2022-05-02</lastmod>
   </url>
   <url>
     <loc>https://blog.hifool.cn/posts/my-own-cinema/</loc>
