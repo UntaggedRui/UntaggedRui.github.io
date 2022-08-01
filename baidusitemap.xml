@@ -1,12 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://blog.hifool.cn/posts/my-own-cinema/</loc>
+    <lastmod>2022-08-01</lastmod>
+  </url>
+  <url>
     <loc>https://blog.hifool.cn/posts/hot-news/</loc>
-    <lastmod>2022-07-26</lastmod>
+    <lastmod>2022-07-28</lastmod>
   </url>
   <url>
     <loc>https://blog.hifool.cn/posts/mac/</loc>
-    <lastmod>2022-06-19</lastmod>
+    <lastmod>2022-07-28</lastmod>
   </url>
   <url>
     <loc>https://blog.hifool.cn/posts/systemted/</loc>
@@ -27,10 +31,6 @@
   <url>
     <loc>https://blog.hifool.cn/posts/1a63d4c3/</loc>
     <lastmod>2022-05-31</lastmod>
-  </url>
-  <url>
-    <loc>https://blog.hifool.cn/posts/my-own-cinema/</loc>
-    <lastmod>2022-05-02</lastmod>
   </url>
   <url>
     <loc>https://blog.hifool.cn/posts/sofware-tools/</loc>
