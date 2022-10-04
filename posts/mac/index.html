@@ -584,14 +584,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-09-16
+                    2022-09-20
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    813
+                    839
                 </div>
                 
 
@@ -713,6 +713,16 @@ $ sudo chmod 644 /Library/LaunchDaemons/limit.maxfiles.plist</code></pre><p>载�
 <ol start="11">
 <li><p>挂载nfs</p>
 <pre class=" language-bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">mount</span> -o rw -o nolocks -t nfs 192.168.2.13:/nfs  /Users/zhangrui/nfs</code></pre>
+</li>
+</ol>
+<ol start="12">
+<li><p>开启任何来源</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token function">sudo</span> spctl --master-disable</code></pre>
+</li>
+</ol>
+<ol start="13">
+<li><p>删除签名。</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token function">sudo</span> xattr -r -d com.apple.quarantine /Applications/Clash\ for\ Windows.app</code></pre>
 </li>
 </ol>
 <ol start="9">
