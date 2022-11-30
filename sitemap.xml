@@ -2,18 +2,36 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://blog.hifool.cn/posts/e1ceeb7b/</loc>
+    <loc>https://blog.hifool.cn/posts/hot-news/</loc>
     
-    <lastmod>2022-10-04</lastmod>
+    <lastmod>2022-11-30</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://blog.hifool.cn/posts/hot-news/</loc>
+    <loc>https://blog.hifool.cn/posts/my-own-cinema/</loc>
     
-    <lastmod>2022-09-29</lastmod>
+    <lastmod>2022-10-23</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.hifool.cn/posts/little-knowledge-points-record/</loc>
+    
+    <lastmod>2022-10-05</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.hifool.cn/posts/e1ceeb7b/</loc>
+    
+    <lastmod>2022-10-04</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -32,15 +50,6 @@
     <loc>https://blog.hifool.cn/posts/sshconfig/</loc>
     
     <lastmod>2022-08-03</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.hifool.cn/posts/my-own-cinema/</loc>
-    
-    <lastmod>2022-08-01</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -66,15 +75,6 @@
   
   <url>
     <loc>https://blog.hifool.cn/posts/nfs/</loc>
-    
-    <lastmod>2022-06-09</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.hifool.cn/posts/little-knowledge-points-record/</loc>
     
     <lastmod>2022-06-09</lastmod>
     
@@ -445,7 +445,7 @@
 
   <url>
     <loc>https://blog.hifool.cn/</loc>
-    <lastmod>2022-10-04</lastmod>
+    <lastmod>2022-11-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -453,70 +453,70 @@
   
   <url>
     <loc>https://blog.hifool.cn/tags/%E8%A7%86%E9%A2%91/</loc>
-    <lastmod>2022-10-04</lastmod>
+    <lastmod>2022-11-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.hifool.cn/tags/MAC/</loc>
-    <lastmod>2022-10-04</lastmod>
+    <lastmod>2022-11-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.hifool.cn/tags/%E4%B8%8D%E5%AD%A6%E4%B9%A0/</loc>
-    <lastmod>2022-10-04</lastmod>
+    <lastmod>2022-11-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.hifool.cn/tags/linux/</loc>
-    <lastmod>2022-10-04</lastmod>
+    <lastmod>2022-11-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.hifool.cn/tags/proxy/</loc>
-    <lastmod>2022-10-04</lastmod>
+    <lastmod>2022-11-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.hifool.cn/tags/hexo/</loc>
-    <lastmod>2022-10-04</lastmod>
+    <lastmod>2022-11-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.hifool.cn/tags/OneDrive/</loc>
-    <lastmod>2022-10-04</lastmod>
+    <lastmod>2022-11-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.hifool.cn/tags/RDMA/</loc>
-    <lastmod>2022-10-04</lastmod>
+    <lastmod>2022-11-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.hifool.cn/tags/%E8%BD%AF%E8%B7%AF%E7%94%B1/</loc>
-    <lastmod>2022-10-04</lastmod>
+    <lastmod>2022-11-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.hifool.cn/tags/%E5%A4%87%E4%BB%BD%E5%B7%A5%E4%BD%9C/</loc>
-    <lastmod>2022-10-04</lastmod>
+    <lastmod>2022-11-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
@@ -525,49 +525,49 @@
   
   <url>
     <loc>https://blog.hifool.cn/categories/%E6%91%B8%E9%B1%BC%E8%AE%B0%E5%BD%95/</loc>
-    <lastmod>2022-10-04</lastmod>
+    <lastmod>2022-11-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.hifool.cn/categories/%E6%91%B8%E9%B1%BC%E5%BF%83%E5%BE%97/</loc>
-    <lastmod>2022-10-04</lastmod>
+    <lastmod>2022-11-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.hifool.cn/categories/linux%E5%BC%80%E5%8F%91/</loc>
-    <lastmod>2022-10-04</lastmod>
+    <lastmod>2022-11-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.hifool.cn/categories/%E6%91%B8%E9%B1%BC%E6%88%90%E6%9E%9C/</loc>
-    <lastmod>2022-10-04</lastmod>
+    <lastmod>2022-11-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.hifool.cn/categories/%E8%BD%AC%E8%BD%BD%E6%96%87%E7%AB%A0/</loc>
-    <lastmod>2022-10-04</lastmod>
+    <lastmod>2022-11-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.hifool.cn/categories/%E5%AD%A6%E4%B9%A0%E7%9F%A5%E8%AF%86/</loc>
-    <lastmod>2022-10-04</lastmod>
+    <lastmod>2022-11-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.hifool.cn/categories/%E4%B8%8D%E5%AD%A6%E4%B9%A0/</loc>
-    <lastmod>2022-10-04</lastmod>
+    <lastmod>2022-11-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
