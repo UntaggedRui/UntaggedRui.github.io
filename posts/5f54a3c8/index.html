@@ -626,7 +626,7 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="错误解决"><a href="#错误解决" class="headerlink" title="错误解决"></a>错误解决</h1><p>在写某个程序时，出现错误，想要使用gdb进行调试，但是在使用<code>b</code>命令设置断点后出现如下错误，并且运行后不能在断点处暂停。</p>
+                <h1 id="错误解决"><a href="#错误解决" class="headerlink" title="错误解决"></a>错误解决</h1><p>在写某个程序时，出现错误，想要使用gdb进行调试，但是在使用<code>b</code>命令设置断点后出现如下错误，并且运行后不能在断点处暂停。</p>
 <pre class=" language-shell"><code class="language-shell">No symbol table is loaded.  Use the "file" command.
 Make breakpoint pending on future shared library load? (y or [n])</code></pre>
 <p>经过搜索资料发现是在编译的时候没有加上<code>-g</code>选项，导致无法进行断点调试，因此在<code>Makefile</code>文件中的<code>CPPFLAGS</code>（如果是C语言就是<code>CFLAGS</code>)中加上<code>-g</code>    选项后，就能够正常进行断点调试了。</p>
@@ -1258,7 +1258,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">51.5k</span>&nbsp;字
+                class="white-color">52k</span>&nbsp;字
             
             
             

@@ -584,14 +584,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-03-25
+                    2022-12-01
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.2k
+                    1.3k
                 </div>
                 
 
@@ -613,7 +613,7 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="下载镜像U盘启动盘"><a href="#下载镜像U盘启动盘" class="headerlink" title="下载镜像U盘启动盘"></a>下载镜像U盘启动盘</h1><p>ubuntu：<a href="https://mirrors.bfsu.edu.cn/ubuntu-releases/20.04.4/" target="_blank" rel="noopener">https://mirrors.bfsu.edu.cn/ubuntu-releases/20.04.4/</a></p>
+                <h1 id="下载镜像U盘启动盘"><a href="#下载镜像U盘启动盘" class="headerlink" title="下载镜像U盘启动盘"></a>下载镜像U盘启动盘</h1><p>ubuntu：<a href="https://mirrors.bfsu.edu.cn/ubuntu-releases/20.04.4/" target="_blank" rel="noopener">https://mirrors.bfsu.edu.cn/ubuntu-releases/20.04.4/</a></p>
 <p>centos：<a href="https://mirrors.bfsu.edu.cn/centos/7.9.2009/isos/x86_64/" target="_blank" rel="noopener">https://mirrors.bfsu.edu.cn/centos/7.9.2009/isos/x86_64/</a></p>
 <p>然后使用ultraiso制作U盘启动盘。</p>
 <h1 id="安装系统"><a href="#安装系统" class="headerlink" title="安装系统"></a>安装系统</h1><ol>
@@ -658,7 +658,7 @@
 </li>
 </ol>
 <h1 id="安装以后的系统配置"><a href="#安装以后的系统配置" class="headerlink" title="安装以后的系统配置"></a>安装以后的系统配置</h1><p>使用上面安装系统时添加的用户登入进行一系列的配置。</p>
-<h2 id="网络配置"><a href="#网络配置" class="headerlink" title="网络配置"></a>网络配置</h2><p>这里仅写ubuntu20中的网络配置，其他的请自行搜索。</p>
+<h2 id="网络配置"><a href="#网络配置" class="headerlink" title="网络配置"></a>网络配置</h2><h3 id="静态ip配置"><a href="#静态ip配置" class="headerlink" title="静态ip配置"></a>静态ip配置</h3><p>这里仅写ubuntu20中的网络配置，其他的请自行搜索。</p>
 <p>编辑文件<code>sudo vim /etc/netplan/00-installer-config.yaml</code></p>
 <p>关于配置哪个网口进行上网，根据服务器后面插入的网线决定。从左往右一次为eno1-eno4。</p>
 <p>ens2f0和ens2f1为rdma网卡的配置，没有的机器可以忽略。</p>
@@ -697,7 +697,16 @@
   <span class="token key atrule">version</span><span class="token punctuation">:</span> <span class="token number">2</span></code></pre>
 <p>编辑完成后执行<code>sudo netplan apply</code>让他生效。</p>
 <p>之后执行<code>ip a</code>看对应的网卡是否已经有ip地址。</p>
-<p>上外网需要脚本进行认证，在相应的位置填入你的账号密码，将一下内容保存为脚本<code>login.sh</code></p>
+<h3 id="解决开机卡住的问题"><a href="#解决开机卡住的问题" class="headerlink" title="解决开机卡住的问题"></a>解决开机卡住的问题</h3><ul>
+<li><p>问题：卡在“A start job is running for wait for network to be Configured”两分多钟。</p>
+</li>
+<li><p>解决办法：</p>
+<pre><code>cd /etc/systemd/system/network-online.target.wants/
+vi systemd-networkd-wait-online.service</code></pre><p>在[Service]下添加<code>TimeoutStartSec=2sec</code></p>
+<p><img src="https://img.tucang.cc/api/image/show/dcef15dbb79fe0442d664b42fff3ec2f" alt="在这里插入图片描述"></p>
+</li>
+</ul>
+<h3 id="上外网"><a href="#上外网" class="headerlink" title="上外网"></a>上外网</h3><p>上外网需要脚本进行认证，在相应的位置填入你的账号密码，将一下内容保存为脚本<code>login.sh</code></p>
 <pre class=" language-bash"><code class="language-bash"><span class="token shebang important">#!/bin/bash</span>
 
 URL<span class="token operator">=</span><span class="token string">"https://10.108.255.249/include/auth_action.php"</span>
@@ -730,6 +739,20 @@ deb https://mirrors.bfsu.edu.cn/ubuntu/ focal-security main restricted universe 
 <p>使用<code>sudo apt-get update</code>更新。</p>
 <p>附赠：如果更新时出现<code>Certificate verification failed: The certificate is NOT trusted. The certificate chain uses expired certificate. Could not handshake: Error in the certificate verification.</code>，先切换为原来的源，再执行<code>sudo apt install –reinstall ca-certificates</code>重新安装证书</p>
 <h2 id="安装docker"><a href="#安装docker" class="headerlink" title="安装docker"></a>安装docker</h2><p><a href="https://blog.hifool.cn/posts/cd03bf65/">ubuntu20安装docker</a></p>
+<h2 id="讲自己设置为网关服务器"><a href="#讲自己设置为网关服务器" class="headerlink" title="讲自己设置为网关服务器"></a>讲自己设置为网关服务器</h2><ol>
+<li><p>开启ip_forward转发：</p>
+<pre><code>vi /etc/sysctl.conf
+
+net.ipv4.ip_forward=1</code></pre></li>
+</ol>
+<ol start="2">
+<li><p>转发内网段的流量，执行firewalld命令：</p>
+<pre><code>firewall-cmd --add-masquerade --permanent
+firewall-cmd --permanent --direct --passthrough ipv4 -t nat -I POSTROUTING -o em1 -j MASQUERADE -s 10.176.22.0/24
+firewall-cmd --reload</code></pre></li>
+<li><p>把另一台机器的网关设置的你这个服务器的ip地址，并且配置dns</p>
+</li>
+</ol>
 
             </div>
             <hr/>
@@ -1316,7 +1339,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">51.5k</span>&nbsp;字
+                class="white-color">52k</span>&nbsp;字
             
             
             

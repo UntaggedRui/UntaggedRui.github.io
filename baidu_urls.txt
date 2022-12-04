@@ -1,3 +1,4 @@
+https://blog.hifool.cn/posts/python_push_to_qiyewechat/
 https://blog.hifool.cn/posts/sshconfig/
 https://blog.hifool.cn/posts/systemted/
 https://blog.hifool.cn/posts/sofware-tools/

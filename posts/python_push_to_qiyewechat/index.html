@@ -12,7 +12,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Hello World, 摸鱼记录">
+    <meta name="keywords" content="python向企业微信推送消息, 摸鱼记录">
     <meta name="description" content="整天不学习，只知道玩的我">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -36,7 +36,7 @@
 </script>
 
 
-    <title>Hello World | 摸鱼记录</title>
+    <title>python向企业微信推送消息 | 摸鱼记录</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -443,12 +443,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/9.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Hello World</h1>
+                    <h1 class="description center-align post-title">python向企业微信推送消息</h1>
                 </div>
             </div>
         </div>
@@ -577,21 +577,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-07-01
+                    2022-12-04
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-08-04
+                    2022-12-04
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    73
+                    290
                 </div>
                 
 
@@ -613,15 +613,103 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre class=" language-bash"><code class="language-bash">$ hexo new <span class="token string">"My New Post"</span></code></pre>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre class=" language-bash"><code class="language-bash">$ hexo server</code></pre>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre class=" language-bash"><code class="language-bash">$ hexo generate</code></pre>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre class=" language-bash"><code class="language-bash">$ hexo deploy</code></pre>
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+                <h1 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h1><p>程序中的某些消息推送到企业微信中，通过微信进行接收。</p>
+<h1 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h1><pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> requests
+<span class="token keyword">import</span> json
+<span class="token keyword">import</span> yaml
+
+
+<span class="token keyword">def</span> <span class="token function">getconfig</span><span class="token punctuation">(</span>filename<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">with</span> open<span class="token punctuation">(</span>filename<span class="token punctuation">,</span> <span class="token string">'r'</span><span class="token punctuation">,</span> encoding<span class="token operator">=</span><span class="token string">'utf-8'</span><span class="token punctuation">)</span> <span class="token keyword">as</span> f<span class="token punctuation">:</span>
+        cont <span class="token operator">=</span> f<span class="token punctuation">.</span>read<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    x <span class="token operator">=</span> yaml<span class="token punctuation">.</span>load<span class="token punctuation">(</span>cont<span class="token punctuation">,</span> Loader<span class="token operator">=</span>yaml<span class="token punctuation">.</span>FullLoader<span class="token punctuation">)</span>
+    weixin <span class="token operator">=</span> x<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token string">"weixin"</span><span class="token punctuation">)</span>
+    <span class="token keyword">return</span> weixin
+
+
+<span class="token keyword">class</span> <span class="token class-name">Wechatpush</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> corpid<span class="token punctuation">,</span> corpsecret<span class="token punctuation">,</span> agentid<span class="token operator">=</span>None<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> None<span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>corpid <span class="token operator">=</span> corpid
+        self<span class="token punctuation">.</span>corpsecret <span class="token operator">=</span> corpsecret
+        self<span class="token punctuation">.</span>agentid <span class="token operator">=</span> agentid
+        self<span class="token punctuation">.</span>token <span class="token operator">=</span> None
+
+    <span class="token keyword">def</span> <span class="token function">get_token</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        params <span class="token operator">=</span> <span class="token punctuation">{</span>
+            <span class="token string">'corpid'</span><span class="token punctuation">:</span> self<span class="token punctuation">.</span>corpid<span class="token punctuation">,</span>
+            <span class="token string">'corpsecret'</span><span class="token punctuation">:</span> self<span class="token punctuation">.</span>corpsecret
+        <span class="token punctuation">}</span>
+        r <span class="token operator">=</span> requests<span class="token punctuation">.</span>get<span class="token punctuation">(</span>
+            <span class="token string">'https://qyapi.weixin.qq.com/cgi-bin/gettoken'</span><span class="token punctuation">,</span> params<span class="token operator">=</span>params<span class="token punctuation">)</span><span class="token punctuation">.</span>content
+        r <span class="token operator">=</span> json<span class="token punctuation">.</span>loads<span class="token punctuation">(</span>r<span class="token punctuation">)</span>
+        <span class="token keyword">if</span> r<span class="token punctuation">[</span><span class="token string">'errcode'</span><span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">:</span>
+            self<span class="token punctuation">.</span>token <span class="token operator">=</span> r<span class="token punctuation">[</span><span class="token string">'access_token'</span><span class="token punctuation">]</span>
+            <span class="token keyword">return</span> r<span class="token punctuation">[</span><span class="token string">'access_token'</span><span class="token punctuation">]</span>
+        <span class="token keyword">else</span><span class="token punctuation">:</span>
+            <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"error:{}"</span><span class="token punctuation">.</span>format<span class="token punctuation">(</span>r<span class="token punctuation">[</span><span class="token string">'errmsg'</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+            <span class="token keyword">return</span> None
+
+    <span class="token keyword">def</span> <span class="token function">send_content</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> data<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        url <span class="token operator">=</span> <span class="token string">"https://qyapi.weixin.qq.com/cgi-bin/message/send?access_token={}"</span><span class="token punctuation">.</span>format<span class="token punctuation">(</span>
+            self<span class="token punctuation">.</span>token<span class="token punctuation">)</span>
+        res <span class="token operator">=</span> requests<span class="token punctuation">.</span>post<span class="token punctuation">(</span>url<span class="token punctuation">,</span> data<span class="token operator">=</span>json<span class="token punctuation">.</span>dumps<span class="token punctuation">(</span>data<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span>json<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token keyword">if</span> res<span class="token punctuation">.</span>get<span class="token punctuation">(</span><span class="token string">"errcode"</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">40014</span><span class="token punctuation">:</span>
+            self<span class="token punctuation">.</span>get_token<span class="token punctuation">(</span><span class="token punctuation">)</span>
+            <span class="token keyword">return</span> self<span class="token punctuation">.</span>send_content<span class="token punctuation">(</span>data<span class="token punctuation">)</span>
+        <span class="token keyword">return</span> res
+
+    <span class="token keyword">def</span> <span class="token function">sendtext</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> users<span class="token punctuation">,</span> content<span class="token punctuation">,</span> agentid<span class="token operator">=</span>None<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">if</span> agentid <span class="token keyword">is</span> None<span class="token punctuation">:</span>
+            agentid <span class="token operator">=</span> self<span class="token punctuation">.</span>agentid
+        data <span class="token operator">=</span> <span class="token punctuation">{</span>
+            <span class="token string">"touser"</span><span class="token punctuation">:</span> users<span class="token punctuation">,</span>
+            <span class="token string">"msgtype"</span><span class="token punctuation">:</span> <span class="token string">"text"</span><span class="token punctuation">,</span>
+            <span class="token string">"agentid"</span><span class="token punctuation">:</span> agentid<span class="token punctuation">,</span>
+            <span class="token string">"text"</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
+                <span class="token string">"content"</span><span class="token punctuation">:</span> content<span class="token punctuation">,</span>
+            <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token string">"safe"</span><span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
+            <span class="token string">"enable_id_trans"</span><span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
+            <span class="token string">"enable_duplicate_check"</span><span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
+            <span class="token string">"duplicate_check_interval"</span><span class="token punctuation">:</span> <span class="token number">1800</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">return</span> self<span class="token punctuation">.</span>send_content<span class="token punctuation">(</span>data<span class="token punctuation">)</span>
+
+    <span class="token keyword">def</span> <span class="token function">send_card</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> users<span class="token punctuation">,</span> title<span class="token punctuation">,</span> desp<span class="token punctuation">,</span> content<span class="token punctuation">,</span> agentid<span class="token operator">=</span>None<span class="token punctuation">)</span><span class="token punctuation">:</span>
+
+        <span class="token keyword">if</span> agentid <span class="token keyword">is</span> None<span class="token punctuation">:</span>
+            agentid <span class="token operator">=</span> self<span class="token punctuation">.</span>agentid
+
+
+        data <span class="token operator">=</span> <span class="token punctuation">{</span>
+            <span class="token string">"touser"</span><span class="token punctuation">:</span> users<span class="token punctuation">,</span>
+            <span class="token string">"msgtype"</span><span class="token punctuation">:</span> <span class="token string">"textcard"</span><span class="token punctuation">,</span>
+            <span class="token string">"agentid"</span><span class="token punctuation">:</span> agentid<span class="token punctuation">,</span>
+            <span class="token string">"textcard"</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
+                <span class="token string">"title"</span><span class="token punctuation">:</span> title<span class="token punctuation">,</span>
+                <span class="token string">"description"</span><span class="token punctuation">:</span> desp<span class="token punctuation">,</span>
+                <span class="token string">"url"</span><span class="token punctuation">:</span> <span class="token string">"https//www.baidu.com"</span><span class="token punctuation">,</span>
+                <span class="token string">"btntxt"</span><span class="token punctuation">:</span> <span class="token string">"更多"</span>
+            <span class="token punctuation">}</span><span class="token punctuation">,</span>
+            <span class="token string">"enable_id_trans"</span><span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
+            <span class="token string">"enable_duplicate_check"</span><span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
+            <span class="token string">"duplicate_check_interval"</span><span class="token punctuation">:</span> <span class="token number">1800</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">return</span> self<span class="token punctuation">.</span>send_content<span class="token punctuation">(</span>data<span class="token punctuation">)</span>
+
+
+<span class="token keyword">def</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    corid<span class="token operator">=</span><span class="token string">"XXX"</span>
+    corpsecret<span class="token operator">=</span><span class="token string">"XXX"</span>
+    agentid<span class="token operator">=</span><span class="token string">"XXX"</span>
+    mypush <span class="token operator">=</span> Wechatpush<span class="token punctuation">(</span>corid<span class="token punctuation">,</span> corpsecret<span class="token punctuation">,</span> agentid<span class="token punctuation">)</span>
+    <span class="token comment" spellcheck="true"># mypush.sendtext(agentid, "@all", "测试消息")</span>
+    mypush<span class="token punctuation">.</span>send_card<span class="token punctuation">(</span><span class="token string">"@all"</span><span class="token punctuation">,</span> <span class="token string">"测试消息"</span><span class="token punctuation">,</span> <span class="token string">"长的消息"</span><span class="token punctuation">,</span> <span class="token string">"aaaaaaaaaaaaaaaaaa"</span><span class="token punctuation">)</span>
+
+
+<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">"__main__"</span><span class="token punctuation">:</span>
+    main<span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre>
 
             </div>
             <hr/>
@@ -677,7 +765,7 @@
         repo: 'zhangrui.github.io',
         owner: 'UntaggedRui',
         admin: "UntaggedRui",
-        id: '2020-07-01T20-41-56',
+        id: '2022-12-04T11-00-01',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -980,76 +1068,36 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/posts/b24dd347/">
+                <a href="/posts/python_push_to_qiyewechat/">
                     <div class="card-image">
                         
-                        <img src="https://s1.ax1x.com/2020/07/25/aSe3rR.jpg" class="responsive-img" alt="摸鱼记录-我的第一篇博客文章">
                         
-                        <span class="card-title">摸鱼记录-我的第一篇博客文章</span>
+                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="python向企业微信推送消息">
+                        
+                        <span class="card-title">python向企业微信推送消息</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            摸鱼计划与摸鱼的罪恶记录
-                        
-                    </div>
-                    <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-07-01
-                        </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E6%91%B8%E9%B1%BC%E8%AE%B0%E5%BD%95/" class="post-category">
-                                    摸鱼记录
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/%E4%B8%8D%E5%AD%A6%E4%B9%A0/">
-                        <span class="chip bg-color">不学习</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="far fa-dot-circle"></i>
-            </div>
-            <div class="card">
-                <a href="/posts/4a17b156/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Hello World">
-                        
-                        <span class="card-title">Hello World</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hex
+                            需求程序中的某些消息推送到企业微信中，通过微信进行接收。
+代码import requests
+import json
+import yaml
+
+
+def getconfig(filename):
+    with open(filename
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-07-01
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-12-04
                             </span>
                         <span class="publish-author">
                             
@@ -1060,6 +1108,46 @@
                     </div>
                 </div>
 
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/posts/sshconfig/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="ssh config即vscode remote ssh配置文件的常用模板">
+                        
+                        <span class="card-title">ssh config即vscode remote ssh配置文件的常用模板</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            连接配置最朴素的配置Host 206rui
+  HostName rdma206.baidu.com
+  User rui
+Host：为我们自定义的名字，这个名字是在remote ssh窗口中显示主机名称。之后也可以直接使用ssh 206r
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-08-03
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            Zhang Rui
+                            
+                        </span>
+                    </div>
+                </div>
                 
             </div>
         </div>
@@ -1194,6 +1282,13 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 
 </main>
 
+
+<script src="https://cdn.bootcdn.net/ajax/libs/mathjax/3.2.0/es5/a11y/assistive-mml.js"></script>
+<script>
+    MathJax.Hub.Config({
+        tex2jax: {inlineMath: [['$', '$'], ['\(', '\)']]}
+    });
+</script>
 
 
 
