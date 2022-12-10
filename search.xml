@@ -4,6 +4,19 @@
   
     
     <entry>
+      <title>python应用打包成docker镜像</title>
+      <link href="/posts/4d946166/"/>
+      <url>/posts/4d946166/</url>
+      
+        <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>今天看到一个mjj分享的应用，用python实现的，并且提供了docker的部署。因此i记录一下将python写的服务端通过dockerfile的方式打包成镜像的方式。</p><h1 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h1><p>项目的原地址是<a href="https://github.com/vastsa/FileCodeBox" target="_blank" rel="noopener">https://github.com/vastsa/FileCodeBox</a></p><p>直接贴上dockerfile</p><pre class=" language-dockerfile"><code class="language-dockerfile">FROM python:3.9.5LABEL author="Lan"LABEL email="vast@tom.com"LABEL version="1.0"COPY . /appRUN ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtimeRUN echo 'Asia/Shanghai' >/etc/timezoneWORKDIR /appRUN pip install -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple/EXPOSE 12345CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "12345"]</code></pre><p>使用docker部署的方法为</p><pre class=" language-bash"><code class="language-bash">docker build --file Dockerfile --tag filecodebox <span class="token keyword">.</span>docker run -d -p 12345:12345 --name filecodebox filecodebox</code></pre><p>浅浅分析一下dockerfile。</p><ol><li>选择python3.9.5作为基础镜像。</li><li>将当前远啦拷贝到app目录</li><li>设置时区。（这个可以重点学习，因为我在使用国外的vps运行定时任务时经常出现失去不一致的问题。）</li><li>安装python所需要的包。</li><li>暴露端口。</li><li>使用uvicorn来运行应用。</li></ol>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>python向企业微信推送消息</title>
       <link href="/posts/python_push_to_qiyewechat/"/>
       <url>/posts/python_push_to_qiyewechat/</url>

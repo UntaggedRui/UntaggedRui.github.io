@@ -12,7 +12,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="[得到]脱不花·怎样成为高效学习的人, 摸鱼记录">
+    <meta name="keywords" content="python应用打包成docker镜像, 摸鱼记录">
     <meta name="description" content="整天不学习，只知道玩的我">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -36,7 +36,7 @@
 </script>
 
 
-    <title>[得到]脱不花·怎样成为高效学习的人 | 摸鱼记录</title>
+    <title>python应用打包成docker镜像 | 摸鱼记录</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -443,12 +443,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/6.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/15.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">[得到]脱不花·怎样成为高效学习的人</h1>
+                    <h1 class="description center-align post-title">python应用打包成docker镜像</h1>
                 </div>
             </div>
         </div>
@@ -577,21 +577,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-07-31
+                    2022-12-10
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-07-31
+                    2022-12-10
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    205
+                    251
                 </div>
                 
 
@@ -613,27 +613,33 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>欢迎词：让我们一起学会学习</p>
+                <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>今天看到一个mjj分享的应用，用python实现的，并且提供了docker的部署。因此i记录一下将python写的服务端通过dockerfile的方式打包成镜像的方式。</p>
+<h1 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h1><p>项目的原地址是<a href="https://github.com/vastsa/FileCodeBox" target="_blank" rel="noopener">https://github.com/vastsa/FileCodeBox</a></p>
+<p>直接贴上dockerfile</p>
+<pre class=" language-dockerfile"><code class="language-dockerfile">FROM python:3.9.5
+LABEL author="Lan"
+LABEL email="vast@tom.com"
+LABEL version="1.0"
+
+
+COPY . /app
+RUN ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
+RUN echo 'Asia/Shanghai' >/etc/timezone
+WORKDIR /app
+RUN pip install -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple/
+EXPOSE 12345
+CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "12345"]</code></pre>
+<p>使用docker部署的方法为</p>
+<pre class=" language-bash"><code class="language-bash">docker build --file Dockerfile --tag filecodebox <span class="token keyword">.</span>
+docker run -d -p 12345:12345 --name filecodebox filecodebox</code></pre>
+<p>浅浅分析一下dockerfile。</p>
 <ol>
-<li>主要分为六讲：<ul>
-<li>怎么找到更好的学习资源？</li>
-<li>怎么制定更有价值的学习目标？</li>
-<li>怎么比别人学得更快更好？</li>
-<li>怎么能学以致用，把学到的东西融会贯通，还能用到自己的工作和生活里？</li>
-<li>怎么让学习的过程变得更愉快？</li>
-<li>不同阶段的学习者，在得到的第一门课应该学什么？</li>
-</ul>
-</li>
-<li>学会学习本身，比学什么更重要。“任务式学习”——用真实的人物、项目、目标来牵引自己的学习。</li>
-</ol>
-<h1 id="怎样找到更好的学习资源"><a href="#怎样找到更好的学习资源" class="headerlink" title="怎样找到更好的学习资源"></a>怎样找到更好的学习资源</h1><h2 id="寻找学习资源的三种方式"><a href="#寻找学习资源的三种方式" class="headerlink" title="寻找学习资源的三种方式"></a>寻找学习资源的三种方式</h2><ol>
-<li><p>搜索</p>
-</li>
-<li><p>用好得到这样的专业学习平台</p>
-</li>
-<li><p>跟人学</p>
-<p>三级导师制：入门、进圈和拜佛。</p>
-</li>
+<li>选择python3.9.5作为基础镜像。</li>
+<li>将当前远啦拷贝到app目录</li>
+<li>设置时区。（这个可以重点学习，因为我在使用国外的vps运行定时任务时经常出现失去不一致的问题。）</li>
+<li>安装python所需要的包。</li>
+<li>暴露端口。</li>
+<li>使用uvicorn来运行应用。</li>
 </ol>
 
             </div>
@@ -690,7 +696,7 @@
         repo: 'zhangrui.github.io',
         owner: 'UntaggedRui',
         admin: "UntaggedRui",
-        id: '2021-07-31T12-16-06',
+        id: '2022-12-10T11-20-43',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -993,33 +999,31 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/posts/1ed1e3fb/">
+                <a href="/posts/4d946166/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="centos通过scl使用高版本gcc">
+                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="python应用打包成docker镜像">
                         
-                        <span class="card-title">centos通过scl使用高版本gcc</span>
+                        <span class="card-title">python应用打包成docker镜像</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            前言安装过程yum install devtoolset-10-gcc.x86_64 devtoolset-10-gcc-c++.x86_6
-查看机器上的scl可以使用的版本
-$ scl --list
-devtoolset-10
-devto
+                            前言今天看到一个mjj分享的应用，用python实现的，并且提供了docker的部署。因此i记录一下将python写的服务端通过dockerfile的方式打包成镜像的方式。
+方法项目的原地址是https://github.com/vasts
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-02-25
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-12-10
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -1028,6 +1032,7 @@ devto
                         </span>
                     </div>
                 </div>
+
                 
             </div>
         </div>
@@ -1038,29 +1043,32 @@ devto
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/posts/nfs/">
+                <a href="/posts/python_push_to_qiyewechat/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="linux搭建nfs系统">
+                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="python向企业微信推送消息">
                         
-                        <span class="card-title">linux搭建nfs系统</span>
+                        <span class="card-title">python向企业微信推送消息</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            安装以下内容搬运于搭建 NFS 网络文件共享服务
-服务器端
-安装 nfs 与 rpc 相关软件包：
-yum install nfs-utils rpcbind -y
-# for ubuntu
-# apt install -y nfs-ker
+                            需求程序中的某些消息推送到企业微信中，通过微信进行接收。
+代码import requests
+import json
+import yaml
+
+
+
+class Wechatpush:
+    def __init__(self, corpi
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-07-30
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-12-04
                             </span>
                         <span class="publish-author">
                             
