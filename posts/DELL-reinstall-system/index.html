@@ -584,21 +584,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-12-01
+                    2022-12-27
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.3k
+                    1.4k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    5 分
+                    6 分
                 </div>
                 
 
@@ -672,11 +672,16 @@
       <span class="token key atrule">addresses</span><span class="token punctuation">:</span>
               <span class="token punctuation">-</span> 10.176.22.207/24
               <span class="token punctuation">-</span> 2001<span class="token punctuation">:</span>DA8<span class="token punctuation">:</span>8001<span class="token punctuation">:</span>7B22<span class="token punctuation">:</span><span class="token punctuation">:</span>207/64
-      <span class="token key atrule">gateway4</span><span class="token punctuation">:</span> 10.176.22.1
-      <span class="token key atrule">gateway6</span><span class="token punctuation">:</span> 2001<span class="token punctuation">:</span>DA8<span class="token punctuation">:</span>8001<span class="token punctuation">:</span>7B22<span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token number">1</span>
       <span class="token key atrule">nameservers</span><span class="token punctuation">:</span>
               <span class="token key atrule">addresses</span><span class="token punctuation">:</span>
                       <span class="token punctuation">-</span> 202.120.224.6
+      <span class="token key atrule">routes</span><span class="token punctuation">:</span>
+              <span class="token punctuation">-</span> <span class="token key atrule">to</span><span class="token punctuation">:</span> 0.0.0.0/0
+                <span class="token key atrule">via</span><span class="token punctuation">:</span> 10.176.22.1
+                <span class="token key atrule">metric</span><span class="token punctuation">:</span> <span class="token number">50</span>
+              <span class="token punctuation">-</span> <span class="token key atrule">to</span><span class="token punctuation">:</span> <span class="token punctuation">:</span><span class="token punctuation">:</span>/0
+                <span class="token key atrule">via</span><span class="token punctuation">:</span> 2001<span class="token punctuation">:</span>DA8<span class="token punctuation">:</span>8001<span class="token punctuation">:</span>7B22<span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token number">1</span>
+                <span class="token key atrule">metric</span><span class="token punctuation">:</span> <span class="token number">70</span>
     <span class="token key atrule">eno2</span><span class="token punctuation">:</span>
       <span class="token key atrule">dhcp4</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
     <span class="token key atrule">eno3</span><span class="token punctuation">:</span>
@@ -691,7 +696,7 @@
       <span class="token key atrule">routes</span><span class="token punctuation">:</span>
               <span class="token punctuation">-</span> <span class="token key atrule">to</span><span class="token punctuation">:</span> 0.0.0.0/0
                 <span class="token key atrule">via</span><span class="token punctuation">:</span> 192.168.2.1
-                <span class="token key atrule">metric</span><span class="token punctuation">:</span> <span class="token number">50</span>
+                <span class="token key atrule">metric</span><span class="token punctuation">:</span> <span class="token number">100</span>
     <span class="token key atrule">ens2f1</span><span class="token punctuation">:</span>
       <span class="token key atrule">dhcp4</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
   <span class="token key atrule">version</span><span class="token punctuation">:</span> <span class="token number">2</span></code></pre>
@@ -738,6 +743,7 @@ deb https://mirrors.bfsu.edu.cn/ubuntu/ focal-security main restricted universe 
 </code></pre>
 <p>使用<code>sudo apt-get update</code>更新。</p>
 <p>附赠：如果更新时出现<code>Certificate verification failed: The certificate is NOT trusted. The certificate chain uses expired certificate. Could not handshake: Error in the certificate verification.</code>，先切换为原来的源，再执行<code>sudo apt install –reinstall ca-certificates</code>重新安装证书</p>
+<h2 id="设置时区"><a href="#设置时区" class="headerlink" title="设置时区"></a>设置时区</h2><pre class=" language-bash"><code class="language-bash"><span class="token function">cp</span> /usr/share/zoneinfo/Asia/Shanghai  /etc/localtime</code></pre>
 <h2 id="安装docker"><a href="#安装docker" class="headerlink" title="安装docker"></a>安装docker</h2><p><a href="https://blog.hifool.cn/posts/cd03bf65/">ubuntu20安装docker</a></p>
 <h2 id="讲自己设置为网关服务器"><a href="#讲自己设置为网关服务器" class="headerlink" title="讲自己设置为网关服务器"></a>讲自己设置为网关服务器</h2><ol>
 <li><p>开启ip_forward转发：</p>
@@ -747,8 +753,12 @@ net.ipv4.ip_forward=1</code></pre></li>
 </ol>
 <ol start="2">
 <li><p>转发内网段的流量，执行firewalld命令：</p>
-<pre><code>firewall-cmd --add-masquerade --permanent
+<pre><code># 转发内网流量
+firewall-cmd --add-masquerade --permanent
 firewall-cmd --permanent --direct --passthrough ipv4 -t nat -I POSTROUTING -o em1 -j MASQUERADE -s 10.176.22.0/24
+# 允许域名解析，不开启只能通过IP访问外网
+firewall-cmd --zone=public --permanent --add-port=53/udp
+firewall-cmd --zone=public --permanent --add-port=53/tcp
 firewall-cmd --reload</code></pre></li>
 <li><p>把另一台机器的网关设置的你这个服务器的ip地址，并且配置dns</p>
 </li>
@@ -1339,7 +1349,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">52.3k</span>&nbsp;字
+                class="white-color">52.8k</span>&nbsp;字
             
             
             
