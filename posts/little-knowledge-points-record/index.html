@@ -597,21 +597,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2023-01-08
+                    2023-02-20
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    3.3k
+                    3k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    15 分
+                    14 分
                 </div>
                 
 
@@ -854,7 +854,7 @@ file '2.mov'</code></pre></li>
 useradd rui -u 6666  -m -s /bin/zsh -g rui
 sudo usermod -aG sudo rui</code></pre></li>
 </ol>
-<ol start="24">
+<ol start="28">
 <li><p>apt-get换源方法：<a href="https://mirrors.bfsu.edu.cn/help/ubuntu/" target="_blank" rel="noopener">https://mirrors.bfsu.edu.cn/help/ubuntu/</a></p>
 <p>注意：再换源之前要先执行sudo  apt install –reinstall ca-certificates重新安装证书，否则再替换后执行apt-get update的时候会出现<code>Certificate verification failed: The certificate is NOT trusted. The certificate chain uses expired certificate. Could not handshake: Error in the certificate verification.</code></p>
 </li>
@@ -868,8 +868,13 @@ sudo usermod -aG sudo rui</code></pre></li>
 <li><p>查看所有存活的主机</p>
 <pre><code>nmap -nsP 10.176.22.0/24</code></pre></li>
 </ol>
-<ol start="30">
-<li><h1 id="centos硬件信息查询"><a href="#centos硬件信息查询" class="headerlink" title="centos硬件信息查询"></a>centos硬件信息查询</h1></li>
+<ol start="32">
+<li><p>office tool plus激活microsoft 365，按下快捷键 Ctrl + Shift + P，打开命令框，按需复制下面的命令。</p>
+<pre><code>ospp /insLicID MondoVolume /sethst:kms.loli.best /setprt:1688 /act</code></pre><p>来源于<a href="https://www.coolhub.top/archives/14" target="_blank" rel="noopener">https://www.coolhub.top/archives/14</a></p>
+</li>
+<li></li>
+</ol>
+<h1 id="centos硬件信息查询"><a href="#centos硬件信息查询" class="headerlink" title="centos硬件信息查询"></a>centos硬件信息查询</h1><ol>
 <li><p>查询服务器型号:<code>sudo dmidecode | grep "Product"</code></p>
 <pre class=" language-bash"><code class="language-bash">    Product Name: PowerEdge R730
     Product Name: 072T6D</code></pre>
@@ -1013,51 +1018,6 @@ root@ubuntu:~<span class="token comment" spellcheck="true"># vgdisplay</span>
 </li>
 </ol>
 <ol start="7">
-<li></li>
-</ol>
-<h1 id="Git-操作"><a href="#Git-操作" class="headerlink" title="Git 操作"></a>Git 操作</h1><ol>
-<li><p>git远程与本地的操作</p>
-<ol>
-<li><p>git重新设置远程仓库地址</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token function">git</span> remote <span class="token function">rm</span> origin
-<span class="token function">git</span> remote add origin 你的新远程仓库地址</code></pre>
-</li>
-<li><p>git删除远程分支</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token function">git</span> push origin --delete Chapater6  </code></pre>
-</li>
-<li><p>git 建立本地分支与远程分支的关联</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token function">git</span> branch –set-upstream 本地新建分支名 origin/远程分支名</code></pre>
-</li>
-<li><p>git重命名分支</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token function">git</span> branch -m old new</code></pre>
-</li>
-<li><p>git拉取远程分支</p>
-</li>
-</ol>
-</li>
-<li><p>git放弃本地修改</p>
-<ul>
-<li><p>未使用git add缓存代码</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token function">git</span> checkout -- filepathname <span class="token comment" spellcheck="true"># 放弃指定文件的缓存</span>
-<span class="token function">git</span> checkout <span class="token keyword">.</span>               <span class="token comment" spellcheck="true"># 放弃所有的文件修改</span></code></pre>
-</li>
-<li><p>已经使用git add缓存代码</p>
-<pre class=" language-bash"><code class="language-bash"> <span class="token function">git</span> reset HEAD filepathname <span class="token comment" spellcheck="true">#放弃指定文件的缓存</span>
- <span class="token function">git</span> reset HEAD <span class="token keyword">.</span>            <span class="token comment" spellcheck="true"># 放弃所有的文件修改</span></code></pre>
-</li>
-<li><p>已经用 git commit提交代码</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token function">git</span> reset --hard HEAD^      <span class="token comment" spellcheck="true"># 回到上一次commit的状态</span></code></pre>
-</li>
-</ul>
-</li>
-<li><p>git使用远程仓库代码覆盖本地代码</p>
-<pre class=" language-bash"><code class="language-bash"> <span class="token function">git</span> fetch --all
- <span class="token function">git</span> reset --hard origin/master
- <span class="token function">git</span> pull</code></pre>
-<p>第一个是：拉取所有更新，不同步；</p>
-<p>第二个是：本地代码同步线上最新版本(会覆盖本地所有与远程仓库上同名的文件)；</p>
-<p>第三个是：再更新一次（其实也可以不用，第二步命令做过了其实）</p>
-</li>
 <li></li>
 </ol>
 
@@ -1670,7 +1630,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">52.8k</span>&nbsp;字
+                class="white-color">54.4k</span>&nbsp;字
             
             
             

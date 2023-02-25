@@ -584,14 +584,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-12-27
+                    2023-02-25
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.4k
+                    1.5k
                 </div>
                 
 
@@ -763,7 +763,23 @@ firewall-cmd --reload</code></pre></li>
 <li><p>把另一台机器的网关设置的你这个服务器的ip地址，并且配置dns</p>
 </li>
 </ol>
-
+<h1 id="升级idrac"><a href="#升级idrac" class="headerlink" title="升级idrac"></a>升级idrac</h1><ol>
+<li><p>下载地址。</p>
+<p><a href="https://www.dell.com/support/home/zh-cn/?app=products" target="_blank" rel="noopener">https://www.dell.com/support/home/zh-cn/?app=products</a></p>
+<p>在上面搜索自己的服务器型号，然后点击bios，会列出一些产品。</p>
+<p><img src="https://img.tucang.cc/api/image/show/690fbcb4fcf48ad6698941d916d156a9" alt="image-20230225160610639"></p>
+</li>
+<li><p>然后点击all，找到我们需要的idrac，并点击下载。</p>
+<p><img src="https://img.tucang.cc/api/image/show/bf202b987c2ae5088ebaa2583b72de95" alt="image-20230225160727293"></p>
+</li>
+<li><p>根据<a href="https://www.dell.com/support/kbdoc/zh-cn/000135299/%E4%BB%8E-%E5%B8%A6%E5%A4%96-%E7%95%8C%E9%9D%A2-%E5%BA%94%E7%94%A8-%E6%9C%80%E6%96%B0-idrac-%E5%9B%BA%E4%BB%B6-%E6%97%B6-%E5%87%BA%E7%8E%B0-idrac7-idrac8-red007-%E9%94%99%E8%AF%AF" target="_blank" rel="noopener">这里</a>说，我们无法直接更新，所以要提取其中的firimg.d7. 找个windows打开下载后的idrac程序，点击extract。</p>
+</li>
+<li><p>在页面中上传payload/firmimg.d7 文件</p>
+<p><img src="https://img.tucang.cc/api/image/show/67f3ec4aef076a80af9829f94932796b" alt="image-20230225161124366"></p>
+</li>
+<li></li>
+</ol>
+<h1 id="配制IDRAC证书"><a href="#配制IDRAC证书" class="headerlink" title="配制IDRAC证书"></a>配制IDRAC证书</h1>
             </div>
             <hr/>
 
@@ -1349,7 +1365,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">52.8k</span>&nbsp;字
+                class="white-color">54.4k</span>&nbsp;字
             
             
             
