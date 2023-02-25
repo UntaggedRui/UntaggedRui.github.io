@@ -591,7 +591,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    993
+                    992
                 </div>
                 
 
@@ -696,17 +696,16 @@ ip route add 10.0.0.0/8 via 10.176.22.1 dev br0</code></pre><h1 id="使用容器
     --subnet=10.176.22.0/24 \
     --gateway=10.176.22.1 \
      -o parent=em1 \
-     -o macvlan_mode=bridge macnet</code></pre></li>
+     -o macvlan_mode=bridge macnet</code></pre><p>有ipv6的版本</p>
+<pre><code>docker network create -d macvlan --ipv6 \
+    --subnet=10.176.22.0/24 \
+    --gateway=10.176.22.1 \
+    --subnet=2001:DA8:8001:7B22:200::/80 --gateway=2001:DA8:8001:7B22:200::1 \
+     -o parent=em1 \
+     -o macvlan_mode=bridge macnet</code></pre><p>注意看含义，有的值需要变</p>
+</li>
 </ol>
-<p>   有ipv6的版本</p>
-<pre><code>   docker network create -d macvlan --ipv6 \
-       --subnet=10.176.22.0/24 \
-       --gateway=10.176.22.1 \
-       --subnet=2001:DA8:8001:7B22:200::/80 --gateway=2001:DA8:8001:7B22:200::1 \
-        -o parent=em1 \
-        -o macvlan_mode=bridge macnet</code></pre><p>   注意看含义，有的值需要变</p>
-<ol start="3">
-<li><h2 id="设置容器"><a href="#设置容器" class="headerlink" title="设置容器"></a>设置容器</h2></li>
+<h2 id="设置容器"><a href="#设置容器" class="headerlink" title="设置容器"></a>设置容器</h2><ol>
 <li><p>采用centos作为容器</p>
 <pre><code>docker pull centos:centos7.9.2009</code></pre></li>
 </ol>

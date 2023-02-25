@@ -11,7 +11,7 @@
   </url>
   
   <url>
-    <loc>https://blog.hifool.cn/posts/DELL-reinstall-system/</loc>
+    <loc>https://blog.hifool.cn/posts/f3fb0249/</loc>
     
     <lastmod>2023-02-25</lastmod>
     
@@ -20,9 +20,18 @@
   </url>
   
   <url>
-    <loc>https://blog.hifool.cn/posts/f3fb0249/</loc>
+    <loc>https://blog.hifool.cn/posts/634f3976/</loc>
     
-    <lastmod>2023-02-20</lastmod>
+    <lastmod>2023-02-25</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.hifool.cn/posts/DELL-reinstall-system/</loc>
+    
+    <lastmod>2023-02-25</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -41,15 +50,6 @@
     <loc>https://blog.hifool.cn/posts/acmesh/</loc>
     
     <lastmod>2023-02-17</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.hifool.cn/posts/634f3976/</loc>
-    
-    <lastmod>2023-02-11</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
