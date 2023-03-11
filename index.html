@@ -840,6 +840,94 @@
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
+                    <a href="/posts/docker-page-index/">
+                        <div class="card-image">
+                            
+                            
+                            <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="导航页部署">
+                            
+                            <span class="card-title">导航页部署</span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                部署教程参考这里
+
+首先是docker-compose.yml
+
+version: '3'
+services:
+    php:
+        image: caomingjun/navpage
+        user: 1000:10
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-02-26
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-user fa-fw"></i>
+                                Zhang Rui
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                </div>
+            </div>
+            
+            
+            
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/posts/1be6557c/">
+                        <div class="card-image">
+                            
+                            
+                            <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="一些包含数据库的docker应用迁移记录">
+                            
+                            <span class="card-title">一些包含数据库的docker应用迁移记录</span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                immich
+导出postgres的数据。
+
+
+在新的环境中导入数据。
+
+
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-02-25
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-user fa-fw"></i>
+                                Zhang Rui
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                </div>
+            </div>
+            
+            
+            
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
                     <a href="/posts/centos-gateway/">
                         <div class="card-image">
                             
@@ -856,11 +944,13 @@
                                 网关服务器配制假设该机的ip地址是10.176.22.33
 
 开启ip转发
-echo "1" &gt; /proc/sys/net/ipv4/ip_forward
+echo "1" > /proc/sys/net/ipv4/ip_forward
+
 让他生效。
 sysctl -p
+
 设置iptables规则
-sudo ipta
+sudo iptab
                             
                         </div>
                         <div class="publish-info">
@@ -933,18 +1023,20 @@ git push origin --dele
                         <div class="card-image">
                             
                             
-                            <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="centos7磁盘空间操作">
+                            <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="LVM学习记录">
                             
-                            <span class="card-title">centos7磁盘空间操作</span>
+                            <span class="card-title">LVM学习记录</span>
                         </div>
                     </a>
 
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                将/home分区合并到/分区[root@nisl51 ~]# df -h
-文件系统                 容量  已用  可用 已用% 挂载点
-devtmpfs                  32G     0   32G  
+                                以下内容主要来自于系统运维|Lnux LVM简明教程。
+简介逻辑卷管理LVM是用来管理磁盘的一个工具。传统分区使用固定大小分区，重新调整大小十分麻烦，而LVM就是解决这个问题的。
+LVM使用分层结构，如下图所示。
+
+这其中就涉及到我们后面需
                             
                         </div>
                         <div class="publish-info">
@@ -1253,81 +1345,6 @@ ffmpeg -i {in-video}.mov -vcodec h264
             </div>
             
             
-            
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/posts/DELL-reinstall-system/">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="DELL服务器重装系统">
-                            
-                            <span class="card-title">DELL服务器重装系统</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                下载镜像U盘启动盘ubuntu：https://mirrors.bfsu.edu.cn/ubuntu-releases/20.04.4/
-centos：https://mirrors.bfsu.edu.cn/centos/7.9.2009/
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-03-25
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-user fa-fw"></i>
-                                Zhang Rui
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                </div>
-            </div>
-            
-            
-            
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/posts/272abeec/">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="hexo博客同步到VPS">
-                            
-                            <span class="card-title">hexo博客同步到VPS</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                参考https://blog.lancitou.net/using-github-actions-to-deploy-hugo-blog-to-self-hosted-vps/和https://axiaoxin.com/article/25
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-03-23
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-user fa-fw"></i>
-                                Zhang Rui
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                </div>
-            </div>
-            
-            
         </div>
     </article>
 
@@ -1373,7 +1390,7 @@ centos：https://mirrors.bfsu.edu.cn/centos/7.9.2009/
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">54.4k</span>&nbsp;字
+                class="white-color">56.1k</span>&nbsp;字
             
             
             

@@ -1,3 +1,5 @@
+https://blog.hifool.cn/posts/docker-page-index/
+https://blog.hifool.cn/posts/1be6557c/
 https://blog.hifool.cn/posts/centos-gateway/
 https://blog.hifool.cn/posts/f3fb0249/
 https://blog.hifool.cn/posts/634f3976/

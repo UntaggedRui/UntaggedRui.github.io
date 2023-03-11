@@ -584,14 +584,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2023-02-25
+                    2023-02-28
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    992
+                    994
                 </div>
                 
 
@@ -616,14 +616,17 @@
                 <h1 id="网关服务器配制"><a href="#网关服务器配制" class="headerlink" title="网关服务器配制"></a>网关服务器配制</h1><p>假设该机的ip地址是10.176.22.33</p>
 <ol>
 <li><p>开启ip转发</p>
-<pre><code>echo "1" &gt; /proc/sys/net/ipv4/ip_forward</code></pre></li>
+<pre class=" language-bash"><code class="language-bash"><span class="token keyword">echo</span> <span class="token string">"1"</span> <span class="token operator">></span> /proc/sys/net/ipv4/ip_forward</code></pre>
+</li>
 <li><p>让他生效。</p>
-<pre><code>sysctl -p</code></pre></li>
+<pre class=" language-bash"><code class="language-bash">sysctl -p</code></pre>
+</li>
 <li><p>设置iptables规则</p>
-<pre><code>sudo iptables -F
-sudo iptables -P INPUT ACCEPT
-sudo iptables -P FORWARD ACCEPT
-sudo iptables -t nat -A POSTROUTING -o eno1 -j MASQUERADE</code></pre><p>最后一条有个eno1是你机器的网口名 你看下你机器网口名是啥 然后改下就行 </p>
+<pre class=" language-bash"><code class="language-bash"><span class="token function">sudo</span> iptables -F
+<span class="token function">sudo</span> iptables -P INPUT ACCEPT
+<span class="token function">sudo</span> iptables -P FORWARD ACCEPT
+<span class="token function">sudo</span> iptables -t nat -A POSTROUTING -o eno1 -j MASQUERADE</code></pre>
+<p>最后一条有个eno1是你机器的网口名 你看下你机器网口名是啥 然后改下就行 </p>
 </li>
 </ol>
 <h1 id="网关服务器配制-1"><a href="#网关服务器配制-1" class="headerlink" title="网关服务器配制"></a>网关服务器配制</h1><h2 id="ubuntu配制"><a href="#ubuntu配制" class="headerlink" title="ubuntu配制"></a>ubuntu配制</h2><p>编辑/etc/netplan/里面的配制文件</p>
@@ -673,13 +676,17 @@ sudo iptables -t nat -A POSTROUTING -o eno1 -j MASQUERADE</code></pre><p>最后�
 <li><p>把你上网的网卡的配置文件(<code>/etc/sysconfig/network-scripts/ifcfg-em3</code>)里的GATEWAY改为<code>10.176.22.33</code></p>
 </li>
 <li><p>增加一条路由，防止局域网的其他机器不能访问你。</p>
-<pre><code>ip route add 10.0.0.0/8 via 10.176.22.1 dev em3</code></pre></li>
+<pre class=" language-bash"><code class="language-bash">ip route add 10.0.0.0/8 via 10.176.22.1 dev em3</code></pre>
+</li>
 <li><p>如果出现<code>RTNETLINK answers: Network is unreachable</code>，在增加一条路由</p>
-<pre><code>ip route add 10.176.22.1/32 dev em3</code></pre></li>
+<pre class=" language-bash"><code class="language-bash">ip route add 10.176.22.1/32 dev em3</code></pre>
+</li>
 </ol>
-<h2 id="不改变网关，只配制路由"><a href="#不改变网关，只配制路由" class="headerlink" title="不改变网关，只配制路由"></a>不改变网关，只配制路由</h2><pre><code>ip route add 0.0.0.0/0 via 10.176.22.33
-ip route add 10.0.0.0/8 via 10.176.22.1</code></pre><h2 id="一些我想记录的命令"><a href="#一些我想记录的命令" class="headerlink" title="一些我想记录的命令"></a>一些我想记录的命令</h2><pre><code>ip route add 10.176.22.1/32 dev br0
-ip route add 10.0.0.0/8 via 10.176.22.1 dev br0</code></pre><h1 id="使用容器作为网关"><a href="#使用容器作为网关" class="headerlink" title="使用容器作为网关"></a>使用容器作为网关</h1><h2 id="创建macvlan网络"><a href="#创建macvlan网络" class="headerlink" title="创建macvlan网络"></a>创建macvlan网络</h2><ol>
+<h2 id="不改变网关，只配制路由"><a href="#不改变网关，只配制路由" class="headerlink" title="不改变网关，只配制路由"></a>不改变网关，只配制路由</h2><pre class=" language-bash"><code class="language-bash">ip route add 0.0.0.0/0 via 10.176.22.33
+ip route add 10.0.0.0/8 via 10.176.22.1</code></pre>
+<h2 id="一些我想记录的命令"><a href="#一些我想记录的命令" class="headerlink" title="一些我想记录的命令"></a>一些我想记录的命令</h2><pre class=" language-bash"><code class="language-bash">ip route add 10.176.22.1/32 dev br0
+ip route add 10.0.0.0/8 via 10.176.22.1 dev br0</code></pre>
+<h1 id="使用容器作为网关"><a href="#使用容器作为网关" class="headerlink" title="使用容器作为网关"></a>使用容器作为网关</h1><h2 id="创建macvlan网络"><a href="#创建macvlan网络" class="headerlink" title="创建macvlan网络"></a>创建macvlan网络</h2><ol>
 <li><p>（可选）让docker监听ipv6。</p>
 <p>编辑etc/docker/daemon.json文件</p>
 <pre class=" language-json"><code class="language-json"><span class="token punctuation">{</span>
@@ -687,85 +694,99 @@ ip route add 10.0.0.0/8 via 10.176.22.1 dev br0</code></pre><h1 id="使用容器
   <span class="token property">"fixed-cidr-v6"</span><span class="token operator">:</span> <span class="token string">"2001:DA8:8001:7B22:200::/80"</span>
 <span class="token punctuation">}</span></code></pre>
 <p>重启docker</p>
-<pre><code>sudo systemctl restart docker</code></pre></li>
+<pre class=" language-bash"><code class="language-bash"><span class="token function">sudo</span> systemctl restart docker</code></pre>
+</li>
 </ol>
 <ol start="2">
 <li><p>创建macvlan</p>
 <p>没有ipv6的版本</p>
-<pre><code>docker network create -d macvlan \
-    --subnet=10.176.22.0/24 \
-    --gateway=10.176.22.1 \
-     -o parent=em1 \
-     -o macvlan_mode=bridge macnet</code></pre><p>有ipv6的版本</p>
-<pre><code>docker network create -d macvlan --ipv6 \
-    --subnet=10.176.22.0/24 \
-    --gateway=10.176.22.1 \
-    --subnet=2001:DA8:8001:7B22:200::/80 --gateway=2001:DA8:8001:7B22:200::1 \
-     -o parent=em1 \
-     -o macvlan_mode=bridge macnet</code></pre><p>注意看含义，有的值需要变</p>
+<pre class=" language-bash"><code class="language-bash">docker network create -d macvlan \
+    --subnet<span class="token operator">=</span>10.176.22.0/24 \
+    --gateway<span class="token operator">=</span>10.176.22.1 \
+     -o parent<span class="token operator">=</span>em1 \
+     -o macvlan_mode<span class="token operator">=</span>bridge macnet</code></pre>
+<p>有ipv6的版本</p>
+<pre class=" language-bash"><code class="language-bash">docker network create -d macvlan --ipv6 \
+    --subnet<span class="token operator">=</span>10.176.22.0/24 \
+    --gateway<span class="token operator">=</span>10.176.22.1 \
+    --subnet<span class="token operator">=</span>2001:DA8:8001:7B22:200::/80 --gateway<span class="token operator">=</span>2001:DA8:8001:7B22:200::1 \
+     -o parent<span class="token operator">=</span>em1 \
+     -o macvlan_mode<span class="token operator">=</span>bridge macnet</code></pre>
+<p>注意看含义，有的值需要变</p>
 </li>
 </ol>
 <h2 id="设置容器"><a href="#设置容器" class="headerlink" title="设置容器"></a>设置容器</h2><ol>
 <li><p>采用centos作为容器</p>
-<pre><code>docker pull centos:centos7.9.2009</code></pre></li>
+<pre class=" language-bash"><code class="language-bash">docker pull centos:centos7.9.2009</code></pre>
+</li>
 </ol>
 <ol start="2">
 <li><p>创建容器</p>
-<pre><code>docker run --name rui -it -d --network macnet --privileged --ip 10.176.22.208 centos:centos7.9.2009 /bin/bash</code></pre></li>
+<pre class=" language-bash"><code class="language-bash">docker run --name rui -it -d --network macnet --privileged --ip 10.176.22.208 centos:centos7.9.2009 /bin/bash</code></pre>
+</li>
 </ol>
 <ol start="3">
 <li><p>进入容器后, 先更换源</p>
-<pre><code>cp -r /etc/yum.repos.d /etc/yum.repos.d.bak
-sed -e 's|^mirrorlist=|#mirrorlist=|g' \
-         -e 's|^#baseurl=http://mirror.centos.org|baseurl=https://mirrors.bfsu.edu.cn|g' \
+<pre class=" language-bash"><code class="language-bash"><span class="token function">cp</span> -r /etc/yum.repos.d /etc/yum.repos.d.bak
+<span class="token function">sed</span> -e <span class="token string">'s|^mirrorlist=|#mirrorlist=|g'</span> \
+         -e <span class="token string">'s|^#baseurl=http://mirror.centos.org|baseurl=https://mirrors.bfsu.edu.cn|g'</span> \
          -i.bak \
          /etc/yum.repos.d/CentOS-*.repo
-yum update</code></pre><p>安装一些工具</p>
-<pre><code>yum install -y  iproute iproute-doc</code></pre></li>
+yum update</code></pre>
+<p>安装一些工具</p>
+<pre class=" language-bash"><code class="language-bash">yum <span class="token function">install</span> -y  iproute iproute-doc</code></pre>
+</li>
 </ol>
 <ol start="4">
 <li><p>像上面一样开启转发</p>
-<pre><code>echo "1" &gt; /proc/sys/net/ipv4/ip_forward
-sysctl -p</code></pre></li>
+<pre class=" language-bash"><code class="language-bash"><span class="token keyword">echo</span> <span class="token string">"1"</span> <span class="token operator">></span> /proc/sys/net/ipv4/ip_forward
+sysctl -p</code></pre>
+</li>
 </ol>
 <ol start="5">
 <li><p>像上面一样设置iptables</p>
-<pre><code>iptables -F
+<pre class=" language-bash"><code class="language-bash">iptables -F
 iptables -P INPUT ACCEPT
 iptables -P FORWARD ACCEPT
-iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE</code></pre></li>
+iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE</code></pre>
+</li>
 </ol>
 <ol start="6">
 <li><p>这就设置好了。</p>
 </li>
 <li><p>把当前容器作为镜像</p>
-<pre><code>docker commit -a "ruiRay" -m "a centos gateway " f4d2c6a1070d centos_gateway:20230225</code></pre></li>
+<pre class=" language-bash"><code class="language-bash">docker commit -a <span class="token string">"ruiRay"</span> -m <span class="token string">"a centos gateway "</span> f4d2c6a1070d centos_gateway:20230225</code></pre>
+</li>
 <li><p>用当前容器重新创建一个测试</p>
-<pre><code>docker run --name rui -it -d --network macnet --privileged --ip 10.176.22.209 centos_gateway:20230225 /bin/bash</code></pre></li>
+<pre class=" language-bash"><code class="language-bash">docker run --name rui -it -d --network macnet --privileged --ip 10.176.22.209 centos_gateway:20230225 /bin/bash</code></pre>
+</li>
 </ol>
 <ol start="9">
 <li><p>发现并不起作用，进入容器查看iptables表发现少了一条记录，于是再次添加</p>
-<pre><code>iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE</code></pre><p>添加以后就能正常使用，还不清楚错误的原因。是不是没有保存？/etc/init.d/iptables save </p>
+<pre class=" language-bash"><code class="language-bash">iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE</code></pre>
+<p>添加以后就能正常使用，还不清楚错误的原因。是不是没有保存？/etc/init.d/iptables save </p>
 </li>
 <li><p>把镜像上传到dockerhub方便下次使用。</p>
-<pre><code>docker login # 输入帐号密码登录</code></pre><p>在官网上创建一个仓库叫做ruiray/centos_gateway:</p>
+<pre class=" language-bash"><code class="language-bash">docker login <span class="token comment" spellcheck="true"># 输入帐号密码登录</span></code></pre>
+<p>在官网上创建一个仓库叫做ruiray/centos_gateway:</p>
 <p>把本地镜像的名字命名为Docker ID/仓库名</p>
-<pre><code> docker tag centos_gateway:20230225 ruiray/centos_gateway:20230225</code></pre><p>推送到远端</p>
-<pre><code>docker push ruiray/centos_gateway:20230225</code></pre><p>验证一下</p>
-<pre><code>docker inspect ruiray/centos_gateway:20230225</code></pre><p><img src="https://img.tucang.cc/api/image/show/78860758f8da36021e4e85348cec2b78" alt="image-20230225180547023"></p>
+<pre class=" language-bash"><code class="language-bash"> docker tag centos_gateway:20230225 ruiray/centos_gateway:20230225</code></pre>
+<p>推送到远端</p>
+<pre class=" language-bash"><code class="language-bash">docker push ruiray/centos_gateway:20230225</code></pre>
+<p>验证一下</p>
+<pre class=" language-bash"><code class="language-bash">docker inspect ruiray/centos_gateway:20230225</code></pre>
+<p><img src="https://img.tucang.cc/api/image/show/78860758f8da36021e4e85348cec2b78" alt="查看镜像"></p>
 </li>
 </ol>
 <ol start="11">
 <li><p>基于alpine制作的方法也一样，创建一个容器，进入执行如下命令</p>
-<pre><code>set -eux &amp;&amp; sed -i 's/dl-cdn.alpinelinux.org/mirrors.sjtug.sjtu.edu.cn/g' /etc/apk/repositories
+<pre class=" language-bash"><code class="language-bash"><span class="token keyword">set</span> -eux <span class="token operator">&amp;&amp;</span> <span class="token function">sed</span> -i <span class="token string">'s/dl-cdn.alpinelinux.org/mirrors.sjtug.sjtu.edu.cn/g'</span> /etc/apk/repositories
 apk add iptables
 iptables -F
 iptables -P INPUT ACCEPT
 iptables -P FORWARD ACCEPT
-iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE</code></pre></li>
-</ol>
-<ol start="12">
-<li></li>
+iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE</code></pre>
+<h1 id=""><a href="#" class="headerlink" title=""></a></h1></li>
 </ol>
 
             </div>
@@ -1125,37 +1146,35 @@ iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE</code></pre></li>
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/posts/centos-gateway/">
+                <a href="/posts/1be6557c/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="centos7作为网关">
+                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="一些包含数据库的docker应用迁移记录">
                         
-                        <span class="card-title">centos7作为网关</span>
+                        <span class="card-title">一些包含数据库的docker应用迁移记录</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            网关服务器配制假设该机的ip地址是10.176.22.33
+                            immich
+导出postgres的数据。
 
-开启ip转发
-echo "1" &gt; /proc/sys/net/ipv4/ip_forward
-让他生效。
-sysctl -p
-设置iptables规则
-sudo ipta
+
+在新的环境中导入数据。
+
+
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-02-25
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2023-02-25
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -1164,7 +1183,6 @@ sudo ipta
                         </span>
                     </div>
                 </div>
-
                 
             </div>
         </div>
@@ -1367,7 +1385,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">54.4k</span>&nbsp;字
+                class="white-color">56.1k</span>&nbsp;字
             
             
             

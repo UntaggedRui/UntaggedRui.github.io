@@ -1035,11 +1035,13 @@
                             网关服务器配制假设该机的ip地址是10.176.22.33
 
 开启ip转发
-echo "1" &gt; /proc/sys/net/ipv4/ip_forward
+echo "1" > /proc/sys/net/ipv4/ip_forward
+
 让他生效。
 sysctl -p
+
 设置iptables规则
-sudo ipta
+sudo iptab
                         
                     </div>
                     <div class="publish-info">
@@ -1068,17 +1070,19 @@ sudo ipta
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="centos7磁盘空间操作">
+                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="LVM学习记录">
                         
-                        <span class="card-title">centos7磁盘空间操作</span>
+                        <span class="card-title">LVM学习记录</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            将/home分区合并到/分区[root@nisl51 ~]# df -h
-文件系统                 容量  已用  可用 已用% 挂载点
-devtmpfs                  32G     0   32G  
+                            以下内容主要来自于系统运维|Lnux LVM简明教程。
+简介逻辑卷管理LVM是用来管理磁盘的一个工具。传统分区使用固定大小分区，重新调整大小十分麻烦，而LVM就是解决这个问题的。
+LVM使用分层结构，如下图所示。
+
+这其中就涉及到我们后面需
                         
                     </div>
                     <div class="publish-info">
@@ -1250,7 +1254,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">54.4k</span>&nbsp;字
+                class="white-color">56.1k</span>&nbsp;字
             
             
             

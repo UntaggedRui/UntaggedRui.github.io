@@ -584,21 +584,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-03-23
+                    2023-03-01
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    177
+                    632
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    2 分
                 </div>
                 
 
@@ -613,7 +613,32 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="常用的环境变量"><a href="#常用的环境变量" class="headerlink" title="常用的环境变量"></a>常用的环境变量</h1><pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 配置时区</span>
+                <h1 id="linux环境变量简介"><a href="#linux环境变量简介" class="headerlink" title="linux环境变量简介"></a>linux环境变量简介</h1><p>export 显示当前系统定义的所有环境变量。</p>
+<p>echo $PATH 输出当前的$PATH 环境变量的值。</p>
+<p><a href="https://blog.csdn.net/tang3827738w/article/details/92387650" target="_blank" rel="noopener">https://blog.csdn.net/tang3827738w/article/details/92387650</a></p>
+<p><a href="https://www.cnblogs.com/kelelipeng/p/13638185.html" target="_blank" rel="noopener">https://www.cnblogs.com/kelelipeng/p/13638185.html</a></p>
+<p>在linux系统登录时主要生效的环境变量配制文件有以下5个</p>
+<p>/etc/profile</p>
+<p>/etc/profile.d/*.sh</p>
+<p>/etc/bashrc</p>
+<p>~/.bash_profile</p>
+<p>~.bashrc</p>
+<p>etc里面的环境变量是全局变量，后面两个是当前用户变量。开机读取配置文件顺序如下图。</p>
+<ul>
+<li>/etc/profile: 此文件为系统的每个用户设置环境信息，当用户第一次登录时，该文件被执行，并从/etc/profile.d目录的配置文件中搜集shell的配制。</li>
+<li>/etc/bashrc: 为每一个运行bash shell的用户执行次文件。当bash shell被打开时，该文件被读取。即每次新开一个终端，都会执行bashrc。</li>
+<li>~/.bashrc_profile。</li>
+</ul>
+<blockquote>
+<p>来自于new bing</p>
+<ul>
+<li>当用户登录时，系统会首先读取并执行 <strong>/etc/profile</strong> 文件，这是一个全局的配置文件，里面定义了一些基本的环境变量，如PATH、HISTSIZE、PS1等。</li>
+<li>然后，系统会读取并执行 <strong>/etc/profile.d/*.sh</strong> 文件夹下的所有以.sh结尾的文件，这些文件通常是一些软件安装时自动添加的配置文件，用来设置软件相关的环境变量。</li>
+<li>接着，系统会读取并执行用户主目录下的 <strong>~/.bash_profile</strong> 文件（如果存在），这是一个用户级别的配置文件，里面可以定义用户自己需要的环境变量。</li>
+<li>最后，系统会读取并执行用户主目录下的 <strong>~/.bashrc</strong> 文件（如果存在），这是一个针对每个shell实例生效的配置文件，里面可以定义一些交互式shell相关的环境变量。</li>
+</ul>
+</blockquote>
+<h1 id="常用的环境变量"><a href="#常用的环境变量" class="headerlink" title="常用的环境变量"></a>常用的环境变量</h1><pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># 配置时区</span>
 <span class="token function">export</span> TZ<span class="token operator">=</span><span class="token string">"Asia/Shanghai"</span>
 
 <span class="token comment" spellcheck="true"># 通过pip安装的可执行文件路径与自己编译产生的可执行文件路径</span>
@@ -1220,7 +1245,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">54.4k</span>&nbsp;字
+                class="white-color">56.1k</span>&nbsp;字
             
             
             

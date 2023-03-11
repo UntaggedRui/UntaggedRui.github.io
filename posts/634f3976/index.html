@@ -12,7 +12,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="centos7磁盘空间操作, 摸鱼记录">
+    <meta name="keywords" content="LVM学习记录, 摸鱼记录">
     <meta name="description" content="整天不学习，只知道玩的我">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -36,7 +36,7 @@
 </script>
 
 
-    <title>centos7磁盘空间操作 | 摸鱼记录</title>
+    <title>LVM学习记录 | 摸鱼记录</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -443,12 +443,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/3.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/2.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">centos7磁盘空间操作</h1>
+                    <h1 class="description center-align post-title">LVM学习记录</h1>
                 </div>
             </div>
         </div>
@@ -584,21 +584,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2023-02-25
+                    2023-02-28
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    344
+                    1.2k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    4 分
                 </div>
                 
 
@@ -613,45 +613,114 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="将-home分区合并到-分区"><a href="#将-home分区合并到-分区" class="headerlink" title="将/home分区合并到/分区"></a>将/home分区合并到/分区</h1><pre><code>[root@nisl51 ~]# df -h
-文件系统                 容量  已用  可用 已用% 挂载点
-devtmpfs                  32G     0   32G    0% /dev
-tmpfs                     32G     0   32G    0% /dev/shm
-tmpfs                     32G  530M   31G    2% /run
-tmpfs                     32G     0   32G    0% /sys/fs/cgroup
-/dev/mapper/centos-root  400G  1.3G  399G    1% /
-/dev/sda2               1014M  144M  871M   15% /boot
-/dev/sda1                200M   12M  189M    6% /boot/efi
-/dev/mapper/centos-home  2.3T   34M  2.3T    1% /home
-tmpfs                    6.3G     0  6.3G    0% /run/user/1000
-tmpfs                    6.3G     0  6.3G    0% /run/user/0</code></pre><p>想把/home的空间合并到/中</p>
-<h1 id="将空磁盘加入到-目录"><a href="#将空磁盘加入到-目录" class="headerlink" title="将空磁盘加入到/目录"></a>将空磁盘加入到/目录</h1><p>之前的情况</p>
-<pre class=" language-bash"><code class="language-bash">finance@nisl55: data$ <span class="token function">df</span> -h
-文件系统                 容量  已用  可用 已用% 挂载点
-devtmpfs                  32G     0   32G    0% /dev
-tmpfs                     32G     0   32G    0% /dev/shm
-tmpfs                     32G  482M   31G    2% /run
-tmpfs                     32G     0   32G    0% /sys/fs/cgroup
-/dev/mapper/centos-root  400G   21G  380G    6% /
-/dev/sda2               1014M  143M  872M   15% /boot
-/dev/sda1                200M   12M  189M    6% /boot/efi
-/dev/mapper/centos-home  610G  4.5G  605G    1% /home
-cm_processes              32G  119M   32G    1% /run/cloudera-scm-agent/process
-tmpfs                    6.3G     0  6.3G    0% /run/user/1000
-finance@nisl55: data$ lsblk
-NAME            MAJ:MIN RM   SIZE RO TYPE MOUNTPOINT
-sda               8:0    0     1T  0 disk
-├─sda1            8:1    0   200M  0 part /boot/efi
-├─sda2            8:2    0     1G  0 part /boot
-└─sda3            8:3    0     1T  0 part
-  ├─centos-root 253:0    0   400G  0 lvm  /
-  ├─centos-swap 253:1    0  31.4G  0 lvm  <span class="token punctuation">[</span>SWAP<span class="token punctuation">]</span>
-  └─centos-home 253:2    0 609.4G  0 lvm  /home
-sdb               8:16   0   1.2T  0 disk
-└─sdb1            8:17   0   1.1T  0 part
-sr0              11:0    1  1024M  0 rom
-finance@nisl55: data$</code></pre>
-<p>目标是把sdb的1.2T空间加入到/中</p>
+                <p>以下内容主要来自于<a href="https://linux.cn/article-3218-1.html" target="_blank" rel="noopener">系统运维|Lnux LVM简明教程</a>。</p>
+<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>逻辑卷管理LVM是用来管理磁盘的一个工具。传统分区使用固定大小分区，重新调整大小十分麻烦，而LVM就是解决这个问题的。</p>
+<p>LVM使用分层结构，如下图所示。</p>
+<p><img src="https://img.tucang.cc/api/image/show/06e4762cd2620f3c59b4ba48c11b7336" alt="lvm的结构"></p>
+<p>这其中就涉及到我们后面需要操作的三个核心组件，物理卷，卷组，逻辑卷。</p>
+<p>首先，实际的物理磁盘及其划分的分区被成为物理卷(PV)，一个或多个物理卷可以用来创建卷组(VG)。基于卷组可以创建逻辑卷(LV)。在一个卷组中可以创建多个逻辑卷。文件系统就是在逻辑卷上创建的，然后可以在操作系统挂载和访问。</p>
+<h1 id="LVM的基本操作"><a href="#LVM的基本操作" class="headerlink" title="LVM的基本操作"></a>LVM的基本操作</h1><h2 id="准备磁盘分区"><a href="#准备磁盘分区" class="headerlink" title="准备磁盘分区"></a>准备磁盘分区</h2><p>通过使用fdisk，创建磁盘分区。我们需要创建3个1G分区，注意，并不要求分区的大小一致。同样，分区需要使用‘8e’类型来使他们可用于LVM。</p>
+<p><img src="https://img.tucang.cc/api/image/show/b63e6a94502ae45bc533d66950281c8a" alt="image-20230228203832204"></p>
+<p>重复上面的操作来创建其他两个分区。分区创建完成后，我们应该有类似如下的输出：</p>
+<p><img src="https://img.tucang.cc/api/image/show/e8db00fcef1f19abdbb3116cef484c37" alt="image-20230228203852946"></p>
+<p>其中/dev/sdb1, /dev/sdb2等就是我们所说的磁盘分区。</p>
+<h2 id="准备物理卷-PV"><a href="#准备物理卷-PV" class="headerlink" title="准备物理卷(PV)"></a>准备物理卷(PV)</h2><p>通过<code>pvcreate</code>可以在磁盘分区上创建物理卷。</p>
+<pre class=" language-bash"><code class="language-bash">pvcreate /dev/sdb1
+pvcreate /dev/sdb2
+pvcreate /dev/sdb3</code></pre>
+<p>使用<code>pvdisplay</code>命令可以检查查看当前机器上的物理卷情况。</p>
+<p><img src="https://img.tucang.cc/api/image/show/a0dc2e6a3afcac67f807625f410d7e38" alt="image-20230228200547018">在我自己的主机上的显示情况如下。</p>
+<p><img src="https://img.tucang.cc/api/image/show/59e9fb83cfe7e41d4d0c2aa4f80a4111" alt="image-20230228195319297"></p>
+<p>使用<code>pvremove</code>可以删除物理卷</p>
+<pre class=" language-bash"><code class="language-bash">pvremove /dev/sdb1</code></pre>
+<h2 id="准备卷组-VG"><a href="#准备卷组-VG" class="headerlink" title="准备卷组(VG)"></a>准备卷组(VG)</h2><p>使用<code>vgcreate</code>进行卷组的创建。</p>
+<p>下列命令用来创建名为’volume-group1’的卷组，使用/dev/sdb1, /dev/sdb2 和 /dev/sdb3创建。</p>
+<pre class=" language-bash"><code class="language-bash">vgcreate volume-group1 /dev/sdb1 /dev/sdb2 /dev/sdb3</code></pre>
+<p>使用<code>vgdisplay</code>来查看主机上的卷组</p>
+<p><img src="https://img.tucang.cc/api/image/show/b9a3138ac2783c1460b9690148410405" alt="image-20230228200533379"></p>
+<p>在我自己的主机上如下所示。</p>
+<p><img src="https://img.tucang.cc/api/image/show/7d4344cb17487c22a9460efc0070195b" alt="image-20230228195636340"></p>
+<p>从众我们可以看到卷组的使用量/总量。物理卷给卷组提供空间，只要这个卷组中还有可用空间，我们就可以随意创建逻辑卷。</p>
+<p>vgs命令也可以查看卷组的信息，但是比较简略。</p>
+<p><img src="https://img.tucang.cc/api/image/show/a58b713ec348aec9a324c6fdc013367b" alt="image-20230228202204131"></p>
+<p>使用vgremove删除卷组。</p>
+<pre class=" language-bash"><code class="language-bash">vgremove volume-group1</code></pre>
+<h2 id="创建逻辑卷-LV"><a href="#创建逻辑卷-LV" class="headerlink" title="创建逻辑卷(LV)"></a>创建逻辑卷(LV)</h2><p>使用<code>lvcreate</code>进行裸机卷的创建。下面是创建一个名为<code>1v1</code>大小为100MB的逻辑卷。</p>
+<pre class=" language-bash"><code class="language-bash">lvcreate -L 100M -n 1v1 volume-group1</code></pre>
+<p>逻辑卷可以使用<code>lvdisplay</code>命令查看。</p>
+<p><img src="https://img.tucang.cc/api/image/show/3d8f01965d19b74f3b9b36cfc5a417bf" alt="image-20230228200516138"></p>
+<p>我自己的机器上显示效果如下。</p>
+<p><img src="https://img.tucang.cc/api/image/show/89c0439a0fb8aad769bb7d6b3ae31887" alt="image-20230228200100937"></p>
+<p>我们可以格式化和挂载逻辑卷。</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># mkfs.ext4 /dev/volume-group1/lv1</span>
+<span class="token comment" spellcheck="true"># mkdir /lvm-mount</span>
+<span class="token comment" spellcheck="true"># mount /dev/volume-group1/lv1 /lvm-mount/ </span></code></pre>
+<p>使用lvremove可以删除逻辑卷。</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># umount /lvm-mount/</span>
+<span class="token comment" spellcheck="true"># lvremove /dev/volume-group1/lv1 </span></code></pre>
+<h2 id="拓展一个LVM卷"><a href="#拓展一个LVM卷" class="headerlink" title="拓展一个LVM卷"></a>拓展一个LVM卷</h2><p>逻辑卷的大小是可以调整的。在调整逻辑卷大小之后，也要对文件系统调整大小进行匹配。这个额外的步骤各不相同，取决于创建文件系统的类型。</p>
+<p>首先需要卸载掉1v1卷。</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token function">umount</span> /lvm-mount/</code></pre>
+<p>然后设置卷的大小为200M</p>
+<pre class=" language-bash"><code class="language-bash">lvresize -L 200M /dev/volume-group1/1v1</code></pre>
+<blockquote>
+<p>也可以用lvextend命令来进行了扩容</p>
+<pre class=" language-bash"><code class="language-bash">lvextend -l +100%FREE /dev/VolGroup00/lv_root</code></pre>
+<p>将当前卷组中所有的空闲空间都拓展到lv_root这个逻辑卷中。</p>
+</blockquote>
+<p>接下来检查磁盘错误</p>
+<pre class=" language-bash"><code class="language-bash">e2fsck -f /dev/volume-group1/1v1</code></pre>
+<p>运行一下命令拓展文件系统</p>
+<pre class=" language-bash"><code class="language-bash">resize2fs /dev/volume-group1/1v1</code></pre>
+<p>然后检查一下lv的状态来验证。</p>
+<p><img src="https://img.tucang.cc/api/image/show/366c41ace77a92570cec424c1f97dcb6" alt="image-20230228201156682"></p>
+<h2 id="缩减一个LVM卷"><a href="#缩减一个LVM卷" class="headerlink" title="缩减一个LVM卷"></a>缩减一个LVM卷</h2><p>和上面差不多的步骤。需要注意的是减少后逻辑卷的大小值如果小于存储数据的大小，存储在后面的数据会丢失。</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token function">umount</span> /dev/volume-group1/lv1 <span class="token comment" spellcheck="true"># 卸载掉卷。</span>
+e2fsck -f /dev/volume-group1/lv1  <span class="token comment" spellcheck="true"># 检测磁盘错误。</span>
+resize2fs /dev/volume-group1/lv1 100M <span class="token comment" spellcheck="true"># 缩小文件系统，更新ext4信息。</span>
+lvresize -L 100M /dev/volume-group1/lv1 <span class="token comment" spellcheck="true">#减少逻辑卷大小</span></code></pre>
+<p>最后验证调整后的逻辑卷大小。</p>
+<p><img src="https://img.tucang.cc/api/image/show/46e70669d7f355933ee14db9a72055f4" alt="image-20230228201506275"></p>
+<h2 id="拓展一个卷组"><a href="#拓展一个卷组" class="headerlink" title="拓展一个卷组"></a>拓展一个卷组</h2><p>将一个物理卷添加到卷组。主要用于将一个新挂载的磁盘加入到LVM中。</p>
+<p>检查现在的卷组状态。</p>
+<p><img src="https://img.tucang.cc/api/image/show/e706c9ca509d573a3ca09443a4acc1e3" alt="image-20230228201607136"></p>
+<p>创建一个2GB分区sdc1，类型为LVM(8e)</p>
+<p><img src="https://img.tucang.cc/api/image/show/2a7c83141b2204148175da4418bd7a7c" alt="image-20230228201643623"></p>
+<p>再创建物理卷并拓展卷组。</p>
+<pre class=" language-bash"><code class="language-bash">pvcreate /dev/sdc1
+vgextend volume-group1 /dev/sdc1</code></pre>
+<p>使用vgdisplay来验证。</p>
+<p><img src="https://img.tucang.cc/api/image/show/ef68867a0f34b66963c4143c32d2b48b" alt="image-20230228201755935"></p>
+<p>只要是8e类型的磁盘分区都可以用来拓展卷组。</p>
+<h1 id="lvm用法实践"><a href="#lvm用法实践" class="headerlink" title="lvm用法实践"></a>lvm用法实践</h1><h2 id="centos中将home分区合并到-分区"><a href="#centos中将home分区合并到-分区" class="headerlink" title="centos中将home分区合并到/分区"></a>centos中将home分区合并到/分区</h2><ol>
+<li><p>备份home分区的文件并卸载home分区</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token function">tar</span> cvf /tmp/home.tar /home
+<span class="token function">umount</span> /home</code></pre>
+</li>
+</ol>
+<ol start="2">
+<li><p>取消home分区的开机挂载，把<code>/etc/fstab</code>里面的<code>/dev/mapper/centos-home</code>这一行注释掉。</p>
+</li>
+<li><p>删除与home分区有关的进程</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token function">fuser</span> -m -v -i -k /home </code></pre>
+</li>
+</ol>
+<ol start="4">
+<li><p>删除/home所在的lv</p>
+<pre class=" language-bash"><code class="language-bash">lvremove /dev/mapper/centos-home</code></pre>
+</li>
+</ol>
+<ol start="5">
+<li><p>拓展/root所在的lv，将剩下全部可用大小都分配给root</p>
+<pre class=" language-bash"><code class="language-bash">lvextend -l +100%FREE /dev/mapper/centos-root
+<span class="token comment" spellcheck="true"># 下面的命令应该用哪一个？</span>
+xfs_growfs /dev/mapper/centos-root 
+resize2fs /dev/mapper/centos-root </code></pre>
+</li>
+</ol>
+<ol start="6">
+<li>把原来备份的home目录中的东西放到/home文件夹中。</li>
+</ol>
 
             </div>
             <hr/>
@@ -1248,7 +1317,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">54.4k</span>&nbsp;字
+                class="white-color">56.1k</span>&nbsp;字
             
             
             
