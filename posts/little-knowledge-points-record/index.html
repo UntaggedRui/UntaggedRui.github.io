@@ -597,14 +597,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2023-02-20
+                    2023-04-08
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    3k
+                    3.1k
                 </div>
                 
 
@@ -634,14 +634,16 @@
 </blockquote>
 </li>
 <li><p>查看公网ip</p>
-<pre class=" language-bash"><code class="language-bash">curl ip.sb   <span class="token comment" spellcheck="true"># 这个速度很快</span>
-curl ipv6.ip.sb <span class="token comment" spellcheck="true"># 获取ipv6</span>
-curl ifconfig.me
-
-curl icanhazip.com</code></pre>
-<p>感谢这位<a href="https://github.com/zhongyang219/TrafficMonitor/issues/394" target="_blank" rel="noopener">朋友</a>的提供，这也是一种途径。</p>
-<p><a href="https://v4.yinghualuo.cn/bejson" target="_blank" rel="noopener">https://v4.yinghualuo.cn/bejson</a><br><a href="https://v6.yinghualuo.cn/bejson" target="_blank" rel="noopener">https://v6.yinghualuo.cn/bejson</a></p>
 </li>
+</ol>
+<pre class=" language-bash"><code class="language-bash">   curl ip.sb   <span class="token comment" spellcheck="true"># 这个速度很快</span>
+   curl ipv6.ip.sb <span class="token comment" spellcheck="true"># 获取ipv6</span>
+   curl ifconfig.me
+
+   curl icanhazip.com</code></pre>
+<p>   感谢这位<a href="https://github.com/zhongyang219/TrafficMonitor/issues/394" target="_blank" rel="noopener">朋友</a>的提供，这也是一种途径。</p>
+<p>   <a href="https://v4.yinghualuo.cn/bejson" target="_blank" rel="noopener">https://v4.yinghualuo.cn/bejson</a><br>   <a href="https://v6.yinghualuo.cn/bejson" target="_blank" rel="noopener">https://v6.yinghualuo.cn/bejson</a></p>
+<ol start="3">
 <li><p>iterm2中建立免输入密钥文件的配置文件</p>
 <ol>
 <li><p>创建登录脚本，保存到Documents/login.sh</p>
@@ -855,6 +857,11 @@ useradd rui -u 6666  -m -s /bin/zsh -g rui
 sudo usermod -aG sudo rui</code></pre></li>
 </ol>
 <ol start="28">
+<li><p>linux查看用户组下面所有用户的方法</p>
+<pre class=" language-bash"><code class="language-bash">getent group rui</code></pre>
+</li>
+</ol>
+<ol start="29">
 <li><p>apt-get换源方法：<a href="https://mirrors.bfsu.edu.cn/help/ubuntu/" target="_blank" rel="noopener">https://mirrors.bfsu.edu.cn/help/ubuntu/</a></p>
 <p>注意：再换源之前要先执行sudo  apt install –reinstall ca-certificates重新安装证书，否则再替换后执行apt-get update的时候会出现<code>Certificate verification failed: The certificate is NOT trusted. The certificate chain uses expired certificate. Could not handshake: Error in the certificate verification.</code></p>
 </li>
@@ -864,17 +871,24 @@ sudo usermod -aG sudo rui</code></pre></li>
 <li><p>生成密钥。</p>
 <pre><code> ssh-keygen -m PEM -t rsa</code></pre></li>
 </ol>
-<ol start="31">
+<ol start="32">
 <li><p>查看所有存活的主机</p>
 <pre><code>nmap -nsP 10.176.22.0/24</code></pre></li>
 </ol>
-<ol start="32">
+<ol start="33">
 <li><p>office tool plus激活microsoft 365，按下快捷键 Ctrl + Shift + P，打开命令框，按需复制下面的命令。</p>
 <pre><code>ospp /insLicID MondoVolume /sethst:kms.loli.best /setprt:1688 /act</code></pre><p>来源于<a href="https://www.coolhub.top/archives/14" target="_blank" rel="noopener">https://www.coolhub.top/archives/14</a></p>
 </li>
-<li></li>
+<li><p>linux删除路由</p>
+<pre class=" language-bash"><code class="language-bash"> <span class="token function">sudo</span> ip route del 192.168.2.0/24 via 0.0.0.0  dev enp175s0f0np0</code></pre>
+</li>
+<li><p>测试磁盘读写速度</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token function">dd</span> if<span class="token operator">=</span>/dev/sda of<span class="token operator">=</span>/dev/null bs<span class="token operator">=</span>1M count<span class="token operator">=</span>1000 iflag<span class="token operator">=</span>direct <span class="token comment" spellcheck="true">#读</span>
+<span class="token function">dd</span> if<span class="token operator">=</span>/dev/zero of<span class="token operator">=</span>testfile bs<span class="token operator">=</span>1M count<span class="token operator">=</span>1000 oflag<span class="token operator">=</span>direct <span class="token comment" spellcheck="true">#写</span></code></pre>
+</li>
 </ol>
-<h1 id="centos硬件信息查询"><a href="#centos硬件信息查询" class="headerlink" title="centos硬件信息查询"></a>centos硬件信息查询</h1><ol>
+<ol start="36">
+<li><h1 id="centos硬件信息查询"><a href="#centos硬件信息查询" class="headerlink" title="centos硬件信息查询"></a>centos硬件信息查询</h1></li>
 <li><p>查询服务器型号:<code>sudo dmidecode | grep "Product"</code></p>
 <pre class=" language-bash"><code class="language-bash">    Product Name: PowerEdge R730
     Product Name: 072T6D</code></pre>
@@ -1020,7 +1034,7 @@ root@ubuntu:~<span class="token comment" spellcheck="true"># vgdisplay</span>
 <ol start="7">
 <li></li>
 </ol>
-
+<h1 id=""><a href="#" class="headerlink" title=""></a></h1>
             </div>
             <hr/>
 
@@ -1630,7 +1644,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">56.1k</span>&nbsp;字
+                class="white-color">57.6k</span>&nbsp;字
             
             
             

@@ -584,21 +584,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2023-02-28
+                    2023-05-05
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.2k
+                    2.1k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    4 分
+                    9 分
                 </div>
                 
 
@@ -720,6 +720,155 @@ resize2fs /dev/mapper/centos-root </code></pre>
 </ol>
 <ol start="6">
 <li>把原来备份的home目录中的东西放到/home文件夹中。</li>
+</ol>
+<h2 id="为ubuntu的lvm分区添加一块新的硬盘"><a href="#为ubuntu的lvm分区添加一块新的硬盘" class="headerlink" title="为ubuntu的lvm分区添加一块新的硬盘"></a>为ubuntu的lvm分区添加一块新的硬盘</h2><ol>
+<li><p>格式化新的硬盘<code>/dev/sda</code>。分区需要使用‘8e’类型来使他们可用于LVM。</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">fdisk</span> /dev/sda
+
+Welcome to <span class="token function">fdisk</span> <span class="token punctuation">(</span>util-linux 2.34<span class="token punctuation">)</span>.
+Changes will remain <span class="token keyword">in</span> memory only, <span class="token keyword">until</span> you decide to <span class="token function">write</span> them.
+Be careful before using the <span class="token function">write</span> command.
+
+Device does not contain a recognized partition table.
+Created a new DOS disklabel with disk identifier 0x10f72008.
+
+Command <span class="token punctuation">(</span>m <span class="token keyword">for</span> help<span class="token punctuation">)</span>: n
+Partition <span class="token function">type</span>
+   p   primary <span class="token punctuation">(</span>0 primary, 0 extended, 4 free<span class="token punctuation">)</span>
+   e   extended <span class="token punctuation">(</span>container <span class="token keyword">for</span> logical partitions<span class="token punctuation">)</span>
+Select <span class="token punctuation">(</span>default p<span class="token punctuation">)</span>: p
+Partition number <span class="token punctuation">(</span>1-4, default 1<span class="token punctuation">)</span>:
+First sector <span class="token punctuation">(</span>2048-1953525167, default 2048<span class="token punctuation">)</span>:
+Last sector, +/-sectors or +/-size<span class="token punctuation">{</span>K,M,G,T,P<span class="token punctuation">}</span> <span class="token punctuation">(</span>2048-1953525167, default 1953525167<span class="token punctuation">)</span>:
+
+Created a new partition 1 of <span class="token function">type</span> <span class="token string">'Linux'</span> and of size 931.5 GiB.
+
+Command <span class="token punctuation">(</span>m <span class="token keyword">for</span> help<span class="token punctuation">)</span>: t
+Selected partition 1
+Hex code <span class="token punctuation">(</span>type L to list all codes<span class="token punctuation">)</span>: 8e
+Changed <span class="token function">type</span> of partition <span class="token string">'Linux'</span> to <span class="token string">'Linux LVM'</span><span class="token keyword">.</span>
+Command <span class="token punctuation">(</span>m <span class="token keyword">for</span> help<span class="token punctuation">)</span>: w
+The partition table has been altered.
+Calling ioctl<span class="token punctuation">(</span><span class="token punctuation">)</span> to re-read partition table.
+Syncing disks.</code></pre>
+</li>
+</ol>
+<ol start="2">
+<li><p>在分区上创建逻辑卷。</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token function">sudo</span> pvcreate /dev/sda1
+  Physical volume <span class="token string">"/dev/sda1"</span> successfully created.</code></pre>
+</li>
+</ol>
+<ol start="3">
+<li><p>将物理卷添加到逻辑卷中。先查看卷名称再扩容。</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># rui @ rdma221 in ~ [8:16:37]</span>
+$ <span class="token function">sudo</span> vgdisplay
+  --- Volume group ---
+  VG Name               ubuntu-vg
+  System ID
+  Format                lvm2
+  Metadata Areas        1
+  Metadata Sequence No  2
+  VG Access             read/write
+  VG Status             resizable
+  MAX LV                0
+  Cur LV                1
+  Open LV               1
+  Max PV                0
+  Cur PV                1
+  Act PV                1
+  VG Size               <span class="token operator">&lt;</span>891.70 GiB
+  PE Size               4.00 MiB
+  Total PE              228275
+  Alloc PE / Size       228275 / <span class="token operator">&lt;</span>891.70 GiB
+  Free  PE / Size       0 / 0
+  VG UUID               2oBXft-mP9w-vgg3-AF1e-ouqS-nVGP-WR0Jdf
+
+</code></pre>
+</li>
+</ol>
+<h1 id="rui-rdma221-in-8-17-03"><a href="#rui-rdma221-in-8-17-03" class="headerlink" title="rui @ rdma221 in ~ [8:17:03]"></a>rui @ rdma221 in ~ [8:17:03]</h1><p>   $ sudo vgextend  ubuntu-vg /dev/sda1<br>     Volume group “ubuntu-vg” successfully extended</p>
+<pre><code>
+
+
+4. 扩容逻辑卷。先查看逻辑卷名称再扩容。
+
+   ```bash
+   # rui @ rdma221 in ~ [8:21:24] C:130
+   $ sudo lvdisplay
+     --- Logical volume ---
+     LV Path                /dev/ubuntu-vg/ubuntu-lv
+     LV Name                ubuntu-lv
+     VG Name                ubuntu-vg
+     LV UUID                ATijFo-gKff-sAf8-r2Xa-md8C-WqJE-ihhiqJ
+     LV Write Access        read/write
+     LV Creation host, time ubuntu-server, 2022-11-22 13:56:21 +0000
+     LV Status              available
+     # open                 1
+     LV Size                &lt;891.70 GiB
+     Current LE             228275
+     Segments               1
+     Allocation             inherit
+     Read ahead sectors     auto
+     - currently set to     256
+     Block device           253:0
+
+
+   # rui @ rdma221 in ~ [8:21:27]
+   $ sudo lvextend -l +100%FREE /dev/ubuntu-vg/ubuntu-lv
+     Size of logical volume ubuntu-vg/ubuntu-lv changed from &lt;891.70 GiB (228275 extents) to 1.78 TiB (466741 extents).
+     Logical volume ubuntu-vg/ubuntu-lv successfully resized.
+</code></pre><ol start="5">
+<li><p>扩容文件系统。</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># rui @ rdma221 in ~ [8:22:06]</span>
+$ <span class="token function">sudo</span> resize2fs /dev/ubuntu-vg/ubuntu-lv
+resize2fs 1.45.5 <span class="token punctuation">(</span>07-Jan-2020<span class="token punctuation">)</span>
+Filesystem at /dev/ubuntu-vg/ubuntu-lv is mounted on /<span class="token punctuation">;</span> on-line resizing required
+old_desc_blocks <span class="token operator">=</span> 112, new_desc_blocks <span class="token operator">=</span> 228
+The filesystem on /dev/ubuntu-vg/ubuntu-lv is now 477942784 <span class="token punctuation">(</span>4k<span class="token punctuation">)</span> blocks long.
+</code></pre>
+</li>
+</ol>
+<ol start="6">
+<li><p>扩容完成。</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># rui @ rdma221 in ~ [8:23:12]</span>
+$ <span class="token function">df</span> -h
+Filesystem                         Size  Used Avail Use% Mounted on
+udev                               126G     0  126G   0% /dev
+tmpfs                               26G  2.8M   26G   1% /run
+/dev/mapper/ubuntu--vg-ubuntu--lv  1.8T  475G  1.3T  28% /
+tmpfs                              126G     0  126G   0% /dev/shm
+tmpfs                              5.0M  4.0K  5.0M   1% /run/lock
+tmpfs                              126G     0  126G   0% /sys/fs/cgroup
+/dev/nvme0n1p2                     1.5G  210M  1.2G  16% /boot
+/dev/nvme0n1p1                     1.1G  6.1M  1.1G   1% /boot/efi
+/dev/loop0                          64M   64M     0 100% /snap/core20/1852
+/dev/loop1                          92M   92M     0 100% /snap/lxd/23991
+/dev/loop2                          54M   54M     0 100% /snap/snapd/18933
+/dev/loop3                          50M   50M     0 100% /snap/snapd/18596
+/dev/loop4                          64M   64M     0 100% /snap/core20/1879
+/dev/loop5                          92M   92M     0 100% /snap/lxd/24061
+tmpfs                               26G     0   26G   0% /run/user/6666
+
+<span class="token comment" spellcheck="true"># rui @ rdma221 in ~ [8:23:15]</span>
+$ lsblk
+NAME                      MAJ:MIN RM   SIZE RO TYPE MOUNTPOINT
+loop0                       7:0    0  63.3M  1 loop /snap/core20/1852
+loop1                       7:1    0  91.8M  1 loop /snap/lxd/23991
+loop2                       7:2    0  53.2M  1 loop /snap/snapd/18933
+loop3                       7:3    0  49.9M  1 loop /snap/snapd/18596
+loop4                       7:4    0  63.3M  1 loop /snap/core20/1879
+loop5                       7:5    0  91.9M  1 loop /snap/lxd/24061
+sda                         8:0    0 931.5G  0 disk
+└─sda1                      8:1    0 931.5G  0 part
+  └─ubuntu--vg-ubuntu--lv 253:0    0   1.8T  0 lvm  /
+nvme0n1                   259:0    0 894.3G  0 disk
+├─nvme0n1p1               259:1    0   1.1G  0 part /boot/efi
+├─nvme0n1p2               259:2    0   1.5G  0 part /boot
+└─nvme0n1p3               259:3    0 891.7G  0 part
+  └─ubuntu--vg-ubuntu--lv 253:0    0   1.8T  0 lvm  /
+pmem0                     259:4    0 496.1G  0 disk</code></pre>
+</li>
 </ol>
 
             </div>
@@ -1317,7 +1466,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">56.1k</span>&nbsp;字
+                class="white-color">57.6k</span>&nbsp;字
             
             
             
