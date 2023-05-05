@@ -11,6 +11,15 @@
   </url>
   
   <url>
+    <loc>https://blog.hifool.cn/posts/f64e623b/</loc>
+    
+    <lastmod>2023-05-05</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://blog.hifool.cn/posts/little-knowledge-points-record/</loc>
     
     <lastmod>2023-04-08</lastmod>
@@ -32,15 +41,6 @@
     <loc>https://blog.hifool.cn/posts/cd03bf65/</loc>
     
     <lastmod>2023-03-31</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.hifool.cn/posts/f64e623b/</loc>
-    
-    <lastmod>2023-03-26</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>

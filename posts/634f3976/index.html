@@ -783,53 +783,50 @@ $ <span class="token function">sudo</span> vgdisplay
   Alloc PE / Size       228275 / <span class="token operator">&lt;</span>891.70 GiB
   Free  PE / Size       0 / 0
   VG UUID               2oBXft-mP9w-vgg3-AF1e-ouqS-nVGP-WR0Jdf
+<span class="token comment" spellcheck="true"># rui @ rdma221 in ~ [8:17:03]</span>
+$ <span class="token function">sudo</span> vgextend  ubuntu-vg /dev/sda1
+  Volume group <span class="token string">"ubuntu-vg"</span> successfully extended
+</code></pre>
+</li>
+</ol>
+<ol start="4">
+<li><p>扩容逻辑卷。先查看逻辑卷名称再扩容。</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># rui @ rdma221 in ~ [8:21:24] C:130</span>
+$ <span class="token function">sudo</span> lvdisplay
+  --- Logical volume ---
+  LV Path                /dev/ubuntu-vg/ubuntu-lv
+  LV Name                ubuntu-lv
+  VG Name                ubuntu-vg
+  LV UUID                ATijFo-gKff-sAf8-r2Xa-md8C-WqJE-ihhiqJ
+  LV Write Access        read/write
+  LV Creation host, <span class="token function">time</span> ubuntu-server, 2022-11-22 13:56:21 +0000
+  LV Status              available
+  <span class="token comment" spellcheck="true"># open                 1</span>
+  LV Size                <span class="token operator">&lt;</span>891.70 GiB
+  Current LE             228275
+  Segments               1
+  Allocation             inherit
+  Read ahead sectors     auto
+  - currently <span class="token keyword">set</span> to     256
+  Block device           253:0
 
 </code></pre>
 </li>
 </ol>
-<h1 id="rui-rdma221-in-8-17-03"><a href="#rui-rdma221-in-8-17-03" class="headerlink" title="rui @ rdma221 in ~ [8:17:03]"></a>rui @ rdma221 in ~ [8:17:03]</h1><p>   $ sudo vgextend  ubuntu-vg /dev/sda1<br>     Volume group “ubuntu-vg” successfully extended</p>
+<h1 id="rui-rdma221-in-8-21-27"><a href="#rui-rdma221-in-8-21-27" class="headerlink" title="rui @ rdma221 in ~ [8:21:27]"></a>rui @ rdma221 in ~ [8:21:27]</h1><p>   $ sudo lvextend -l +100%FREE /dev/ubuntu-vg/ubuntu-lv<br>     Size of logical volume ubuntu-vg/ubuntu-lv changed from &lt;891.70 GiB (228275 extents) to 1.78 TiB (466741 extents).<br>     Logical volume ubuntu-vg/ubuntu-lv successfully resized.</p>
 <pre><code>
 
 
-4. 扩容逻辑卷。先查看逻辑卷名称再扩容。
+5. 扩容文件系统。
 
    ```bash
-   # rui @ rdma221 in ~ [8:21:24] C:130
-   $ sudo lvdisplay
-     --- Logical volume ---
-     LV Path                /dev/ubuntu-vg/ubuntu-lv
-     LV Name                ubuntu-lv
-     VG Name                ubuntu-vg
-     LV UUID                ATijFo-gKff-sAf8-r2Xa-md8C-WqJE-ihhiqJ
-     LV Write Access        read/write
-     LV Creation host, time ubuntu-server, 2022-11-22 13:56:21 +0000
-     LV Status              available
-     # open                 1
-     LV Size                &lt;891.70 GiB
-     Current LE             228275
-     Segments               1
-     Allocation             inherit
-     Read ahead sectors     auto
-     - currently set to     256
-     Block device           253:0
-
-
-   # rui @ rdma221 in ~ [8:21:27]
-   $ sudo lvextend -l +100%FREE /dev/ubuntu-vg/ubuntu-lv
-     Size of logical volume ubuntu-vg/ubuntu-lv changed from &lt;891.70 GiB (228275 extents) to 1.78 TiB (466741 extents).
-     Logical volume ubuntu-vg/ubuntu-lv successfully resized.
-</code></pre><ol start="5">
-<li><p>扩容文件系统。</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># rui @ rdma221 in ~ [8:22:06]</span>
-$ <span class="token function">sudo</span> resize2fs /dev/ubuntu-vg/ubuntu-lv
-resize2fs 1.45.5 <span class="token punctuation">(</span>07-Jan-2020<span class="token punctuation">)</span>
-Filesystem at /dev/ubuntu-vg/ubuntu-lv is mounted on /<span class="token punctuation">;</span> on-line resizing required
-old_desc_blocks <span class="token operator">=</span> 112, new_desc_blocks <span class="token operator">=</span> 228
-The filesystem on /dev/ubuntu-vg/ubuntu-lv is now 477942784 <span class="token punctuation">(</span>4k<span class="token punctuation">)</span> blocks long.
-</code></pre>
-</li>
-</ol>
-<ol start="6">
+   # rui @ rdma221 in ~ [8:22:06]
+   $ sudo resize2fs /dev/ubuntu-vg/ubuntu-lv
+   resize2fs 1.45.5 (07-Jan-2020)
+   Filesystem at /dev/ubuntu-vg/ubuntu-lv is mounted on /; on-line resizing required
+   old_desc_blocks = 112, new_desc_blocks = 228
+   The filesystem on /dev/ubuntu-vg/ubuntu-lv is now 477942784 (4k) blocks long.
+</code></pre><ol start="6">
 <li><p>扩容完成。</p>
 <pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true"># rui @ rdma221 in ~ [8:23:12]</span>
 $ <span class="token function">df</span> -h
