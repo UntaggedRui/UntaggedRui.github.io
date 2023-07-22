@@ -12,7 +12,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="centos7作为网关, 摸鱼记录">
+    <meta name="keywords" content="2023年起的当下热点记录, 摸鱼记录">
     <meta name="description" content="整天不学习，只知道玩的我">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -36,7 +36,7 @@
 </script>
 
 
-    <title>centos7作为网关 | 摸鱼记录</title>
+    <title>2023年起的当下热点记录 | 摸鱼记录</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -443,12 +443,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/21.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/5.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">centos7作为网关</h1>
+                    <h1 class="description center-align post-title">2023年起的当下热点记录</h1>
                 </div>
             </div>
         </div>
@@ -577,28 +577,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2023-02-25
+                    2023-05-17
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2023-02-28
+                    2023-05-29
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    994
+                    539
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    4 分
+                    1 分
                 </div>
                 
 
@@ -613,180 +613,25 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="网关服务器配制"><a href="#网关服务器配制" class="headerlink" title="网关服务器配制"></a>网关服务器配制</h1><p>假设该机的ip地址是10.176.22.33</p>
-<ol>
-<li><p>开启ip转发</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token keyword">echo</span> <span class="token string">"1"</span> <span class="token operator">></span> /proc/sys/net/ipv4/ip_forward</code></pre>
+                <h1 id="2023年"><a href="#2023年" class="headerlink" title="2023年"></a>2023年</h1><h2 id="5月"><a href="#5月" class="headerlink" title="5月"></a>5月</h2><ol>
+<li><p>12日，oppo旗下的芯片公司哲库突然解散。</p>
 </li>
-<li><p>让他生效。</p>
-<pre class=" language-bash"><code class="language-bash">sysctl -p</code></pre>
+<li><p>业内知名IT人士 左耳朵耗子因为心梗去世。coolshell.cn</p>
 </li>
-<li><p>设置iptables规则</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token function">sudo</span> iptables -F
-<span class="token function">sudo</span> iptables -P INPUT ACCEPT
-<span class="token function">sudo</span> iptables -P FORWARD ACCEPT
-<span class="token function">sudo</span> iptables -t nat -A POSTROUTING -o eno1 -j MASQUERADE</code></pre>
-<p>最后一条有个eno1是你机器的网口名 你看下你机器网口名是啥 然后改下就行 </p>
+<li><p>15日，湖北恩施网孔浮桥一辆商务车坠入水中，5死3伤。</p>
 </li>
-</ol>
-<h1 id="网关服务器配制-1"><a href="#网关服务器配制-1" class="headerlink" title="网关服务器配制"></a>网关服务器配制</h1><h2 id="ubuntu配制"><a href="#ubuntu配制" class="headerlink" title="ubuntu配制"></a>ubuntu配制</h2><p>编辑/etc/netplan/里面的配制文件</p>
-<pre class=" language-yaml"><code class="language-yaml"><span class="token comment" spellcheck="true"># This is the network config written by 'subiquity'</span>
-<span class="token key atrule">network</span><span class="token punctuation">:</span>
-  <span class="token key atrule">ethernets</span><span class="token punctuation">:</span>
-    <span class="token key atrule">eno1</span><span class="token punctuation">:</span>
-      <span class="token key atrule">dhcp4</span><span class="token punctuation">:</span> no
-      <span class="token key atrule">dhcp6</span><span class="token punctuation">:</span> no
-      <span class="token key atrule">addresses</span><span class="token punctuation">:</span>
-              <span class="token punctuation">-</span> 10.176.22.207/24
-              <span class="token punctuation">-</span> 2001<span class="token punctuation">:</span>DA8<span class="token punctuation">:</span>8001<span class="token punctuation">:</span>7B22<span class="token punctuation">:</span><span class="token punctuation">:</span>207/64
-      <span class="token key atrule">nameservers</span><span class="token punctuation">:</span>
-              <span class="token key atrule">addresses</span><span class="token punctuation">:</span>
-                      <span class="token punctuation">-</span> 202.120.224.6
-      <span class="token key atrule">routes</span><span class="token punctuation">:</span>
-              <span class="token punctuation">-</span> <span class="token key atrule">to</span><span class="token punctuation">:</span> 0.0.0.0/0
-                <span class="token key atrule">via</span><span class="token punctuation">:</span> 10.176.22.33
-                <span class="token key atrule">metric</span><span class="token punctuation">:</span> <span class="token number">50</span>
-              <span class="token punctuation">-</span> <span class="token key atrule">to</span><span class="token punctuation">:</span> 10.0.0.0/8
-                <span class="token key atrule">via</span><span class="token punctuation">:</span> 10.176.22.1
-                <span class="token key atrule">metric</span><span class="token punctuation">:</span> <span class="token number">50</span>
-              <span class="token punctuation">-</span> <span class="token key atrule">to</span><span class="token punctuation">:</span> <span class="token punctuation">:</span><span class="token punctuation">:</span>/0
-                <span class="token key atrule">via</span><span class="token punctuation">:</span> 2001<span class="token punctuation">:</span>DA8<span class="token punctuation">:</span>8001<span class="token punctuation">:</span>7B22<span class="token punctuation">:</span><span class="token punctuation">:</span><span class="token number">1</span>
-                <span class="token key atrule">metric</span><span class="token punctuation">:</span> <span class="token number">70</span>
-    <span class="token key atrule">eno2</span><span class="token punctuation">:</span>
-      <span class="token key atrule">dhcp4</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
-    <span class="token key atrule">eno3</span><span class="token punctuation">:</span>
-      <span class="token key atrule">dhcp4</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
-    <span class="token key atrule">eno4</span><span class="token punctuation">:</span>
-      <span class="token key atrule">dhcp4</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
-    <span class="token key atrule">ens2f0</span><span class="token punctuation">:</span>
-      <span class="token key atrule">dhcp4</span><span class="token punctuation">:</span> no
-      <span class="token key atrule">addresses</span><span class="token punctuation">:</span> <span class="token punctuation">[</span>192.168.2.207/24<span class="token punctuation">]</span>
-      <span class="token key atrule">nameservers</span><span class="token punctuation">:</span>
-                <span class="token key atrule">addresses</span><span class="token punctuation">:</span> <span class="token punctuation">[</span>202.120.224.6<span class="token punctuation">]</span>
-      <span class="token key atrule">routes</span><span class="token punctuation">:</span>
-              <span class="token punctuation">-</span> <span class="token key atrule">to</span><span class="token punctuation">:</span> 0.0.0.0/0
-                <span class="token key atrule">via</span><span class="token punctuation">:</span> 192.168.2.1
-                <span class="token key atrule">metric</span><span class="token punctuation">:</span> <span class="token number">50</span>
-    <span class="token key atrule">ens2f1</span><span class="token punctuation">:</span>
-      <span class="token key atrule">dhcp4</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
-  <span class="token key atrule">version</span><span class="token punctuation">:</span> <span class="token number">2</span></code></pre>
-<p>其中10.176.22.33为局域网作为网关的机器。</p>
-<p>记得配制一条10.0.0.0/8的路由，防止局域网内其他主机无法直接访问这台机器。</p>
-<h2 id="centos配制"><a href="#centos配制" class="headerlink" title="centos配制"></a>centos配制</h2><ol>
-<li><p>把你上网的网卡的配置文件(<code>/etc/sysconfig/network-scripts/ifcfg-em3</code>)里的GATEWAY改为<code>10.176.22.33</code></p>
+<li><p>笑果文化被罚。</p>
+<blockquote>
+<p>2023年5月15日，北京市文化市场综合执法总队接群众举报，决定对上海笑笙文化传媒有限公司依法立案调查。经查实，该公司及其演员李昊石肆意篡改演出申报内容，在5月13日下午、晚上连续两场“笑果脱口秀”演出中出现严重侮辱人民军队的情节，造成恶劣社会影响。</p>
+<p>该公司行为违反了《营业性演出管理条例》第二十五条、第二十六条规定。依据《营业性演出管理条例》第四十六条规定，北京市文化市场综合执法总队决定对该公司作出相应行政处罚：警告、没收违法所得1325381.6元、罚款13353816元。对涉案人员及其演出经纪机构和演出场所经营单位相关违规行为将进一步依法依规追究责任。北京市文化和旅游局决定无限期暂停涉事公司在京所有演出活动。</p>
+<p>人民军队是守卫国家安全、守护人民安宁的坚强卫士，我们绝不允许任何公司和个人在首都舞台肆意诋毁人民军队的光辉形象，绝不允许伤害广大人民群众对子弟兵的深厚感情，绝不允许把严肃题材娱乐化。我们将坚持强化监管、严格执法，坚决抵制只求“笑果”不计后果、只讲经济收益不讲社会责任的行为。希望广大文艺工作者遵守法律法规，端正创作思想，加强道德修养，自觉讲品味、讲格调、讲责任，为人民群众提供有营养的精神食粮。</p>
+<p>北京市文化和旅游局</p>
+<p>2023年5月17日</p>
+</blockquote>
 </li>
-<li><p>增加一条路由，防止局域网的其他机器不能访问你。</p>
-<pre class=" language-bash"><code class="language-bash">ip route add 10.0.0.0/8 via 10.176.22.1 dev em3</code></pre>
+<li><p>5月29日，北邮偷奶茶事件。<a href="https://www.v2ex.com/t/943867" target="_blank" rel="noopener">https://www.v2ex.com/t/943867</a></p>
 </li>
-<li><p>如果出现<code>RTNETLINK answers: Network is unreachable</code>，在增加一条路由</p>
-<pre class=" language-bash"><code class="language-bash">ip route add 10.176.22.1/32 dev em3</code></pre>
-</li>
-</ol>
-<h2 id="不改变网关，只配制路由"><a href="#不改变网关，只配制路由" class="headerlink" title="不改变网关，只配制路由"></a>不改变网关，只配制路由</h2><pre class=" language-bash"><code class="language-bash">ip route add 0.0.0.0/0 via 10.176.22.33
-ip route add 10.0.0.0/8 via 10.176.22.1</code></pre>
-<h2 id="一些我想记录的命令"><a href="#一些我想记录的命令" class="headerlink" title="一些我想记录的命令"></a>一些我想记录的命令</h2><pre class=" language-bash"><code class="language-bash">ip route add 10.176.22.1/32 dev br0
-ip route add 10.0.0.0/8 via 10.176.22.1 dev br0</code></pre>
-<h1 id="使用容器作为网关"><a href="#使用容器作为网关" class="headerlink" title="使用容器作为网关"></a>使用容器作为网关</h1><h2 id="创建macvlan网络"><a href="#创建macvlan网络" class="headerlink" title="创建macvlan网络"></a>创建macvlan网络</h2><ol>
-<li><p>（可选）让docker监听ipv6。</p>
-<p>编辑etc/docker/daemon.json文件</p>
-<pre class=" language-json"><code class="language-json"><span class="token punctuation">{</span>
-  <span class="token property">"ipv6"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
-  <span class="token property">"fixed-cidr-v6"</span><span class="token operator">:</span> <span class="token string">"2001:DA8:8001:7B22:200::/80"</span>
-<span class="token punctuation">}</span></code></pre>
-<p>重启docker</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token function">sudo</span> systemctl restart docker</code></pre>
-</li>
-</ol>
-<ol start="2">
-<li><p>创建macvlan</p>
-<p>没有ipv6的版本</p>
-<pre class=" language-bash"><code class="language-bash">docker network create -d macvlan \
-    --subnet<span class="token operator">=</span>10.176.22.0/24 \
-    --gateway<span class="token operator">=</span>10.176.22.1 \
-     -o parent<span class="token operator">=</span>em1 \
-     -o macvlan_mode<span class="token operator">=</span>bridge macnet</code></pre>
-<p>有ipv6的版本</p>
-<pre class=" language-bash"><code class="language-bash">docker network create -d macvlan --ipv6 \
-    --subnet<span class="token operator">=</span>10.176.22.0/24 \
-    --gateway<span class="token operator">=</span>10.176.22.1 \
-    --subnet<span class="token operator">=</span>2001:DA8:8001:7B22:200::/80 --gateway<span class="token operator">=</span>2001:DA8:8001:7B22:200::1 \
-     -o parent<span class="token operator">=</span>em1 \
-     -o macvlan_mode<span class="token operator">=</span>bridge macnet</code></pre>
-<p>注意看含义，有的值需要变</p>
-</li>
-</ol>
-<h2 id="设置容器"><a href="#设置容器" class="headerlink" title="设置容器"></a>设置容器</h2><ol>
-<li><p>采用centos作为容器</p>
-<pre class=" language-bash"><code class="language-bash">docker pull centos:centos7.9.2009</code></pre>
-</li>
-</ol>
-<ol start="2">
-<li><p>创建容器</p>
-<pre class=" language-bash"><code class="language-bash">docker run --name rui -it -d --network macnet --privileged --ip 10.176.22.208 centos:centos7.9.2009 /bin/bash</code></pre>
-</li>
-</ol>
-<ol start="3">
-<li><p>进入容器后, 先更换源</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token function">cp</span> -r /etc/yum.repos.d /etc/yum.repos.d.bak
-<span class="token function">sed</span> -e <span class="token string">'s|^mirrorlist=|#mirrorlist=|g'</span> \
-         -e <span class="token string">'s|^#baseurl=http://mirror.centos.org|baseurl=https://mirrors.bfsu.edu.cn|g'</span> \
-         -i.bak \
-         /etc/yum.repos.d/CentOS-*.repo
-yum update</code></pre>
-<p>安装一些工具</p>
-<pre class=" language-bash"><code class="language-bash">yum <span class="token function">install</span> -y  iproute iproute-doc</code></pre>
-</li>
-</ol>
-<ol start="4">
-<li><p>像上面一样开启转发</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token keyword">echo</span> <span class="token string">"1"</span> <span class="token operator">></span> /proc/sys/net/ipv4/ip_forward
-sysctl -p</code></pre>
-</li>
-</ol>
-<ol start="5">
-<li><p>像上面一样设置iptables</p>
-<pre class=" language-bash"><code class="language-bash">iptables -F
-iptables -P INPUT ACCEPT
-iptables -P FORWARD ACCEPT
-iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE</code></pre>
-</li>
-</ol>
-<ol start="6">
-<li><p>这就设置好了。</p>
-</li>
-<li><p>把当前容器作为镜像</p>
-<pre class=" language-bash"><code class="language-bash">docker commit -a <span class="token string">"ruiRay"</span> -m <span class="token string">"a centos gateway "</span> f4d2c6a1070d centos_gateway:20230225</code></pre>
-</li>
-<li><p>用当前容器重新创建一个测试</p>
-<pre class=" language-bash"><code class="language-bash">docker run --name rui -it -d --network macnet --privileged --ip 10.176.22.209 centos_gateway:20230225 /bin/bash</code></pre>
-</li>
-</ol>
-<ol start="9">
-<li><p>发现并不起作用，进入容器查看iptables表发现少了一条记录，于是再次添加</p>
-<pre class=" language-bash"><code class="language-bash">iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE</code></pre>
-<p>添加以后就能正常使用，还不清楚错误的原因。是不是没有保存？/etc/init.d/iptables save </p>
-</li>
-<li><p>把镜像上传到dockerhub方便下次使用。</p>
-<pre class=" language-bash"><code class="language-bash">docker login <span class="token comment" spellcheck="true"># 输入帐号密码登录</span></code></pre>
-<p>在官网上创建一个仓库叫做ruiray/centos_gateway:</p>
-<p>把本地镜像的名字命名为Docker ID/仓库名</p>
-<pre class=" language-bash"><code class="language-bash"> docker tag centos_gateway:20230225 ruiray/centos_gateway:20230225</code></pre>
-<p>推送到远端</p>
-<pre class=" language-bash"><code class="language-bash">docker push ruiray/centos_gateway:20230225</code></pre>
-<p>验证一下</p>
-<pre class=" language-bash"><code class="language-bash">docker inspect ruiray/centos_gateway:20230225</code></pre>
-<p><img src="https://img.tucang.cc/api/image/show/78860758f8da36021e4e85348cec2b78" alt="查看镜像"></p>
-</li>
-</ol>
-<ol start="11">
-<li><p>基于alpine制作的方法也一样，创建一个容器，进入执行如下命令</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token keyword">set</span> -eux <span class="token operator">&amp;&amp;</span> <span class="token function">sed</span> -i <span class="token string">'s/dl-cdn.alpinelinux.org/mirrors.sjtug.sjtu.edu.cn/g'</span> /etc/apk/repositories
-apk add iptables
-iptables -F
-iptables -P INPUT ACCEPT
-iptables -P FORWARD ACCEPT
-iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE</code></pre>
-<h1 id=""><a href="#" class="headerlink" title=""></a></h1></li>
+<li></li>
 </ol>
 
             </div>
@@ -843,7 +688,7 @@ iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE</code></pre>
         repo: 'zhangrui.github.io',
         owner: 'UntaggedRui',
         admin: "UntaggedRui",
-        id: '2023-02-25T14-34-08',
+        id: '2023-05-17T10-07-59',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -1150,30 +995,29 @@ iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE</code></pre>
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/posts/1be6557c/">
+                <a href="/posts/e9447a0f/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="一些包含数据库的docker应用迁移记录">
+                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="C/C++动态链接库的简单使用">
                         
-                        <span class="card-title">一些包含数据库的docker应用迁移记录</span>
+                        <span class="card-title">C/C++动态链接库的简单使用</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            immich
-导出postgres的数据。
-
-
-在新的环境中导入数据。
-
-
+                            C语言下最简单的动态链接库demo实现一个demo，在main.c中调用动态链接库中的add函数。
+准备源码首先实现add函数，在add.c中实现以下内容。
+int add(int a, int b)
+{
+    return a+b;
+}
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2023-02-25
+                            <i class="far fa-clock fa-fw icon-date"></i>2023-06-21
                         </span>
                         <span class="publish-author">
                             
@@ -1193,32 +1037,24 @@ iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE</code></pre>
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/posts/f3fb0249/">
+                <a href="/posts/f64e623b/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="git的一些学习记录">
+                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="解决访问谷歌时的人机验证">
                         
-                        <span class="card-title">git的一些学习记录</span>
+                        <span class="card-title">解决访问谷歌时的人机验证</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Git 操作
-git远程与本地的操作
-
-git重新设置远程仓库地址
-git remote rm origin
-git remote add origin 你的新远程仓库地址
-
-git删除远程分支
-git push origin --dele
+                            以下内容复制于https://duriancat.com/archives/virmachracknerddeng-colocrossingji-fang-vps-yong-warp-jie-jue-pin-fan-google-yan-z
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-02-20
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-03-26
                             </span>
                         <span class="publish-author">
                             

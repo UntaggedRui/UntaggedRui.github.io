@@ -584,21 +584,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2023-02-25
+                    2023-05-27
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.5k
+                    1.6k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    6 分
+                    7 分
                 </div>
                 
 
@@ -723,6 +723,20 @@ result<span class="token operator">=</span>`curl <span class="token variable">$U
 <span class="token keyword">echo</span> <span class="token variable">$result</span>
 </code></pre>
 <p>然后执行<code>bash login.sh</code>就可以访问外网了。</p>
+<h4 id="可选）制作定时脚本"><a href="#可选）制作定时脚本" class="headerlink" title="(可选）制作定时脚本"></a>(可选）制作定时脚本</h4><p>首先写脚本<code>check.sh</code>。</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token shebang important">#!/bin/sh</span>
+curday<span class="token operator">=</span><span class="token variable"><span class="token variable">`</span><span class="token function">date</span> +%Y-%m-%d\ %H:%M:%S<span class="token variable">`</span></span>
+<span class="token keyword">if</span> <span class="token function">ping</span> -q -c 1 -W 1 223.5.5.5 <span class="token operator">></span>/dev/null<span class="token punctuation">;</span> <span class="token keyword">then</span>
+  <span class="token keyword">echo</span> <span class="token string">"<span class="token variable">${curday}</span> Internet connection is up"</span>
+<span class="token keyword">else</span>
+  <span class="token keyword">echo</span> <span class="token string">"<span class="token variable">${curday}</span> Internet connection is down, attempting to login"</span>
+  /bin/bash ./login.sh 
+<span class="token keyword">fi</span></code></pre>
+<p>其中login.sh就是上面上外网的脚本。</p>
+<p>然后编写定时任务，输入<code>crontab -e</code>后输出下面</p>
+<pre class=" language-bash"><code class="language-bash">10 * * * * <span class="token function">cd</span> ~/scripts  <span class="token operator">&amp;&amp;</span> /bin/sh ./check.sh <span class="token operator">>></span> ./cron.log 2<span class="token operator">></span><span class="token operator">&amp;</span>1</code></pre>
+<p>其中<code>~/scripts</code>是你存放脚本的位置。</p>
+<p>执行完后就会不断网了。</p>
 <h2 id="换源"><a href="#换源" class="headerlink" title="换源"></a>换源</h2><p>使用bfsu的源。<a href="https://mirrors.bfsu.edu.cn/help/ubuntu/" target="_blank" rel="noopener">https://mirrors.bfsu.edu.cn/help/ubuntu/</a></p>
 <p>先进行备份 <code>sudo mv /etc/apt/sources.list /etc/apt/sources.list.bak</code></p>
 <p>将一下内容写入到<code>/etc/apt/sources.list</code>中。</p>
@@ -1363,7 +1377,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">57.6k</span>&nbsp;字
+                class="white-color">58.5k</span>&nbsp;字
             
             
             
