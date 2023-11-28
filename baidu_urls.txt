@@ -36,7 +36,6 @@ https://blog.hifool.cn/posts/d0231e3b/
 https://blog.hifool.cn/posts/1995ca3f/
 https://blog.hifool.cn/posts/experience-in-PHD/
 https://blog.hifool.cn/posts/hot-news/
-https://blog.hifool.cn/posts/setting-proxy-in-linux/
 https://blog.hifool.cn/posts/MAC-setup-system-proxy-quickly/
 https://blog.hifool.cn/posts/d36c02d3/
 https://blog.hifool.cn/posts/Files-to-be-backed-up-when-reinstalling-the-system/

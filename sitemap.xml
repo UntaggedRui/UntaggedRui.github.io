@@ -182,15 +182,6 @@
   </url>
   
   <url>
-    <loc>https://blog.hifool.cn/posts/setting-proxy-in-linux/</loc>
-    
-    <lastmod>2022-11-30</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://blog.hifool.cn/posts/e1ceeb7b/</loc>
     
     <lastmod>2022-10-04</lastmod>
@@ -570,13 +561,6 @@
   </url>
   
   <url>
-    <loc>https://blog.hifool.cn/tags/proxy/</loc>
-    <lastmod>2023-11-28</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://blog.hifool.cn/tags/hexo/</loc>
     <lastmod>2023-11-28</lastmod>
     <changefreq>weekly</changefreq>
@@ -629,13 +613,6 @@
   
   <url>
     <loc>https://blog.hifool.cn/categories/linux%E5%BC%80%E5%8F%91/</loc>
-    <lastmod>2023-11-28</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.hifool.cn/categories/%E6%91%B8%E9%B1%BC%E6%88%90%E6%9E%9C/</loc>
     <lastmod>2023-11-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
